@@ -1,18 +1,19 @@
 {
   "schema_version": 1,
-  "version": 2,
-  "generated_at": "2026-05-27T10:57:18.929Z",
+  "version": 3,
+  "generated_at": "2026-05-27T11:13:24.803Z",
   "bar": {
     "id": "28754067-952c-4f89-9618-62d358bb7566",
     "name": "BARO",
     "slug": "baro",
     "bar_type": "cigar",
-    "description": "",
-    "website_url": ""
+    "description": "For your private moment",
+    "website_url": "https://www.instagram.com/baro_busan/"
   },
   "presentation": {
     "theme": {
-      "variant": "cigar"
+      "variant": "cigar",
+      "accent": "#d8a657"
     },
     "features": {
       "showFeatured": true,
