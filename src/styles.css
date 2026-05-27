@@ -620,6 +620,7 @@ svg.is-filled {
 }
 
 .single-price-block {
+  align-items: flex-end;
   align-self: center;
   display: flex;
   flex-direction: column;
@@ -640,6 +641,10 @@ svg.is-filled {
   display: block;
   justify-self: end;
   text-align: right;
+}
+
+.single-price-block .single-price {
+  align-self: flex-end;
 }
 
 .combo-card {
