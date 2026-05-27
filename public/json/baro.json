@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "version": 10,
-  "generated_at": "2026-05-27T16:32:32.558Z",
+  "version": 11,
+  "generated_at": "2026-05-27T16:41:12.732Z",
   "bar": {
     "id": "28754067-952c-4f89-9618-62d358bb7566",
     "name": "BARO",
@@ -60,20 +60,20 @@
               "is_featured": 0,
               "servings": [
                 {
-                  "label": "bottle",
-                  "serving_ml": 700,
+                  "label": "half",
+                  "serving_ml": 15,
                   "price": null,
                   "sort_order": 0
                 },
                 {
-                  "label": "half",
-                  "serving_ml": 350,
+                  "label": "glass",
+                  "serving_ml": 30,
                   "price": null,
                   "sort_order": 1
                 },
                 {
-                  "label": "shot",
-                  "serving_ml": 30,
+                  "label": "bottle",
+                  "serving_ml": 750,
                   "price": null,
                   "sort_order": 2
                 }
@@ -103,20 +103,20 @@
               "is_featured": 0,
               "servings": [
                 {
-                  "label": "bottle",
-                  "serving_ml": 700,
+                  "label": "half",
+                  "serving_ml": 15,
                   "price": null,
                   "sort_order": 0
                 },
                 {
-                  "label": "half",
-                  "serving_ml": 350,
+                  "label": "glass",
+                  "serving_ml": 30,
                   "price": null,
                   "sort_order": 1
                 },
                 {
-                  "label": "shot",
-                  "serving_ml": 30,
+                  "label": "bottle",
+                  "serving_ml": 750,
                   "price": null,
                   "sort_order": 2
                 }
@@ -146,20 +146,20 @@
               "is_featured": 0,
               "servings": [
                 {
-                  "label": "bottle",
-                  "serving_ml": 700,
+                  "label": "half",
+                  "serving_ml": 15,
                   "price": null,
                   "sort_order": 0
                 },
                 {
-                  "label": "half",
-                  "serving_ml": 350,
+                  "label": "glass",
+                  "serving_ml": 30,
                   "price": null,
                   "sort_order": 1
                 },
                 {
-                  "label": "shot",
-                  "serving_ml": 30,
+                  "label": "bottle",
+                  "serving_ml": 750,
                   "price": null,
                   "sort_order": 2
                 }
@@ -189,20 +189,20 @@
               "is_featured": 0,
               "servings": [
                 {
-                  "label": "bottle",
-                  "serving_ml": 700,
+                  "label": "half",
+                  "serving_ml": 15,
                   "price": null,
                   "sort_order": 0
                 },
                 {
-                  "label": "half",
-                  "serving_ml": 350,
+                  "label": "glass",
+                  "serving_ml": 30,
                   "price": null,
                   "sort_order": 1
                 },
                 {
-                  "label": "shot",
-                  "serving_ml": 30,
+                  "label": "bottle",
+                  "serving_ml": 750,
                   "price": null,
                   "sort_order": 2
                 }
@@ -232,20 +232,20 @@
               "is_featured": 0,
               "servings": [
                 {
-                  "label": "bottle",
-                  "serving_ml": 700,
+                  "label": "half",
+                  "serving_ml": 15,
                   "price": null,
                   "sort_order": 0
                 },
                 {
-                  "label": "half",
-                  "serving_ml": 350,
+                  "label": "glass",
+                  "serving_ml": 30,
                   "price": null,
                   "sort_order": 1
                 },
                 {
-                  "label": "shot",
-                  "serving_ml": 30,
+                  "label": "bottle",
+                  "serving_ml": 750,
                   "price": null,
                   "sort_order": 2
                 }
@@ -275,20 +275,20 @@
               "is_featured": 0,
               "servings": [
                 {
-                  "label": "bottle",
-                  "serving_ml": 700,
+                  "label": "half",
+                  "serving_ml": 15,
                   "price": null,
                   "sort_order": 0
                 },
                 {
-                  "label": "half",
-                  "serving_ml": 350,
+                  "label": "glass",
+                  "serving_ml": 30,
                   "price": null,
                   "sort_order": 1
                 },
                 {
-                  "label": "shot",
-                  "serving_ml": 30,
+                  "label": "bottle",
+                  "serving_ml": 750,
                   "price": null,
                   "sort_order": 2
                 }
@@ -318,20 +318,20 @@
               "is_featured": 0,
               "servings": [
                 {
-                  "label": "bottle",
-                  "serving_ml": 700,
+                  "label": "half",
+                  "serving_ml": 15,
                   "price": null,
                   "sort_order": 0
                 },
                 {
-                  "label": "half",
-                  "serving_ml": 350,
+                  "label": "glass",
+                  "serving_ml": 30,
                   "price": null,
                   "sort_order": 1
                 },
                 {
-                  "label": "shot",
-                  "serving_ml": 30,
+                  "label": "bottle",
+                  "serving_ml": 750,
                   "price": null,
                   "sort_order": 2
                 }
@@ -361,20 +361,20 @@
               "is_featured": 0,
               "servings": [
                 {
-                  "label": "bottle",
-                  "serving_ml": 700,
+                  "label": "half",
+                  "serving_ml": 15,
                   "price": null,
                   "sort_order": 0
                 },
                 {
-                  "label": "half",
-                  "serving_ml": 350,
+                  "label": "glass",
+                  "serving_ml": 30,
                   "price": null,
                   "sort_order": 1
                 },
                 {
-                  "label": "shot",
-                  "serving_ml": 30,
+                  "label": "bottle",
+                  "serving_ml": 750,
                   "price": null,
                   "sort_order": 2
                 }
@@ -404,20 +404,20 @@
               "is_featured": 0,
               "servings": [
                 {
-                  "label": "bottle",
-                  "serving_ml": 700,
+                  "label": "half",
+                  "serving_ml": 15,
                   "price": null,
                   "sort_order": 0
                 },
                 {
-                  "label": "half",
-                  "serving_ml": 350,
+                  "label": "glass",
+                  "serving_ml": 30,
                   "price": null,
                   "sort_order": 1
                 },
                 {
-                  "label": "shot",
-                  "serving_ml": 30,
+                  "label": "bottle",
+                  "serving_ml": 750,
                   "price": null,
                   "sort_order": 2
                 }
@@ -447,20 +447,20 @@
               "is_featured": 0,
               "servings": [
                 {
-                  "label": "bottle",
-                  "serving_ml": 700,
+                  "label": "half",
+                  "serving_ml": 15,
                   "price": null,
                   "sort_order": 0
                 },
                 {
-                  "label": "half",
-                  "serving_ml": 350,
+                  "label": "glass",
+                  "serving_ml": 30,
                   "price": null,
                   "sort_order": 1
                 },
                 {
-                  "label": "shot",
-                  "serving_ml": 30,
+                  "label": "bottle",
+                  "serving_ml": 750,
                   "price": null,
                   "sort_order": 2
                 }
@@ -490,20 +490,20 @@
               "is_featured": 0,
               "servings": [
                 {
-                  "label": "bottle",
-                  "serving_ml": 700,
+                  "label": "half",
+                  "serving_ml": 15,
                   "price": null,
                   "sort_order": 0
                 },
                 {
-                  "label": "half",
-                  "serving_ml": 350,
+                  "label": "glass",
+                  "serving_ml": 30,
                   "price": null,
                   "sort_order": 1
                 },
                 {
-                  "label": "shot",
-                  "serving_ml": 30,
+                  "label": "bottle",
+                  "serving_ml": 750,
                   "price": null,
                   "sort_order": 2
                 }
@@ -533,20 +533,20 @@
               "is_featured": 0,
               "servings": [
                 {
-                  "label": "bottle",
-                  "serving_ml": 700,
+                  "label": "half",
+                  "serving_ml": 15,
                   "price": null,
                   "sort_order": 0
                 },
                 {
-                  "label": "half",
-                  "serving_ml": 350,
+                  "label": "glass",
+                  "serving_ml": 30,
                   "price": null,
                   "sort_order": 1
                 },
                 {
-                  "label": "shot",
-                  "serving_ml": 30,
+                  "label": "bottle",
+                  "serving_ml": 750,
                   "price": null,
                   "sort_order": 2
                 }
@@ -576,20 +576,20 @@
               "is_featured": 0,
               "servings": [
                 {
-                  "label": "bottle",
-                  "serving_ml": 700,
+                  "label": "half",
+                  "serving_ml": 15,
                   "price": null,
                   "sort_order": 0
                 },
                 {
-                  "label": "half",
-                  "serving_ml": 350,
+                  "label": "glass",
+                  "serving_ml": 30,
                   "price": null,
                   "sort_order": 1
                 },
                 {
-                  "label": "shot",
-                  "serving_ml": 30,
+                  "label": "bottle",
+                  "serving_ml": 750,
                   "price": null,
                   "sort_order": 2
                 }
@@ -619,20 +619,20 @@
               "is_featured": 0,
               "servings": [
                 {
-                  "label": "bottle",
-                  "serving_ml": 700,
+                  "label": "half",
+                  "serving_ml": 15,
                   "price": null,
                   "sort_order": 0
                 },
                 {
-                  "label": "half",
-                  "serving_ml": 350,
+                  "label": "glass",
+                  "serving_ml": 30,
                   "price": null,
                   "sort_order": 1
                 },
                 {
-                  "label": "shot",
-                  "serving_ml": 30,
+                  "label": "bottle",
+                  "serving_ml": 750,
                   "price": null,
                   "sort_order": 2
                 }
@@ -662,20 +662,20 @@
               "is_featured": 0,
               "servings": [
                 {
-                  "label": "bottle",
-                  "serving_ml": 700,
+                  "label": "half",
+                  "serving_ml": 15,
                   "price": null,
                   "sort_order": 0
                 },
                 {
-                  "label": "half",
-                  "serving_ml": 350,
+                  "label": "glass",
+                  "serving_ml": 30,
                   "price": null,
                   "sort_order": 1
                 },
                 {
-                  "label": "shot",
-                  "serving_ml": 30,
+                  "label": "bottle",
+                  "serving_ml": 750,
                   "price": null,
                   "sort_order": 2
                 }
@@ -705,20 +705,20 @@
               "is_featured": 0,
               "servings": [
                 {
-                  "label": "bottle",
-                  "serving_ml": 700,
+                  "label": "half",
+                  "serving_ml": 15,
                   "price": null,
                   "sort_order": 0
                 },
                 {
-                  "label": "half",
-                  "serving_ml": 350,
+                  "label": "glass",
+                  "serving_ml": 30,
                   "price": null,
                   "sort_order": 1
                 },
                 {
-                  "label": "shot",
-                  "serving_ml": 30,
+                  "label": "bottle",
+                  "serving_ml": 750,
                   "price": null,
                   "sort_order": 2
                 }
@@ -763,20 +763,20 @@
               "is_featured": 0,
               "servings": [
                 {
-                  "label": "bottle",
-                  "serving_ml": 700,
+                  "label": "half",
+                  "serving_ml": 15,
                   "price": null,
                   "sort_order": 0
                 },
                 {
-                  "label": "half",
-                  "serving_ml": 350,
+                  "label": "glass",
+                  "serving_ml": 30,
                   "price": null,
                   "sort_order": 1
                 },
                 {
-                  "label": "shot",
-                  "serving_ml": 30,
+                  "label": "bottle",
+                  "serving_ml": 750,
                   "price": null,
                   "sort_order": 2
                 }
@@ -806,20 +806,20 @@
               "is_featured": 0,
               "servings": [
                 {
-                  "label": "bottle",
-                  "serving_ml": 700,
+                  "label": "half",
+                  "serving_ml": 15,
                   "price": null,
                   "sort_order": 0
                 },
                 {
-                  "label": "half",
-                  "serving_ml": 350,
+                  "label": "glass",
+                  "serving_ml": 30,
                   "price": null,
                   "sort_order": 1
                 },
                 {
-                  "label": "shot",
-                  "serving_ml": 30,
+                  "label": "bottle",
+                  "serving_ml": 750,
                   "price": null,
                   "sort_order": 2
                 }
@@ -849,20 +849,20 @@
               "is_featured": 0,
               "servings": [
                 {
-                  "label": "bottle",
-                  "serving_ml": 700,
+                  "label": "half",
+                  "serving_ml": 15,
                   "price": null,
                   "sort_order": 0
                 },
                 {
-                  "label": "half",
-                  "serving_ml": 350,
+                  "label": "glass",
+                  "serving_ml": 30,
                   "price": null,
                   "sort_order": 1
                 },
                 {
-                  "label": "shot",
-                  "serving_ml": 30,
+                  "label": "bottle",
+                  "serving_ml": 750,
                   "price": null,
                   "sort_order": 2
                 }
@@ -892,20 +892,20 @@
               "is_featured": 0,
               "servings": [
                 {
-                  "label": "bottle",
-                  "serving_ml": 700,
+                  "label": "half",
+                  "serving_ml": 15,
                   "price": null,
                   "sort_order": 0
                 },
                 {
-                  "label": "half",
-                  "serving_ml": 350,
+                  "label": "glass",
+                  "serving_ml": 30,
                   "price": null,
                   "sort_order": 1
                 },
                 {
-                  "label": "shot",
-                  "serving_ml": 30,
+                  "label": "bottle",
+                  "serving_ml": 750,
                   "price": null,
                   "sort_order": 2
                 }
@@ -935,20 +935,20 @@
               "is_featured": 0,
               "servings": [
                 {
-                  "label": "bottle",
-                  "serving_ml": 700,
+                  "label": "half",
+                  "serving_ml": 15,
                   "price": null,
                   "sort_order": 0
                 },
                 {
-                  "label": "half",
-                  "serving_ml": 350,
+                  "label": "glass",
+                  "serving_ml": 30,
                   "price": null,
                   "sort_order": 1
                 },
                 {
-                  "label": "shot",
-                  "serving_ml": 30,
+                  "label": "bottle",
+                  "serving_ml": 750,
                   "price": null,
                   "sort_order": 2
                 }
@@ -978,20 +978,20 @@
               "is_featured": 0,
               "servings": [
                 {
-                  "label": "bottle",
-                  "serving_ml": 700,
+                  "label": "half",
+                  "serving_ml": 15,
                   "price": null,
                   "sort_order": 0
                 },
                 {
-                  "label": "half",
-                  "serving_ml": 350,
+                  "label": "glass",
+                  "serving_ml": 30,
                   "price": null,
                   "sort_order": 1
                 },
                 {
-                  "label": "shot",
-                  "serving_ml": 30,
+                  "label": "bottle",
+                  "serving_ml": 750,
                   "price": null,
                   "sort_order": 2
                 }
@@ -1021,20 +1021,20 @@
               "is_featured": 0,
               "servings": [
                 {
-                  "label": "bottle",
-                  "serving_ml": 700,
+                  "label": "half",
+                  "serving_ml": 15,
                   "price": null,
                   "sort_order": 0
                 },
                 {
-                  "label": "half",
-                  "serving_ml": 350,
+                  "label": "glass",
+                  "serving_ml": 30,
                   "price": null,
                   "sort_order": 1
                 },
                 {
-                  "label": "shot",
-                  "serving_ml": 30,
+                  "label": "bottle",
+                  "serving_ml": 750,
                   "price": null,
                   "sort_order": 2
                 }
@@ -1064,20 +1064,20 @@
               "is_featured": 0,
               "servings": [
                 {
-                  "label": "bottle",
-                  "serving_ml": 700,
+                  "label": "half",
+                  "serving_ml": 15,
                   "price": null,
                   "sort_order": 0
                 },
                 {
-                  "label": "half",
-                  "serving_ml": 350,
+                  "label": "glass",
+                  "serving_ml": 30,
                   "price": null,
                   "sort_order": 1
                 },
                 {
-                  "label": "shot",
-                  "serving_ml": 30,
+                  "label": "bottle",
+                  "serving_ml": 750,
                   "price": null,
                   "sort_order": 2
                 }
@@ -1107,20 +1107,20 @@
               "is_featured": 0,
               "servings": [
                 {
-                  "label": "bottle",
-                  "serving_ml": 700,
+                  "label": "half",
+                  "serving_ml": 15,
                   "price": null,
                   "sort_order": 0
                 },
                 {
-                  "label": "half",
-                  "serving_ml": 350,
+                  "label": "glass",
+                  "serving_ml": 30,
                   "price": null,
                   "sort_order": 1
                 },
                 {
-                  "label": "shot",
-                  "serving_ml": 30,
+                  "label": "bottle",
+                  "serving_ml": 750,
                   "price": null,
                   "sort_order": 2
                 }
@@ -1150,20 +1150,20 @@
               "is_featured": 0,
               "servings": [
                 {
-                  "label": "bottle",
-                  "serving_ml": 700,
+                  "label": "half",
+                  "serving_ml": 15,
                   "price": null,
                   "sort_order": 0
                 },
                 {
-                  "label": "half",
-                  "serving_ml": 350,
+                  "label": "glass",
+                  "serving_ml": 30,
                   "price": null,
                   "sort_order": 1
                 },
                 {
-                  "label": "shot",
-                  "serving_ml": 30,
+                  "label": "bottle",
+                  "serving_ml": 750,
                   "price": null,
                   "sort_order": 2
                 }
@@ -1193,20 +1193,20 @@
               "is_featured": 0,
               "servings": [
                 {
-                  "label": "bottle",
-                  "serving_ml": 700,
+                  "label": "half",
+                  "serving_ml": 15,
                   "price": null,
                   "sort_order": 0
                 },
                 {
-                  "label": "half",
-                  "serving_ml": 350,
+                  "label": "glass",
+                  "serving_ml": 30,
                   "price": null,
                   "sort_order": 1
                 },
                 {
-                  "label": "shot",
-                  "serving_ml": 30,
+                  "label": "bottle",
+                  "serving_ml": 750,
                   "price": null,
                   "sort_order": 2
                 }
@@ -1236,20 +1236,20 @@
               "is_featured": 0,
               "servings": [
                 {
-                  "label": "bottle",
-                  "serving_ml": 700,
+                  "label": "half",
+                  "serving_ml": 15,
                   "price": null,
                   "sort_order": 0
                 },
                 {
-                  "label": "half",
-                  "serving_ml": 350,
+                  "label": "glass",
+                  "serving_ml": 30,
                   "price": null,
                   "sort_order": 1
                 },
                 {
-                  "label": "shot",
-                  "serving_ml": 30,
+                  "label": "bottle",
+                  "serving_ml": 750,
                   "price": null,
                   "sort_order": 2
                 }
@@ -1279,20 +1279,20 @@
               "is_featured": 0,
               "servings": [
                 {
-                  "label": "bottle",
-                  "serving_ml": 700,
+                  "label": "half",
+                  "serving_ml": 15,
                   "price": null,
                   "sort_order": 0
                 },
                 {
-                  "label": "half",
-                  "serving_ml": 350,
+                  "label": "glass",
+                  "serving_ml": 30,
                   "price": null,
                   "sort_order": 1
                 },
                 {
-                  "label": "shot",
-                  "serving_ml": 30,
+                  "label": "bottle",
+                  "serving_ml": 750,
                   "price": null,
                   "sort_order": 2
                 }
@@ -1322,20 +1322,20 @@
               "is_featured": 0,
               "servings": [
                 {
-                  "label": "bottle",
-                  "serving_ml": 700,
+                  "label": "half",
+                  "serving_ml": 15,
                   "price": null,
                   "sort_order": 0
                 },
                 {
-                  "label": "half",
-                  "serving_ml": 350,
+                  "label": "glass",
+                  "serving_ml": 30,
                   "price": null,
                   "sort_order": 1
                 },
                 {
-                  "label": "shot",
-                  "serving_ml": 30,
+                  "label": "bottle",
+                  "serving_ml": 750,
                   "price": null,
                   "sort_order": 2
                 }
@@ -1365,20 +1365,20 @@
               "is_featured": 0,
               "servings": [
                 {
-                  "label": "bottle",
-                  "serving_ml": 700,
+                  "label": "half",
+                  "serving_ml": 15,
                   "price": null,
                   "sort_order": 0
                 },
                 {
-                  "label": "half",
-                  "serving_ml": 350,
+                  "label": "glass",
+                  "serving_ml": 30,
                   "price": null,
                   "sort_order": 1
                 },
                 {
-                  "label": "shot",
-                  "serving_ml": 30,
+                  "label": "bottle",
+                  "serving_ml": 750,
                   "price": null,
                   "sort_order": 2
                 }
@@ -1408,20 +1408,20 @@
               "is_featured": 0,
               "servings": [
                 {
-                  "label": "bottle",
-                  "serving_ml": 700,
+                  "label": "half",
+                  "serving_ml": 15,
                   "price": null,
                   "sort_order": 0
                 },
                 {
-                  "label": "half",
-                  "serving_ml": 350,
+                  "label": "glass",
+                  "serving_ml": 30,
                   "price": null,
                   "sort_order": 1
                 },
                 {
-                  "label": "shot",
-                  "serving_ml": 30,
+                  "label": "bottle",
+                  "serving_ml": 750,
                   "price": null,
                   "sort_order": 2
                 }
@@ -1451,20 +1451,20 @@
               "is_featured": 0,
               "servings": [
                 {
-                  "label": "bottle",
-                  "serving_ml": 700,
+                  "label": "half",
+                  "serving_ml": 15,
                   "price": null,
                   "sort_order": 0
                 },
                 {
-                  "label": "half",
-                  "serving_ml": 350,
+                  "label": "glass",
+                  "serving_ml": 30,
                   "price": null,
                   "sort_order": 1
                 },
                 {
-                  "label": "shot",
-                  "serving_ml": 30,
+                  "label": "bottle",
+                  "serving_ml": 750,
                   "price": null,
                   "sort_order": 2
                 }
@@ -1494,20 +1494,20 @@
               "is_featured": 0,
               "servings": [
                 {
-                  "label": "bottle",
-                  "serving_ml": 700,
+                  "label": "half",
+                  "serving_ml": 15,
                   "price": null,
                   "sort_order": 0
                 },
                 {
-                  "label": "half",
-                  "serving_ml": 350,
+                  "label": "glass",
+                  "serving_ml": 30,
                   "price": null,
                   "sort_order": 1
                 },
                 {
-                  "label": "shot",
-                  "serving_ml": 30,
+                  "label": "bottle",
+                  "serving_ml": 750,
                   "price": null,
                   "sort_order": 2
                 }
@@ -1537,20 +1537,20 @@
               "is_featured": 0,
               "servings": [
                 {
-                  "label": "bottle",
-                  "serving_ml": 700,
+                  "label": "half",
+                  "serving_ml": 15,
                   "price": null,
                   "sort_order": 0
                 },
                 {
-                  "label": "half",
-                  "serving_ml": 350,
+                  "label": "glass",
+                  "serving_ml": 30,
                   "price": null,
                   "sort_order": 1
                 },
                 {
-                  "label": "shot",
-                  "serving_ml": 30,
+                  "label": "bottle",
+                  "serving_ml": 750,
                   "price": null,
                   "sort_order": 2
                 }
@@ -1580,20 +1580,20 @@
               "is_featured": 0,
               "servings": [
                 {
-                  "label": "bottle",
-                  "serving_ml": 700,
+                  "label": "half",
+                  "serving_ml": 15,
                   "price": null,
                   "sort_order": 0
                 },
                 {
-                  "label": "half",
-                  "serving_ml": 350,
+                  "label": "glass",
+                  "serving_ml": 30,
                   "price": null,
                   "sort_order": 1
                 },
                 {
-                  "label": "shot",
-                  "serving_ml": 30,
+                  "label": "bottle",
+                  "serving_ml": 750,
                   "price": null,
                   "sort_order": 2
                 }
@@ -1623,20 +1623,20 @@
               "is_featured": 0,
               "servings": [
                 {
-                  "label": "bottle",
-                  "serving_ml": 700,
+                  "label": "half",
+                  "serving_ml": 15,
                   "price": null,
                   "sort_order": 0
                 },
                 {
-                  "label": "half",
-                  "serving_ml": 350,
+                  "label": "glass",
+                  "serving_ml": 30,
                   "price": null,
                   "sort_order": 1
                 },
                 {
-                  "label": "shot",
-                  "serving_ml": 30,
+                  "label": "bottle",
+                  "serving_ml": 750,
                   "price": null,
                   "sort_order": 2
                 }
@@ -1666,20 +1666,20 @@
               "is_featured": 0,
               "servings": [
                 {
-                  "label": "bottle",
-                  "serving_ml": 700,
+                  "label": "half",
+                  "serving_ml": 15,
                   "price": null,
                   "sort_order": 0
                 },
                 {
-                  "label": "half",
-                  "serving_ml": 350,
+                  "label": "glass",
+                  "serving_ml": 30,
                   "price": null,
                   "sort_order": 1
                 },
                 {
-                  "label": "shot",
-                  "serving_ml": 30,
+                  "label": "bottle",
+                  "serving_ml": 750,
                   "price": null,
                   "sort_order": 2
                 }
@@ -1709,20 +1709,20 @@
               "is_featured": 0,
               "servings": [
                 {
-                  "label": "bottle",
-                  "serving_ml": 700,
+                  "label": "half",
+                  "serving_ml": 15,
                   "price": null,
                   "sort_order": 0
                 },
                 {
-                  "label": "half",
-                  "serving_ml": 350,
+                  "label": "glass",
+                  "serving_ml": 30,
                   "price": null,
                   "sort_order": 1
                 },
                 {
-                  "label": "shot",
-                  "serving_ml": 30,
+                  "label": "bottle",
+                  "serving_ml": 750,
                   "price": null,
                   "sort_order": 2
                 }
@@ -1752,20 +1752,20 @@
               "is_featured": 0,
               "servings": [
                 {
-                  "label": "bottle",
-                  "serving_ml": 700,
+                  "label": "half",
+                  "serving_ml": 15,
                   "price": null,
                   "sort_order": 0
                 },
                 {
-                  "label": "half",
-                  "serving_ml": 350,
+                  "label": "glass",
+                  "serving_ml": 30,
                   "price": null,
                   "sort_order": 1
                 },
                 {
-                  "label": "shot",
-                  "serving_ml": 30,
+                  "label": "bottle",
+                  "serving_ml": 750,
                   "price": null,
                   "sort_order": 2
                 }
@@ -1803,20 +1803,20 @@
               "is_featured": 0,
               "servings": [
                 {
-                  "label": "bottle",
-                  "serving_ml": 700,
+                  "label": "half",
+                  "serving_ml": 15,
                   "price": null,
                   "sort_order": 0
                 },
                 {
-                  "label": "half",
-                  "serving_ml": 350,
+                  "label": "glass",
+                  "serving_ml": 30,
                   "price": null,
                   "sort_order": 1
                 },
                 {
-                  "label": "shot",
-                  "serving_ml": 30,
+                  "label": "bottle",
+                  "serving_ml": 750,
                   "price": null,
                   "sort_order": 2
                 }
@@ -1846,20 +1846,20 @@
               "is_featured": 0,
               "servings": [
                 {
-                  "label": "bottle",
-                  "serving_ml": 700,
+                  "label": "half",
+                  "serving_ml": 15,
                   "price": null,
                   "sort_order": 0
                 },
                 {
-                  "label": "half",
-                  "serving_ml": 350,
+                  "label": "glass",
+                  "serving_ml": 30,
                   "price": null,
                   "sort_order": 1
                 },
                 {
-                  "label": "shot",
-                  "serving_ml": 30,
+                  "label": "bottle",
+                  "serving_ml": 750,
                   "price": null,
                   "sort_order": 2
                 }
@@ -1889,20 +1889,20 @@
               "is_featured": 0,
               "servings": [
                 {
-                  "label": "bottle",
-                  "serving_ml": 700,
+                  "label": "half",
+                  "serving_ml": 15,
                   "price": null,
                   "sort_order": 0
                 },
                 {
-                  "label": "half",
-                  "serving_ml": 350,
+                  "label": "glass",
+                  "serving_ml": 30,
                   "price": null,
                   "sort_order": 1
                 },
                 {
-                  "label": "shot",
-                  "serving_ml": 30,
+                  "label": "bottle",
+                  "serving_ml": 750,
                   "price": null,
                   "sort_order": 2
                 }
@@ -1932,20 +1932,20 @@
               "is_featured": 0,
               "servings": [
                 {
-                  "label": "bottle",
-                  "serving_ml": 700,
+                  "label": "half",
+                  "serving_ml": 15,
                   "price": null,
                   "sort_order": 0
                 },
                 {
-                  "label": "half",
-                  "serving_ml": 350,
+                  "label": "glass",
+                  "serving_ml": 30,
                   "price": null,
                   "sort_order": 1
                 },
                 {
-                  "label": "shot",
-                  "serving_ml": 30,
+                  "label": "bottle",
+                  "serving_ml": 750,
                   "price": null,
                   "sort_order": 2
                 }
@@ -1975,20 +1975,20 @@
               "is_featured": 0,
               "servings": [
                 {
-                  "label": "bottle",
-                  "serving_ml": 700,
+                  "label": "half",
+                  "serving_ml": 15,
                   "price": null,
                   "sort_order": 0
                 },
                 {
-                  "label": "half",
-                  "serving_ml": 350,
+                  "label": "glass",
+                  "serving_ml": 30,
                   "price": null,
                   "sort_order": 1
                 },
                 {
-                  "label": "shot",
-                  "serving_ml": 30,
+                  "label": "bottle",
+                  "serving_ml": 750,
                   "price": null,
                   "sort_order": 2
                 }
@@ -2018,20 +2018,20 @@
               "is_featured": 0,
               "servings": [
                 {
-                  "label": "bottle",
-                  "serving_ml": 700,
+                  "label": "half",
+                  "serving_ml": 15,
                   "price": null,
                   "sort_order": 0
                 },
                 {
-                  "label": "half",
-                  "serving_ml": 350,
+                  "label": "glass",
+                  "serving_ml": 30,
                   "price": null,
                   "sort_order": 1
                 },
                 {
-                  "label": "shot",
-                  "serving_ml": 30,
+                  "label": "bottle",
+                  "serving_ml": 750,
                   "price": null,
                   "sort_order": 2
                 }
@@ -2061,20 +2061,20 @@
               "is_featured": 0,
               "servings": [
                 {
-                  "label": "bottle",
-                  "serving_ml": 700,
+                  "label": "half",
+                  "serving_ml": 15,
                   "price": null,
                   "sort_order": 0
                 },
                 {
-                  "label": "half",
-                  "serving_ml": 350,
+                  "label": "glass",
+                  "serving_ml": 30,
                   "price": null,
                   "sort_order": 1
                 },
                 {
-                  "label": "shot",
-                  "serving_ml": 30,
+                  "label": "bottle",
+                  "serving_ml": 750,
                   "price": null,
                   "sort_order": 2
                 }
@@ -2104,20 +2104,20 @@
               "is_featured": 0,
               "servings": [
                 {
-                  "label": "bottle",
-                  "serving_ml": 700,
+                  "label": "half",
+                  "serving_ml": 15,
                   "price": null,
                   "sort_order": 0
                 },
                 {
-                  "label": "half",
-                  "serving_ml": 350,
+                  "label": "glass",
+                  "serving_ml": 30,
                   "price": null,
                   "sort_order": 1
                 },
                 {
-                  "label": "shot",
-                  "serving_ml": 30,
+                  "label": "bottle",
+                  "serving_ml": 750,
                   "price": null,
                   "sort_order": 2
                 }
@@ -2147,20 +2147,20 @@
               "is_featured": 0,
               "servings": [
                 {
-                  "label": "bottle",
-                  "serving_ml": 700,
+                  "label": "half",
+                  "serving_ml": 15,
                   "price": null,
                   "sort_order": 0
                 },
                 {
-                  "label": "half",
-                  "serving_ml": 350,
+                  "label": "glass",
+                  "serving_ml": 30,
                   "price": null,
                   "sort_order": 1
                 },
                 {
-                  "label": "shot",
-                  "serving_ml": 30,
+                  "label": "bottle",
+                  "serving_ml": 750,
                   "price": null,
                   "sort_order": 2
                 }
@@ -2190,20 +2190,20 @@
               "is_featured": 0,
               "servings": [
                 {
-                  "label": "bottle",
-                  "serving_ml": 700,
+                  "label": "half",
+                  "serving_ml": 15,
                   "price": null,
                   "sort_order": 0
                 },
                 {
-                  "label": "half",
-                  "serving_ml": 350,
+                  "label": "glass",
+                  "serving_ml": 30,
                   "price": null,
                   "sort_order": 1
                 },
                 {
-                  "label": "shot",
-                  "serving_ml": 30,
+                  "label": "bottle",
+                  "serving_ml": 750,
                   "price": null,
                   "sort_order": 2
                 }
@@ -2233,20 +2233,20 @@
               "is_featured": 0,
               "servings": [
                 {
-                  "label": "bottle",
-                  "serving_ml": 700,
+                  "label": "half",
+                  "serving_ml": 15,
                   "price": null,
                   "sort_order": 0
                 },
                 {
-                  "label": "half",
-                  "serving_ml": 350,
+                  "label": "glass",
+                  "serving_ml": 30,
                   "price": null,
                   "sort_order": 1
                 },
                 {
-                  "label": "shot",
-                  "serving_ml": 30,
+                  "label": "bottle",
+                  "serving_ml": 750,
                   "price": null,
                   "sort_order": 2
                 }
@@ -2276,20 +2276,20 @@
               "is_featured": 0,
               "servings": [
                 {
-                  "label": "bottle",
-                  "serving_ml": 700,
+                  "label": "half",
+                  "serving_ml": 15,
                   "price": null,
                   "sort_order": 0
                 },
                 {
-                  "label": "half",
-                  "serving_ml": 350,
+                  "label": "glass",
+                  "serving_ml": 30,
                   "price": null,
                   "sort_order": 1
                 },
                 {
-                  "label": "shot",
-                  "serving_ml": 30,
+                  "label": "bottle",
+                  "serving_ml": 750,
                   "price": null,
                   "sort_order": 2
                 }
@@ -2319,20 +2319,20 @@
               "is_featured": 0,
               "servings": [
                 {
-                  "label": "bottle",
-                  "serving_ml": 700,
+                  "label": "half",
+                  "serving_ml": 15,
                   "price": null,
                   "sort_order": 0
                 },
                 {
-                  "label": "half",
-                  "serving_ml": 350,
+                  "label": "glass",
+                  "serving_ml": 30,
                   "price": null,
                   "sort_order": 1
                 },
                 {
-                  "label": "shot",
-                  "serving_ml": 30,
+                  "label": "bottle",
+                  "serving_ml": 750,
                   "price": null,
                   "sort_order": 2
                 }
@@ -2362,20 +2362,20 @@
               "is_featured": 0,
               "servings": [
                 {
-                  "label": "bottle",
-                  "serving_ml": 700,
+                  "label": "half",
+                  "serving_ml": 15,
                   "price": null,
                   "sort_order": 0
                 },
                 {
-                  "label": "half",
-                  "serving_ml": 350,
+                  "label": "glass",
+                  "serving_ml": 30,
                   "price": null,
                   "sort_order": 1
                 },
                 {
-                  "label": "shot",
-                  "serving_ml": 30,
+                  "label": "bottle",
+                  "serving_ml": 750,
                   "price": null,
                   "sort_order": 2
                 }
@@ -2405,20 +2405,20 @@
               "is_featured": 0,
               "servings": [
                 {
-                  "label": "bottle",
-                  "serving_ml": 700,
+                  "label": "half",
+                  "serving_ml": 15,
                   "price": null,
                   "sort_order": 0
                 },
                 {
-                  "label": "half",
-                  "serving_ml": 350,
+                  "label": "glass",
+                  "serving_ml": 30,
                   "price": null,
                   "sort_order": 1
                 },
                 {
-                  "label": "shot",
-                  "serving_ml": 30,
+                  "label": "bottle",
+                  "serving_ml": 750,
                   "price": null,
                   "sort_order": 2
                 }
@@ -2448,20 +2448,20 @@
               "is_featured": 0,
               "servings": [
                 {
-                  "label": "bottle",
-                  "serving_ml": 700,
+                  "label": "half",
+                  "serving_ml": 15,
                   "price": null,
                   "sort_order": 0
                 },
                 {
-                  "label": "half",
-                  "serving_ml": 350,
+                  "label": "glass",
+                  "serving_ml": 30,
                   "price": null,
                   "sort_order": 1
                 },
                 {
-                  "label": "shot",
-                  "serving_ml": 30,
+                  "label": "bottle",
+                  "serving_ml": 750,
                   "price": null,
                   "sort_order": 2
                 }
@@ -2491,20 +2491,20 @@
               "is_featured": 0,
               "servings": [
                 {
-                  "label": "bottle",
-                  "serving_ml": 700,
+                  "label": "half",
+                  "serving_ml": 15,
                   "price": null,
                   "sort_order": 0
                 },
                 {
-                  "label": "half",
-                  "serving_ml": 350,
+                  "label": "glass",
+                  "serving_ml": 30,
                   "price": null,
                   "sort_order": 1
                 },
                 {
-                  "label": "shot",
-                  "serving_ml": 30,
+                  "label": "bottle",
+                  "serving_ml": 750,
                   "price": null,
                   "sort_order": 2
                 }
@@ -2534,20 +2534,20 @@
               "is_featured": 0,
               "servings": [
                 {
-                  "label": "bottle",
-                  "serving_ml": 700,
+                  "label": "half",
+                  "serving_ml": 15,
                   "price": null,
                   "sort_order": 0
                 },
                 {
-                  "label": "half",
-                  "serving_ml": 350,
+                  "label": "glass",
+                  "serving_ml": 30,
                   "price": null,
                   "sort_order": 1
                 },
                 {
-                  "label": "shot",
-                  "serving_ml": 30,
+                  "label": "bottle",
+                  "serving_ml": 750,
                   "price": null,
                   "sort_order": 2
                 }
@@ -2577,20 +2577,20 @@
               "is_featured": 0,
               "servings": [
                 {
-                  "label": "bottle",
-                  "serving_ml": 700,
+                  "label": "half",
+                  "serving_ml": 15,
                   "price": null,
                   "sort_order": 0
                 },
                 {
-                  "label": "half",
-                  "serving_ml": 350,
+                  "label": "glass",
+                  "serving_ml": 30,
                   "price": null,
                   "sort_order": 1
                 },
                 {
-                  "label": "shot",
-                  "serving_ml": 30,
+                  "label": "bottle",
+                  "serving_ml": 750,
                   "price": null,
                   "sort_order": 2
                 }
@@ -2620,20 +2620,20 @@
               "is_featured": 0,
               "servings": [
                 {
-                  "label": "bottle",
-                  "serving_ml": 700,
+                  "label": "half",
+                  "serving_ml": 15,
                   "price": null,
                   "sort_order": 0
                 },
                 {
-                  "label": "half",
-                  "serving_ml": 350,
+                  "label": "glass",
+                  "serving_ml": 30,
                   "price": null,
                   "sort_order": 1
                 },
                 {
-                  "label": "shot",
-                  "serving_ml": 30,
+                  "label": "bottle",
+                  "serving_ml": 750,
                   "price": null,
                   "sort_order": 2
                 }
@@ -2663,20 +2663,20 @@
               "is_featured": 0,
               "servings": [
                 {
-                  "label": "bottle",
-                  "serving_ml": 700,
+                  "label": "half",
+                  "serving_ml": 15,
                   "price": null,
                   "sort_order": 0
                 },
                 {
-                  "label": "half",
-                  "serving_ml": 350,
+                  "label": "glass",
+                  "serving_ml": 30,
                   "price": null,
                   "sort_order": 1
                 },
                 {
-                  "label": "shot",
-                  "serving_ml": 30,
+                  "label": "bottle",
+                  "serving_ml": 750,
                   "price": null,
                   "sort_order": 2
                 }
@@ -2706,20 +2706,20 @@
               "is_featured": 0,
               "servings": [
                 {
-                  "label": "bottle",
-                  "serving_ml": 700,
+                  "label": "half",
+                  "serving_ml": 15,
                   "price": null,
                   "sort_order": 0
                 },
                 {
-                  "label": "half",
-                  "serving_ml": 350,
+                  "label": "glass",
+                  "serving_ml": 30,
                   "price": null,
                   "sort_order": 1
                 },
                 {
-                  "label": "shot",
-                  "serving_ml": 30,
+                  "label": "bottle",
+                  "serving_ml": 750,
                   "price": null,
                   "sort_order": 2
                 }
@@ -2749,20 +2749,20 @@
               "is_featured": 0,
               "servings": [
                 {
-                  "label": "bottle",
-                  "serving_ml": 700,
+                  "label": "half",
+                  "serving_ml": 15,
                   "price": null,
                   "sort_order": 0
                 },
                 {
-                  "label": "half",
-                  "serving_ml": 350,
+                  "label": "glass",
+                  "serving_ml": 30,
                   "price": null,
                   "sort_order": 1
                 },
                 {
-                  "label": "shot",
-                  "serving_ml": 30,
+                  "label": "bottle",
+                  "serving_ml": 750,
                   "price": null,
                   "sort_order": 2
                 }
@@ -2792,20 +2792,20 @@
               "is_featured": 0,
               "servings": [
                 {
-                  "label": "bottle",
-                  "serving_ml": 700,
+                  "label": "half",
+                  "serving_ml": 15,
                   "price": null,
                   "sort_order": 0
                 },
                 {
-                  "label": "half",
-                  "serving_ml": 350,
+                  "label": "glass",
+                  "serving_ml": 30,
                   "price": null,
                   "sort_order": 1
                 },
                 {
-                  "label": "shot",
-                  "serving_ml": 30,
+                  "label": "bottle",
+                  "serving_ml": 750,
                   "price": null,
                   "sort_order": 2
                 }
@@ -2835,20 +2835,20 @@
               "is_featured": 0,
               "servings": [
                 {
-                  "label": "bottle",
-                  "serving_ml": 700,
+                  "label": "half",
+                  "serving_ml": 15,
                   "price": null,
                   "sort_order": 0
                 },
                 {
-                  "label": "half",
-                  "serving_ml": 350,
+                  "label": "glass",
+                  "serving_ml": 30,
                   "price": null,
                   "sort_order": 1
                 },
                 {
-                  "label": "shot",
-                  "serving_ml": 30,
+                  "label": "bottle",
+                  "serving_ml": 750,
                   "price": null,
                   "sort_order": 2
                 }
@@ -2878,20 +2878,20 @@
               "is_featured": 0,
               "servings": [
                 {
-                  "label": "bottle",
-                  "serving_ml": 700,
+                  "label": "half",
+                  "serving_ml": 15,
                   "price": null,
                   "sort_order": 0
                 },
                 {
-                  "label": "half",
-                  "serving_ml": 350,
+                  "label": "glass",
+                  "serving_ml": 30,
                   "price": null,
                   "sort_order": 1
                 },
                 {
-                  "label": "shot",
-                  "serving_ml": 30,
+                  "label": "bottle",
+                  "serving_ml": 750,
                   "price": null,
                   "sort_order": 2
                 }
@@ -2921,20 +2921,20 @@
               "is_featured": 0,
               "servings": [
                 {
-                  "label": "bottle",
-                  "serving_ml": 700,
+                  "label": "half",
+                  "serving_ml": 15,
                   "price": null,
                   "sort_order": 0
                 },
                 {
-                  "label": "half",
-                  "serving_ml": 350,
+                  "label": "glass",
+                  "serving_ml": 30,
                   "price": null,
                   "sort_order": 1
                 },
                 {
-                  "label": "shot",
-                  "serving_ml": 30,
+                  "label": "bottle",
+                  "serving_ml": 750,
                   "price": null,
                   "sort_order": 2
                 }
@@ -2964,20 +2964,20 @@
               "is_featured": 0,
               "servings": [
                 {
-                  "label": "bottle",
-                  "serving_ml": 700,
+                  "label": "half",
+                  "serving_ml": 15,
                   "price": null,
                   "sort_order": 0
                 },
                 {
-                  "label": "half",
-                  "serving_ml": 350,
+                  "label": "glass",
+                  "serving_ml": 30,
                   "price": null,
                   "sort_order": 1
                 },
                 {
-                  "label": "shot",
-                  "serving_ml": 30,
+                  "label": "bottle",
+                  "serving_ml": 750,
                   "price": null,
                   "sort_order": 2
                 }
@@ -3007,20 +3007,20 @@
               "is_featured": 0,
               "servings": [
                 {
-                  "label": "bottle",
-                  "serving_ml": 700,
+                  "label": "half",
+                  "serving_ml": 15,
                   "price": null,
                   "sort_order": 0
                 },
                 {
-                  "label": "half",
-                  "serving_ml": 350,
+                  "label": "glass",
+                  "serving_ml": 30,
                   "price": null,
                   "sort_order": 1
                 },
                 {
-                  "label": "shot",
-                  "serving_ml": 30,
+                  "label": "bottle",
+                  "serving_ml": 750,
                   "price": null,
                   "sort_order": 2
                 }
@@ -3050,20 +3050,20 @@
               "is_featured": 0,
               "servings": [
                 {
-                  "label": "bottle",
-                  "serving_ml": 700,
+                  "label": "half",
+                  "serving_ml": 15,
                   "price": null,
                   "sort_order": 0
                 },
                 {
-                  "label": "half",
-                  "serving_ml": 350,
+                  "label": "glass",
+                  "serving_ml": 30,
                   "price": null,
                   "sort_order": 1
                 },
                 {
-                  "label": "shot",
-                  "serving_ml": 30,
+                  "label": "bottle",
+                  "serving_ml": 750,
                   "price": null,
                   "sort_order": 2
                 }
@@ -3093,20 +3093,20 @@
               "is_featured": 0,
               "servings": [
                 {
-                  "label": "bottle",
-                  "serving_ml": 700,
+                  "label": "half",
+                  "serving_ml": 15,
                   "price": null,
                   "sort_order": 0
                 },
                 {
-                  "label": "half",
-                  "serving_ml": 350,
+                  "label": "glass",
+                  "serving_ml": 30,
                   "price": null,
                   "sort_order": 1
                 },
                 {
-                  "label": "shot",
-                  "serving_ml": 30,
+                  "label": "bottle",
+                  "serving_ml": 750,
                   "price": null,
                   "sort_order": 2
                 }
@@ -3136,20 +3136,20 @@
               "is_featured": 0,
               "servings": [
                 {
-                  "label": "bottle",
-                  "serving_ml": 700,
+                  "label": "half",
+                  "serving_ml": 15,
                   "price": null,
                   "sort_order": 0
                 },
                 {
-                  "label": "half",
-                  "serving_ml": 350,
+                  "label": "glass",
+                  "serving_ml": 30,
                   "price": null,
                   "sort_order": 1
                 },
                 {
-                  "label": "shot",
-                  "serving_ml": 30,
+                  "label": "bottle",
+                  "serving_ml": 750,
                   "price": null,
                   "sort_order": 2
                 }
@@ -3179,20 +3179,20 @@
               "is_featured": 0,
               "servings": [
                 {
-                  "label": "bottle",
-                  "serving_ml": 700,
+                  "label": "half",
+                  "serving_ml": 15,
                   "price": null,
                   "sort_order": 0
                 },
                 {
-                  "label": "half",
-                  "serving_ml": 350,
+                  "label": "glass",
+                  "serving_ml": 30,
                   "price": null,
                   "sort_order": 1
                 },
                 {
-                  "label": "shot",
-                  "serving_ml": 30,
+                  "label": "bottle",
+                  "serving_ml": 750,
                   "price": null,
                   "sort_order": 2
                 }
@@ -3222,20 +3222,20 @@
               "is_featured": 0,
               "servings": [
                 {
-                  "label": "bottle",
-                  "serving_ml": 700,
+                  "label": "half",
+                  "serving_ml": 15,
                   "price": null,
                   "sort_order": 0
                 },
                 {
-                  "label": "half",
-                  "serving_ml": 350,
+                  "label": "glass",
+                  "serving_ml": 30,
                   "price": null,
                   "sort_order": 1
                 },
                 {
-                  "label": "shot",
-                  "serving_ml": 30,
+                  "label": "bottle",
+                  "serving_ml": 750,
                   "price": null,
                   "sort_order": 2
                 }
@@ -3273,20 +3273,20 @@
               "is_featured": 0,
               "servings": [
                 {
-                  "label": "bottle",
-                  "serving_ml": 700,
+                  "label": "half",
+                  "serving_ml": 15,
                   "price": null,
                   "sort_order": 0
                 },
                 {
-                  "label": "half",
-                  "serving_ml": 350,
+                  "label": "glass",
+                  "serving_ml": 30,
                   "price": null,
                   "sort_order": 1
                 },
                 {
-                  "label": "shot",
-                  "serving_ml": 30,
+                  "label": "bottle",
+                  "serving_ml": 750,
                   "price": null,
                   "sort_order": 2
                 }
