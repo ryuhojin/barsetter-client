@@ -1,13 +1,14 @@
 {
   "schema_version": 1,
-  "version": 1,
-  "generated_at": "2026-05-27T09:13:47.844Z",
+  "version": 2,
+  "generated_at": "2026-05-27T10:57:18.929Z",
   "bar": {
     "id": "28754067-952c-4f89-9618-62d358bb7566",
     "name": "BARO",
     "slug": "baro",
     "bar_type": "cigar",
-    "description": ""
+    "description": "",
+    "website_url": ""
   },
   "presentation": {
     "theme": {
@@ -69,7 +70,56 @@
           "name": "Non-Cuban",
           "slug": "noncuban",
           "sort_order": 1,
-          "products": []
+          "products": [
+            {
+              "id": "88aca426-088c-4ebc-b9fc-57d9685c0718",
+              "name": "Davidoff Signature 2000",
+              "sku": null,
+              "product_type": "cigar",
+              "food_type": null,
+              "cigar_vitola": "",
+              "cigar_wrapper": "",
+              "cigar_binder": "",
+              "cigar_filler": "",
+              "cigar_body": "mild",
+              "base_price": 60000,
+              "origin": "",
+              "producer": "",
+              "abv": null,
+              "vintage": "",
+              "cask_info": "",
+              "volume_ml": null,
+              "unit": "",
+              "description": "",
+              "tasting_notes": "",
+              "is_featured": 0,
+              "servings": []
+            },
+            {
+              "id": "3c12861b-1c3a-47c0-8398-2bffa04dd299",
+              "name": "Davidoff Signature No.2",
+              "sku": null,
+              "product_type": "cigar",
+              "food_type": null,
+              "cigar_vitola": "",
+              "cigar_wrapper": "",
+              "cigar_binder": "",
+              "cigar_filler": "",
+              "cigar_body": "mild",
+              "base_price": 75000,
+              "origin": "",
+              "producer": "",
+              "abv": null,
+              "vintage": "",
+              "cask_info": "",
+              "volume_ml": null,
+              "unit": "",
+              "description": "",
+              "tasting_notes": "",
+              "is_featured": 0,
+              "servings": []
+            }
+          ]
         }
       ]
     },
