@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "version": 6,
+  "generated_at": "2026-05-27T04:38:15.123Z",
+  "bar": {
+    "id": "afe150c9-84e4-4d57-aeb9-aba929b34715",
+    "name": "Bar host",
+    "slug": "bar-host",
+    "bar_type": "multi",
+    "description": "ff"
+  },
+  "presentation": {
+    "theme": {
+      "variant": "multi"
+    },
+    "features": {
+      "showCombos": true,
+      "showDescriptions": true,
+      "showTastingNotes": true,
+      "showServingDetails": true
+    }
+  },
+  "categories": [
+    {
+      "id": "a7505500-0b20-4ebd-bbfa-b769e1eb7a1f",
+      "name": "Spirits",
+      "slug": "spirits",
+      "sort_order": 0,
+      "subcategories": [
+        {
+          "id": "5cc292bd-3051-461c-a590-4051fb93d1ff",
+          "name": "Brandy",
+          "slug": "brandy",
+          "sort_order": 0,
+          "products": []
+        }
+      ]
+    },
+    {
+      "id": "869d7528-9f83-4ad0-8582-2a62965b4887",
+      "name": "Cigar",
+      "slug": "cigar",
+      "sort_order": 1,
+      "subcategories": []
+    },
+    {
+      "id": "3aaf91ce-57cf-4005-994a-581c3af31ca7",
+      "name": "Etc",
+      "slug": "etc",
+      "sort_order": 2,
+      "subcategories": []
+    }
+  ],
+  "combos": []
+}
