@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "version": 1,
+  "generated_at": "2026-05-27T09:13:47.844Z",
+  "bar": {
+    "id": "28754067-952c-4f89-9618-62d358bb7566",
+    "name": "BARO",
+    "slug": "baro",
+    "bar_type": "cigar",
+    "description": ""
+  },
+  "presentation": {
+    "theme": {
+      "variant": "cigar"
+    },
+    "features": {
+      "showFeatured": true,
+      "showCombos": true,
+      "showDescriptions": true,
+      "showTastingNotes": true,
+      "showServingDetails": true
+    }
+  },
+  "categories": [
+    {
+      "id": "587d8f80-352f-43e4-ba68-2dbb081963f8",
+      "name": "Spirits",
+      "slug": "spirits",
+      "sort_order": 0,
+      "subcategories": [
+        {
+          "id": "b700dc9d-6a09-4060-b166-13fa45fac909",
+          "name": "Brandy",
+          "slug": "brandy",
+          "sort_order": 0,
+          "products": []
+        },
+        {
+          "id": "79fca6b6-7fce-4ebb-90ec-c83809059a56",
+          "name": "Whisky",
+          "slug": "whisky",
+          "sort_order": 1,
+          "products": []
+        },
+        {
+          "id": "0fb1f61e-fe6b-4a80-a135-e73479da56c2",
+          "name": "Wine",
+          "slug": "wine",
+          "sort_order": 2,
+          "products": []
+        }
+      ]
+    },
+    {
+      "id": "16d23bff-bf5c-4295-ab6d-d5f5befb27e0",
+      "name": "Cigar",
+      "slug": "cigar",
+      "sort_order": 1,
+      "subcategories": [
+        {
+          "id": "ec4b28ce-ea0f-4b30-888b-b6f841f3db31",
+          "name": "Cuban",
+          "slug": "cuban",
+          "sort_order": 0,
+          "products": []
+        },
+        {
+          "id": "28e81023-d783-43c9-bba3-a752b916ebb9",
+          "name": "Non-Cuban",
+          "slug": "noncuban",
+          "sort_order": 1,
+          "products": []
+        }
+      ]
+    },
+    {
+      "id": "5b29c166-c390-4fca-82cd-ece0eeeee8f3",
+      "name": "Etc",
+      "slug": "etc",
+      "sort_order": 2,
+      "subcategories": [
+        {
+          "id": "80ac1a53-691d-4dd1-b989-4fd162d35f41",
+          "name": "Drink",
+          "slug": "drink",
+          "sort_order": 0,
+          "products": []
+        },
+        {
+          "id": "280554c1-8e7d-4240-a618-a052c526f450",
+          "name": "Etc",
+          "slug": "etc",
+          "sort_order": 1,
+          "products": []
+        }
+      ]
+    }
+  ],
+  "combos": []
+}
