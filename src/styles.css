@@ -419,7 +419,7 @@ svg.is-filled {
   min-height: 0;
   overflow-y: auto;
   overscroll-behavior: contain;
-  padding-bottom: calc(var(--bottom-nav-clearance) + 18px);
+  padding-bottom: 18px;
   scrollbar-width: none;
 }
 
