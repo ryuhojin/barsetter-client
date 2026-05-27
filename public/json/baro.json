@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "version": 7,
-  "generated_at": "2026-05-27T14:11:33.486Z",
+  "version": 8,
+  "generated_at": "2026-05-27T16:05:01.948Z",
   "bar": {
     "id": "28754067-952c-4f89-9618-62d358bb7566",
     "name": "BARO",
@@ -32,8 +32,8 @@
       "subcategories": [
         {
           "id": "b700dc9d-6a09-4060-b166-13fa45fac909",
-          "name": "Brandy",
-          "slug": "brandy",
+          "name": "Cognac",
+          "slug": "cognac",
           "sort_order": 0,
           "products": [
             {
@@ -50,13 +50,13 @@
               "base_price": null,
               "origin": "",
               "producer": "",
-              "abv": null,
-              "vintage": "",
+              "abv": 40,
+              "vintage": "VSOP",
               "cask_info": "",
               "volume_ml": null,
               "unit": "bottle",
               "description": "",
-              "tasting_notes": "",
+              "tasting_notes": "포도",
               "is_featured": 0,
               "servings": [
                 {
@@ -727,10 +727,17 @@
           ]
         },
         {
+          "id": "46872d7a-fe93-456b-be08-97628dcdeeeb",
+          "name": "Armagnac",
+          "slug": "armagnac",
+          "sort_order": 1,
+          "products": []
+        },
+        {
           "id": "79fca6b6-7fce-4ebb-90ec-c83809059a56",
           "name": "Whisky",
           "slug": "whisky",
-          "sort_order": 1,
+          "sort_order": 2,
           "products": [
             {
               "id": "96be3e02-30ae-4b61-828a-af605fd97bf2",
@@ -1770,7 +1777,7 @@
           "id": "0fb1f61e-fe6b-4a80-a135-e73479da56c2",
           "name": "Wine",
           "slug": "wine",
-          "sort_order": 2,
+          "sort_order": 3,
           "products": [
             {
               "id": "8efeda74-6591-4718-9cf0-fe9b52f8927a",
@@ -3240,7 +3247,7 @@
           "id": "d88e5a3b-6f19-41a6-adee-3367f16e26eb",
           "name": "Rum",
           "slug": "rum",
-          "sort_order": 3,
+          "sort_order": 4,
           "products": [
             {
               "id": "8da3c9f9-d21a-4aa0-a778-d3e7bf7b3a76",
