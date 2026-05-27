@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "version": 9,
-  "generated_at": "2026-05-27T16:15:46.705Z",
+  "version": 10,
+  "generated_at": "2026-05-27T16:32:32.558Z",
   "bar": {
     "id": "28754067-952c-4f89-9618-62d358bb7566",
     "name": "BARO",
@@ -3679,5 +3679,35 @@
       ]
     }
   ],
-  "combos": []
+  "combos": [
+    {
+      "id": "7ea7dfed-1eae-4a68-b275-a3d4a8787a65",
+      "name": "Brandy & Cigar",
+      "combo_type": "tasting_set",
+      "description": "브랜디와 시가의 조합",
+      "price": 70000,
+      "discount_type": "none",
+      "discount_value": null,
+      "start_at": null,
+      "end_at": null,
+      "items": [
+        {
+          "product_id": "43b7950f-7cc6-490c-93b6-f2bce72c35b9",
+          "product_name": "까뮤 보더리 vsop",
+          "quantity": 1,
+          "pour_ml": null,
+          "note": "",
+          "sort_order": 0
+        },
+        {
+          "product_id": "c3188465-3e12-427b-8692-6a201f7067bb",
+          "product_name": "다비도프 벨리코소",
+          "quantity": 1,
+          "pour_ml": null,
+          "note": "",
+          "sort_order": 1
+        }
+      ]
+    }
+  ]
 }
