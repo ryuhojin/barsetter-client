@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
-  "version": 1,
-  "generated_at": "2026-05-27T11:10:50.424Z",
+  "version": 2,
+  "generated_at": "2026-05-27T11:13:31.525Z",
   "bar": {
     "id": "543bca85-d752-4401-854c-a5e535b21042",
     "name": "NuttyOak",
     "slug": "nuttyoak",
     "bar_type": "malt",
     "description": "지칠때까지",
-    "website_url": ""
+    "website_url": "https://www.instagram.com/nuttyoak_bar/"
   },
   "presentation": {
     "theme": {
