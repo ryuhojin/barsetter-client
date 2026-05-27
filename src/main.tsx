@@ -179,7 +179,15 @@ async function loadMenu(slug: string): Promise<MenuData> {
   if (!response.ok) {
     throw new Error(response.status === 404 ? "메뉴판을 찾을 수 없습니다." : "메뉴 데이터를 불러오지 못했습니다.");
   }
-  return response.json() as Promise<MenuData>;
+  const raw = await response.text();
+  try {
+    return JSON.parse(raw) as MenuData;
+  } catch {
+    if (raw.trimStart().startsWith("<!doctype") || raw.trimStart().startsWith("<html")) {
+      throw new Error("메뉴 JSON 파일을 찾을 수 없습니다. 발행 후 클라이언트 배포가 완료되었는지 확인하세요.");
+    }
+    throw new Error("메뉴 JSON 형식이 올바르지 않습니다.");
+  }
 }
 
 function useMenu(): LoadState {
