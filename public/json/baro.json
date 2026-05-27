@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "version": 4,
-  "generated_at": "2026-05-27T11:52:23.343Z",
+  "version": 5,
+  "generated_at": "2026-05-27T13:08:05.121Z",
   "bar": {
     "id": "28754067-952c-4f89-9618-62d358bb7566",
     "name": "BARO",
@@ -35,51 +35,7 @@
           "name": "Brandy",
           "slug": "brandy",
           "sort_order": 0,
-          "products": [
-            {
-              "id": "7340312f-fe09-4dae-bcee-74771b8b686f",
-              "name": "GlenDronach 21Y",
-              "sku": null,
-              "product_type": "alcohol",
-              "food_type": null,
-              "cigar_vitola": "",
-              "cigar_wrapper": "",
-              "cigar_binder": "",
-              "cigar_filler": "",
-              "cigar_body": null,
-              "base_price": null,
-              "origin": "Scotland",
-              "producer": "GlenDronach",
-              "abv": 43,
-              "vintage": "21Y",
-              "cask_info": "Oloroso Sherry Butt",
-              "volume_ml": null,
-              "unit": "bottle",
-              "description": "시가랑 페어링이 좋은 위스키",
-              "tasting_notes": "바닐라, 꿀, 건과일",
-              "is_featured": 0,
-              "servings": [
-                {
-                  "label": "bottle",
-                  "serving_ml": 700,
-                  "price": 500000,
-                  "sort_order": 0
-                },
-                {
-                  "label": "glass",
-                  "serving_ml": 30,
-                  "price": 60000,
-                  "sort_order": 1
-                },
-                {
-                  "label": "half",
-                  "serving_ml": 15,
-                  "price": 30000,
-                  "sort_order": 2
-                }
-              ]
-            }
-          ]
+          "products": []
         },
         {
           "id": "79fca6b6-7fce-4ebb-90ec-c83809059a56",
@@ -93,7 +49,997 @@
           "name": "Wine",
           "slug": "wine",
           "sort_order": 2,
-          "products": []
+          "products": [
+            {
+              "id": "8efeda74-6591-4718-9cf0-fe9b52f8927a",
+              "name": "시즌스 비달 아이스바인",
+              "sku": null,
+              "product_type": "alcohol",
+              "food_type": null,
+              "cigar_vitola": "",
+              "cigar_wrapper": "",
+              "cigar_binder": "",
+              "cigar_filler": "",
+              "cigar_body": null,
+              "base_price": null,
+              "origin": "",
+              "producer": "",
+              "abv": null,
+              "vintage": "",
+              "cask_info": "",
+              "volume_ml": null,
+              "unit": "bottle",
+              "description": "",
+              "tasting_notes": "",
+              "is_featured": 0,
+              "servings": [
+                {
+                  "label": "bottle",
+                  "serving_ml": 700,
+                  "price": null,
+                  "sort_order": 0
+                },
+                {
+                  "label": "half",
+                  "serving_ml": 350,
+                  "price": null,
+                  "sort_order": 1
+                },
+                {
+                  "label": "shot",
+                  "serving_ml": 30,
+                  "price": null,
+                  "sort_order": 2
+                }
+              ]
+            },
+            {
+              "id": "df4d584e-eb6a-4d29-bcab-f3f1dd5bc840",
+              "name": "루이자도 피노누아",
+              "sku": null,
+              "product_type": "alcohol",
+              "food_type": null,
+              "cigar_vitola": "",
+              "cigar_wrapper": "",
+              "cigar_binder": "",
+              "cigar_filler": "",
+              "cigar_body": null,
+              "base_price": null,
+              "origin": "",
+              "producer": "",
+              "abv": null,
+              "vintage": "",
+              "cask_info": "",
+              "volume_ml": null,
+              "unit": "bottle",
+              "description": "",
+              "tasting_notes": "",
+              "is_featured": 0,
+              "servings": [
+                {
+                  "label": "bottle",
+                  "serving_ml": 700,
+                  "price": null,
+                  "sort_order": 0
+                },
+                {
+                  "label": "half",
+                  "serving_ml": 350,
+                  "price": null,
+                  "sort_order": 1
+                },
+                {
+                  "label": "shot",
+                  "serving_ml": 30,
+                  "price": null,
+                  "sort_order": 2
+                }
+              ]
+            },
+            {
+              "id": "d16f1168-4178-468b-b61a-dc4ac5361e00",
+              "name": "루이자도 샤도네이",
+              "sku": null,
+              "product_type": "alcohol",
+              "food_type": null,
+              "cigar_vitola": "",
+              "cigar_wrapper": "",
+              "cigar_binder": "",
+              "cigar_filler": "",
+              "cigar_body": null,
+              "base_price": null,
+              "origin": "",
+              "producer": "",
+              "abv": null,
+              "vintage": "",
+              "cask_info": "",
+              "volume_ml": null,
+              "unit": "bottle",
+              "description": "",
+              "tasting_notes": "",
+              "is_featured": 0,
+              "servings": [
+                {
+                  "label": "bottle",
+                  "serving_ml": 700,
+                  "price": null,
+                  "sort_order": 0
+                },
+                {
+                  "label": "half",
+                  "serving_ml": 350,
+                  "price": null,
+                  "sort_order": 1
+                },
+                {
+                  "label": "shot",
+                  "serving_ml": 30,
+                  "price": null,
+                  "sort_order": 2
+                }
+              ]
+            },
+            {
+              "id": "e71a536c-c54f-473f-be70-7a8c36eda80c",
+              "name": "이기갈 꼬뜨 뒤 론",
+              "sku": null,
+              "product_type": "alcohol",
+              "food_type": null,
+              "cigar_vitola": "",
+              "cigar_wrapper": "",
+              "cigar_binder": "",
+              "cigar_filler": "",
+              "cigar_body": null,
+              "base_price": null,
+              "origin": "",
+              "producer": "",
+              "abv": null,
+              "vintage": "",
+              "cask_info": "",
+              "volume_ml": null,
+              "unit": "bottle",
+              "description": "",
+              "tasting_notes": "",
+              "is_featured": 0,
+              "servings": [
+                {
+                  "label": "bottle",
+                  "serving_ml": 700,
+                  "price": null,
+                  "sort_order": 0
+                },
+                {
+                  "label": "half",
+                  "serving_ml": 350,
+                  "price": null,
+                  "sort_order": 1
+                },
+                {
+                  "label": "shot",
+                  "serving_ml": 30,
+                  "price": null,
+                  "sort_order": 2
+                }
+              ]
+            },
+            {
+              "id": "a59142c3-5ba5-461c-b7d3-09e15eb1fd53",
+              "name": "폰토디 끼안티 클라시코",
+              "sku": null,
+              "product_type": "alcohol",
+              "food_type": null,
+              "cigar_vitola": "",
+              "cigar_wrapper": "",
+              "cigar_binder": "",
+              "cigar_filler": "",
+              "cigar_body": null,
+              "base_price": null,
+              "origin": "",
+              "producer": "",
+              "abv": null,
+              "vintage": "",
+              "cask_info": "",
+              "volume_ml": null,
+              "unit": "bottle",
+              "description": "",
+              "tasting_notes": "",
+              "is_featured": 0,
+              "servings": [
+                {
+                  "label": "bottle",
+                  "serving_ml": 700,
+                  "price": null,
+                  "sort_order": 0
+                },
+                {
+                  "label": "half",
+                  "serving_ml": 350,
+                  "price": null,
+                  "sort_order": 1
+                },
+                {
+                  "label": "shot",
+                  "serving_ml": 30,
+                  "price": null,
+                  "sort_order": 2
+                }
+              ]
+            },
+            {
+              "id": "aa0308d3-6da7-4c84-a177-de4e35c9825f",
+              "name": "캄파 아레피아노",
+              "sku": null,
+              "product_type": "alcohol",
+              "food_type": null,
+              "cigar_vitola": "",
+              "cigar_wrapper": "",
+              "cigar_binder": "",
+              "cigar_filler": "",
+              "cigar_body": null,
+              "base_price": null,
+              "origin": "",
+              "producer": "",
+              "abv": null,
+              "vintage": "",
+              "cask_info": "",
+              "volume_ml": null,
+              "unit": "bottle",
+              "description": "",
+              "tasting_notes": "",
+              "is_featured": 0,
+              "servings": [
+                {
+                  "label": "bottle",
+                  "serving_ml": 700,
+                  "price": null,
+                  "sort_order": 0
+                },
+                {
+                  "label": "half",
+                  "serving_ml": 350,
+                  "price": null,
+                  "sort_order": 1
+                },
+                {
+                  "label": "shot",
+                  "serving_ml": 30,
+                  "price": null,
+                  "sort_order": 2
+                }
+              ]
+            },
+            {
+              "id": "2e744217-7e40-4368-975b-0540f096171c",
+              "name": "테르 드 픽 생그",
+              "sku": null,
+              "product_type": "alcohol",
+              "food_type": null,
+              "cigar_vitola": "",
+              "cigar_wrapper": "",
+              "cigar_binder": "",
+              "cigar_filler": "",
+              "cigar_body": null,
+              "base_price": null,
+              "origin": "",
+              "producer": "",
+              "abv": null,
+              "vintage": "",
+              "cask_info": "",
+              "volume_ml": null,
+              "unit": "bottle",
+              "description": "",
+              "tasting_notes": "",
+              "is_featured": 0,
+              "servings": [
+                {
+                  "label": "bottle",
+                  "serving_ml": 700,
+                  "price": null,
+                  "sort_order": 0
+                },
+                {
+                  "label": "half",
+                  "serving_ml": 350,
+                  "price": null,
+                  "sort_order": 1
+                },
+                {
+                  "label": "shot",
+                  "serving_ml": 30,
+                  "price": null,
+                  "sort_order": 2
+                }
+              ]
+            },
+            {
+              "id": "2b8cfe88-cd97-49bc-b899-c2689100c80f",
+              "name": "동그레예 레테흐핀",
+              "sku": null,
+              "product_type": "alcohol",
+              "food_type": null,
+              "cigar_vitola": "",
+              "cigar_wrapper": "",
+              "cigar_binder": "",
+              "cigar_filler": "",
+              "cigar_body": null,
+              "base_price": null,
+              "origin": "",
+              "producer": "",
+              "abv": null,
+              "vintage": "",
+              "cask_info": "",
+              "volume_ml": null,
+              "unit": "bottle",
+              "description": "",
+              "tasting_notes": "",
+              "is_featured": 0,
+              "servings": [
+                {
+                  "label": "bottle",
+                  "serving_ml": 700,
+                  "price": null,
+                  "sort_order": 0
+                },
+                {
+                  "label": "half",
+                  "serving_ml": 350,
+                  "price": null,
+                  "sort_order": 1
+                },
+                {
+                  "label": "shot",
+                  "serving_ml": 30,
+                  "price": null,
+                  "sort_order": 2
+                }
+              ]
+            },
+            {
+              "id": "eda1b564-f081-4894-b02a-bdc53e4d4680",
+              "name": "샤또가쟁 포메롤",
+              "sku": null,
+              "product_type": "alcohol",
+              "food_type": null,
+              "cigar_vitola": "",
+              "cigar_wrapper": "",
+              "cigar_binder": "",
+              "cigar_filler": "",
+              "cigar_body": null,
+              "base_price": null,
+              "origin": "",
+              "producer": "",
+              "abv": null,
+              "vintage": "",
+              "cask_info": "",
+              "volume_ml": null,
+              "unit": "bottle",
+              "description": "",
+              "tasting_notes": "",
+              "is_featured": 0,
+              "servings": [
+                {
+                  "label": "bottle",
+                  "serving_ml": 700,
+                  "price": null,
+                  "sort_order": 0
+                },
+                {
+                  "label": "half",
+                  "serving_ml": 350,
+                  "price": null,
+                  "sort_order": 1
+                },
+                {
+                  "label": "shot",
+                  "serving_ml": 30,
+                  "price": null,
+                  "sort_order": 2
+                }
+              ]
+            },
+            {
+              "id": "a95fa57e-61f8-4195-9041-9e6d478b08d0",
+              "name": "샤또 뒤포르비방",
+              "sku": null,
+              "product_type": "alcohol",
+              "food_type": null,
+              "cigar_vitola": "",
+              "cigar_wrapper": "",
+              "cigar_binder": "",
+              "cigar_filler": "",
+              "cigar_body": null,
+              "base_price": null,
+              "origin": "",
+              "producer": "",
+              "abv": null,
+              "vintage": "",
+              "cask_info": "",
+              "volume_ml": null,
+              "unit": "bottle",
+              "description": "",
+              "tasting_notes": "",
+              "is_featured": 0,
+              "servings": [
+                {
+                  "label": "bottle",
+                  "serving_ml": 700,
+                  "price": null,
+                  "sort_order": 0
+                },
+                {
+                  "label": "half",
+                  "serving_ml": 350,
+                  "price": null,
+                  "sort_order": 1
+                },
+                {
+                  "label": "shot",
+                  "serving_ml": 30,
+                  "price": null,
+                  "sort_order": 2
+                }
+              ]
+            },
+            {
+              "id": "580a6bac-4fc7-42d1-b148-c031287b556d",
+              "name": "오레무스 드라이 만둘라스",
+              "sku": null,
+              "product_type": "alcohol",
+              "food_type": null,
+              "cigar_vitola": "",
+              "cigar_wrapper": "",
+              "cigar_binder": "",
+              "cigar_filler": "",
+              "cigar_body": null,
+              "base_price": null,
+              "origin": "",
+              "producer": "",
+              "abv": null,
+              "vintage": "",
+              "cask_info": "",
+              "volume_ml": null,
+              "unit": "bottle",
+              "description": "",
+              "tasting_notes": "",
+              "is_featured": 0,
+              "servings": [
+                {
+                  "label": "bottle",
+                  "serving_ml": 700,
+                  "price": null,
+                  "sort_order": 0
+                },
+                {
+                  "label": "half",
+                  "serving_ml": 350,
+                  "price": null,
+                  "sort_order": 1
+                },
+                {
+                  "label": "shot",
+                  "serving_ml": 30,
+                  "price": null,
+                  "sort_order": 2
+                }
+              ]
+            },
+            {
+              "id": "485c2a32-91ab-4a93-b8b9-9310f4738719",
+              "name": "이갈스 지공다스",
+              "sku": null,
+              "product_type": "alcohol",
+              "food_type": null,
+              "cigar_vitola": "",
+              "cigar_wrapper": "",
+              "cigar_binder": "",
+              "cigar_filler": "",
+              "cigar_body": null,
+              "base_price": null,
+              "origin": "",
+              "producer": "",
+              "abv": null,
+              "vintage": "",
+              "cask_info": "",
+              "volume_ml": null,
+              "unit": "bottle",
+              "description": "",
+              "tasting_notes": "",
+              "is_featured": 0,
+              "servings": [
+                {
+                  "label": "bottle",
+                  "serving_ml": 700,
+                  "price": null,
+                  "sort_order": 0
+                },
+                {
+                  "label": "half",
+                  "serving_ml": 350,
+                  "price": null,
+                  "sort_order": 1
+                },
+                {
+                  "label": "shot",
+                  "serving_ml": 30,
+                  "price": null,
+                  "sort_order": 2
+                }
+              ]
+            },
+            {
+              "id": "4638d641-6014-4987-96ec-540eae1f8c13",
+              "name": "트리벤토 골든리저브 말벡",
+              "sku": null,
+              "product_type": "alcohol",
+              "food_type": null,
+              "cigar_vitola": "",
+              "cigar_wrapper": "",
+              "cigar_binder": "",
+              "cigar_filler": "",
+              "cigar_body": null,
+              "base_price": null,
+              "origin": "",
+              "producer": "",
+              "abv": null,
+              "vintage": "",
+              "cask_info": "",
+              "volume_ml": null,
+              "unit": "bottle",
+              "description": "",
+              "tasting_notes": "",
+              "is_featured": 0,
+              "servings": [
+                {
+                  "label": "bottle",
+                  "serving_ml": 700,
+                  "price": null,
+                  "sort_order": 0
+                },
+                {
+                  "label": "half",
+                  "serving_ml": 350,
+                  "price": null,
+                  "sort_order": 1
+                },
+                {
+                  "label": "shot",
+                  "serving_ml": 30,
+                  "price": null,
+                  "sort_order": 2
+                }
+              ]
+            },
+            {
+              "id": "ca8655fe-11bc-4e26-8d2e-ffdf75582ab5",
+              "name": "셀락오리진소비뇽블랑",
+              "sku": null,
+              "product_type": "alcohol",
+              "food_type": null,
+              "cigar_vitola": "",
+              "cigar_wrapper": "",
+              "cigar_binder": "",
+              "cigar_filler": "",
+              "cigar_body": null,
+              "base_price": null,
+              "origin": "",
+              "producer": "",
+              "abv": null,
+              "vintage": "",
+              "cask_info": "",
+              "volume_ml": null,
+              "unit": "bottle",
+              "description": "",
+              "tasting_notes": "",
+              "is_featured": 0,
+              "servings": [
+                {
+                  "label": "bottle",
+                  "serving_ml": 700,
+                  "price": null,
+                  "sort_order": 0
+                },
+                {
+                  "label": "half",
+                  "serving_ml": 350,
+                  "price": null,
+                  "sort_order": 1
+                },
+                {
+                  "label": "shot",
+                  "serving_ml": 30,
+                  "price": null,
+                  "sort_order": 2
+                }
+              ]
+            },
+            {
+              "id": "f5644d60-f144-4afa-afbc-39e133710040",
+              "name": "아만테",
+              "sku": null,
+              "product_type": "alcohol",
+              "food_type": null,
+              "cigar_vitola": "",
+              "cigar_wrapper": "",
+              "cigar_binder": "",
+              "cigar_filler": "",
+              "cigar_body": null,
+              "base_price": null,
+              "origin": "",
+              "producer": "",
+              "abv": null,
+              "vintage": "",
+              "cask_info": "",
+              "volume_ml": null,
+              "unit": "bottle",
+              "description": "",
+              "tasting_notes": "",
+              "is_featured": 0,
+              "servings": [
+                {
+                  "label": "bottle",
+                  "serving_ml": 700,
+                  "price": null,
+                  "sort_order": 0
+                },
+                {
+                  "label": "half",
+                  "serving_ml": 350,
+                  "price": null,
+                  "sort_order": 1
+                },
+                {
+                  "label": "shot",
+                  "serving_ml": 30,
+                  "price": null,
+                  "sort_order": 2
+                }
+              ]
+            },
+            {
+              "id": "a969a9ea-664f-486b-a664-916d74f55172",
+              "name": "마르셀마틴 크레망",
+              "sku": null,
+              "product_type": "alcohol",
+              "food_type": null,
+              "cigar_vitola": "",
+              "cigar_wrapper": "",
+              "cigar_binder": "",
+              "cigar_filler": "",
+              "cigar_body": null,
+              "base_price": null,
+              "origin": "",
+              "producer": "",
+              "abv": null,
+              "vintage": "",
+              "cask_info": "",
+              "volume_ml": null,
+              "unit": "bottle",
+              "description": "",
+              "tasting_notes": "",
+              "is_featured": 0,
+              "servings": [
+                {
+                  "label": "bottle",
+                  "serving_ml": 700,
+                  "price": null,
+                  "sort_order": 0
+                },
+                {
+                  "label": "half",
+                  "serving_ml": 350,
+                  "price": null,
+                  "sort_order": 1
+                },
+                {
+                  "label": "shot",
+                  "serving_ml": 30,
+                  "price": null,
+                  "sort_order": 2
+                }
+              ]
+            },
+            {
+              "id": "0b9b8a9c-d12b-4a39-a66b-5a60a9b076b7",
+              "name": "에고메이",
+              "sku": null,
+              "product_type": "alcohol",
+              "food_type": null,
+              "cigar_vitola": "",
+              "cigar_wrapper": "",
+              "cigar_binder": "",
+              "cigar_filler": "",
+              "cigar_body": null,
+              "base_price": null,
+              "origin": "",
+              "producer": "",
+              "abv": null,
+              "vintage": "",
+              "cask_info": "",
+              "volume_ml": null,
+              "unit": "bottle",
+              "description": "",
+              "tasting_notes": "",
+              "is_featured": 0,
+              "servings": [
+                {
+                  "label": "bottle",
+                  "serving_ml": 700,
+                  "price": null,
+                  "sort_order": 0
+                },
+                {
+                  "label": "half",
+                  "serving_ml": 350,
+                  "price": null,
+                  "sort_order": 1
+                },
+                {
+                  "label": "shot",
+                  "serving_ml": 30,
+                  "price": null,
+                  "sort_order": 2
+                }
+              ]
+            },
+            {
+              "id": "e88c9bf7-00c0-4fd7-86ca-04cf03e437c5",
+              "name": "이터 피노누아",
+              "sku": null,
+              "product_type": "alcohol",
+              "food_type": null,
+              "cigar_vitola": "",
+              "cigar_wrapper": "",
+              "cigar_binder": "",
+              "cigar_filler": "",
+              "cigar_body": null,
+              "base_price": null,
+              "origin": "",
+              "producer": "",
+              "abv": null,
+              "vintage": "",
+              "cask_info": "",
+              "volume_ml": null,
+              "unit": "bottle",
+              "description": "",
+              "tasting_notes": "",
+              "is_featured": 0,
+              "servings": [
+                {
+                  "label": "bottle",
+                  "serving_ml": 700,
+                  "price": null,
+                  "sort_order": 0
+                },
+                {
+                  "label": "half",
+                  "serving_ml": 350,
+                  "price": null,
+                  "sort_order": 1
+                },
+                {
+                  "label": "shot",
+                  "serving_ml": 30,
+                  "price": null,
+                  "sort_order": 2
+                }
+              ]
+            },
+            {
+              "id": "24311636-db7f-4c02-bbc4-02aa0eba99a7",
+              "name": "루이지레오나르도",
+              "sku": null,
+              "product_type": "alcohol",
+              "food_type": null,
+              "cigar_vitola": "",
+              "cigar_wrapper": "",
+              "cigar_binder": "",
+              "cigar_filler": "",
+              "cigar_body": null,
+              "base_price": null,
+              "origin": "",
+              "producer": "",
+              "abv": null,
+              "vintage": "",
+              "cask_info": "",
+              "volume_ml": null,
+              "unit": "bottle",
+              "description": "",
+              "tasting_notes": "",
+              "is_featured": 0,
+              "servings": [
+                {
+                  "label": "bottle",
+                  "serving_ml": 700,
+                  "price": null,
+                  "sort_order": 0
+                },
+                {
+                  "label": "half",
+                  "serving_ml": 350,
+                  "price": null,
+                  "sort_order": 1
+                },
+                {
+                  "label": "shot",
+                  "serving_ml": 30,
+                  "price": null,
+                  "sort_order": 2
+                }
+              ]
+            },
+            {
+              "id": "ac477920-c285-44c6-99c8-54051447ce9e",
+              "name": "블루눈 돈펠더",
+              "sku": null,
+              "product_type": "alcohol",
+              "food_type": null,
+              "cigar_vitola": "",
+              "cigar_wrapper": "",
+              "cigar_binder": "",
+              "cigar_filler": "",
+              "cigar_body": null,
+              "base_price": null,
+              "origin": "",
+              "producer": "",
+              "abv": null,
+              "vintage": "",
+              "cask_info": "",
+              "volume_ml": null,
+              "unit": "bottle",
+              "description": "",
+              "tasting_notes": "",
+              "is_featured": 0,
+              "servings": [
+                {
+                  "label": "bottle",
+                  "serving_ml": 700,
+                  "price": null,
+                  "sort_order": 0
+                },
+                {
+                  "label": "half",
+                  "serving_ml": 350,
+                  "price": null,
+                  "sort_order": 1
+                },
+                {
+                  "label": "shot",
+                  "serving_ml": 30,
+                  "price": null,
+                  "sort_order": 2
+                }
+              ]
+            },
+            {
+              "id": "4a51ea45-9506-4818-b9d4-eec21a2d2f41",
+              "name": "엘레시오",
+              "sku": null,
+              "product_type": "alcohol",
+              "food_type": null,
+              "cigar_vitola": "",
+              "cigar_wrapper": "",
+              "cigar_binder": "",
+              "cigar_filler": "",
+              "cigar_body": null,
+              "base_price": null,
+              "origin": "",
+              "producer": "",
+              "abv": null,
+              "vintage": "",
+              "cask_info": "",
+              "volume_ml": null,
+              "unit": "bottle",
+              "description": "",
+              "tasting_notes": "",
+              "is_featured": 0,
+              "servings": [
+                {
+                  "label": "bottle",
+                  "serving_ml": 700,
+                  "price": null,
+                  "sort_order": 0
+                },
+                {
+                  "label": "half",
+                  "serving_ml": 350,
+                  "price": null,
+                  "sort_order": 1
+                },
+                {
+                  "label": "shot",
+                  "serving_ml": 30,
+                  "price": null,
+                  "sort_order": 2
+                }
+              ]
+            },
+            {
+              "id": "b75e6b3e-7571-455a-af61-5dda256d16ec",
+              "name": "엘비에호",
+              "sku": null,
+              "product_type": "alcohol",
+              "food_type": null,
+              "cigar_vitola": "",
+              "cigar_wrapper": "",
+              "cigar_binder": "",
+              "cigar_filler": "",
+              "cigar_body": null,
+              "base_price": null,
+              "origin": "",
+              "producer": "",
+              "abv": null,
+              "vintage": "",
+              "cask_info": "",
+              "volume_ml": null,
+              "unit": "bottle",
+              "description": "",
+              "tasting_notes": "",
+              "is_featured": 0,
+              "servings": [
+                {
+                  "label": "bottle",
+                  "serving_ml": 700,
+                  "price": null,
+                  "sort_order": 0
+                },
+                {
+                  "label": "half",
+                  "serving_ml": 350,
+                  "price": null,
+                  "sort_order": 1
+                },
+                {
+                  "label": "shot",
+                  "serving_ml": 30,
+                  "price": null,
+                  "sort_order": 2
+                }
+              ]
+            },
+            {
+              "id": "e7656875-0c1a-4194-9f2b-9c4b316226fd",
+              "name": "뱅상르구 오뜨꼬뜨뉘 블랑",
+              "sku": null,
+              "product_type": "alcohol",
+              "food_type": null,
+              "cigar_vitola": "",
+              "cigar_wrapper": "",
+              "cigar_binder": "",
+              "cigar_filler": "",
+              "cigar_body": null,
+              "base_price": null,
+              "origin": "",
+              "producer": "",
+              "abv": null,
+              "vintage": "",
+              "cask_info": "",
+              "volume_ml": null,
+              "unit": "bottle",
+              "description": "",
+              "tasting_notes": "",
+              "is_featured": 0,
+              "servings": [
+                {
+                  "label": "bottle",
+                  "serving_ml": 700,
+                  "price": null,
+                  "sort_order": 0
+                },
+                {
+                  "label": "half",
+                  "serving_ml": 350,
+                  "price": null,
+                  "sort_order": 1
+                },
+                {
+                  "label": "shot",
+                  "serving_ml": 30,
+                  "price": null,
+                  "sort_order": 2
+                }
+              ]
+            }
+          ]
         }
       ]
     },
