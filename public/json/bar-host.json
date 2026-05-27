@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "version": 7,
-  "generated_at": "2026-05-27T05:04:42.290Z",
+  "version": 8,
+  "generated_at": "2026-05-27T05:48:00.939Z",
   "bar": {
     "id": "afe150c9-84e4-4d57-aeb9-aba929b34715",
     "name": "Bar host",
@@ -14,6 +14,7 @@
       "variant": "multi"
     },
     "features": {
+      "showFeatured": true,
       "showCombos": true,
       "showDescriptions": true,
       "showTastingNotes": true,
@@ -32,7 +33,55 @@
           "name": "Brandy",
           "slug": "brandy",
           "sort_order": 0,
-          "products": []
+          "products": [
+            {
+              "id": "33a237f7-7f4e-485f-8162-194060b4ba25",
+              "name": "글렌드로낙지 18",
+              "sku": null,
+              "product_type": "alcohol",
+              "food_type": null,
+              "cigar_vitola": "",
+              "cigar_wrapper": "",
+              "cigar_binder": "",
+              "cigar_filler": "",
+              "cigar_body": null,
+              "base_price": null,
+              "origin": "스코틀랜드",
+              "producer": "글랜드로낙",
+              "abv": 40,
+              "vintage": "18Y",
+              "cask_info": "올로로소 셰리 캐스크",
+              "volume_ml": 700,
+              "unit": "bottle",
+              "currency": "KRW",
+              "description": "존맛",
+              "tasting_notes": "존맛",
+              "is_featured": 1,
+              "servings": [
+                {
+                  "label": "bottle",
+                  "serving_ml": 700,
+                  "price": 2000,
+                  "currency": "KRW",
+                  "sort_order": 0
+                },
+                {
+                  "label": "half",
+                  "serving_ml": 350,
+                  "price": 1000,
+                  "currency": "KRW",
+                  "sort_order": 1
+                },
+                {
+                  "label": "shot",
+                  "serving_ml": 30,
+                  "price": 500,
+                  "currency": "KRW",
+                  "sort_order": 2
+                }
+              ]
+            }
+          ]
         },
         {
           "id": "40623d81-c035-4b42-964c-fabbe0e32001",
