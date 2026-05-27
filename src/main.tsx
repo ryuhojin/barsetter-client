@@ -14,6 +14,7 @@ type MenuTheme = {
 };
 
 type MenuFeatures = {
+  showFeatured?: boolean;
   showCombos?: boolean;
   showDescriptions?: boolean;
   showTastingNotes?: boolean;
@@ -42,6 +43,7 @@ type MenuProduct = {
   currency?: string;
   description?: string;
   tasting_notes?: string;
+  is_featured?: number;
   servings?: MenuServing[];
 };
 
@@ -113,6 +115,7 @@ type LoadState =
   | { kind: "error"; slug: string; message: string };
 
 const defaultFeatures: Required<MenuFeatures> = {
+  showFeatured: true,
   showCombos: true,
   showDescriptions: true,
   showTastingNotes: true,
@@ -231,6 +234,7 @@ function App() {
 function MenuPage({ menu }: { menu: MenuData }) {
   const theme = resolveTheme(menu);
   const features = { ...defaultFeatures, ...menu.presentation?.features };
+  const featuredProducts = featuredProductsFromMenu(menu);
   const categoryRefs = React.useRef<Record<string, HTMLElement | null>>({});
 
   React.useEffect(() => {
@@ -257,6 +261,11 @@ function MenuPage({ menu }: { menu: MenuData }) {
       </header>
 
       <nav className="category-nav" aria-label="Menu categories">
+        {features.showFeatured && featuredProducts.length ? (
+          <button type="button" onClick={() => document.getElementById("featured")?.scrollIntoView({ behavior: "smooth" })}>
+            추천
+          </button>
+        ) : null}
         {menu.categories.map((category) => (
           <button
             key={category.id}
@@ -272,6 +281,20 @@ function MenuPage({ menu }: { menu: MenuData }) {
           </button>
         ) : null}
       </nav>
+
+      {features.showFeatured && featuredProducts.length ? (
+        <section id="featured" className="featured-section">
+          <div className="category-heading">
+            <h2>추천</h2>
+            <span>{featuredProducts.length} picks</span>
+          </div>
+          <div className="product-list">
+            {featuredProducts.map((product) => (
+              <ProductCard key={`featured-${product.id}`} product={product} features={features} featured />
+            ))}
+          </div>
+        </section>
+      ) : null}
 
       <section className="menu-layout">
         {menu.categories.map((category) => (
@@ -305,12 +328,15 @@ function MenuPage({ menu }: { menu: MenuData }) {
   );
 }
 
-function ProductCard({ product, features }: { product: MenuProduct; features: Required<MenuFeatures> }) {
+function ProductCard({ product, features, featured = false }: { product: MenuProduct; features: Required<MenuFeatures>; featured?: boolean }) {
   return (
-    <article className="product-card">
+    <article className={featured || product.is_featured ? "product-card featured" : "product-card"}>
       <div className="product-main">
         <div>
-          <h4>{productTitle(product)}</h4>
+          <h4>
+            {productTitle(product)}
+            {featured || product.is_featured ? <span className="featured-badge">추천</span> : null}
+          </h4>
           <ProductMeta product={product} />
         </div>
         <PriceBlock product={product} features={features} />
@@ -414,6 +440,21 @@ function resolveTheme(menu: MenuData): Required<MenuTheme> {
 
 function productCount(category: MenuCategory) {
   return category.subcategories.reduce((sum, subcategory) => sum + subcategory.products.length, 0);
+}
+
+function featuredProductsFromMenu(menu: MenuData) {
+  const seen = new Set<string>();
+  const products: MenuProduct[] = [];
+  for (const category of menu.categories) {
+    for (const subcategory of category.subcategories) {
+      for (const product of subcategory.products) {
+        if (!product.is_featured || seen.has(product.id)) continue;
+        seen.add(product.id);
+        products.push(product);
+      }
+    }
+  }
+  return products;
 }
 
 function productTitle(product: MenuProduct) {

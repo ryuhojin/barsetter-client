@@ -127,6 +127,7 @@ h1 {
 }
 
 .menu-layout,
+.featured-section,
 .combo-section {
   display: flex;
   flex-direction: column;
@@ -136,8 +137,13 @@ h1 {
 }
 
 .menu-category,
+.featured-section,
 .combo-section {
   scroll-margin-top: 78px;
+}
+
+.featured-section {
+  margin-bottom: 42px;
 }
 
 .category-heading {
@@ -187,6 +193,11 @@ h1 {
   padding: 16px;
 }
 
+.product-card.featured {
+  border-color: color-mix(in srgb, var(--accent) 48%, transparent);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 12%, transparent);
+}
+
 .product-main {
   align-items: start;
   display: grid;
@@ -195,8 +206,22 @@ h1 {
 }
 
 h4 {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
   font-size: 19px;
   line-height: 1.22;
+}
+
+.featured-badge {
+  background: color-mix(in srgb, var(--accent) 18%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent) 56%, transparent);
+  border-radius: 999px;
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 800;
+  padding: 2px 7px;
 }
 
 .meta,

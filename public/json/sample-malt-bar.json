@@ -14,6 +14,7 @@
       "variant": "malt"
     },
     "features": {
+      "showFeatured": true,
       "showCombos": true,
       "showDescriptions": true,
       "showTastingNotes": true,
@@ -44,6 +45,7 @@
               "currency": "KRW",
               "description": "Rich dried fruit, oak spice, and soft vanilla.",
               "tasting_notes": "Raisin, ginger, orange peel, polished oak.",
+              "is_featured": 1,
               "servings": [
                 {
                   "label": "bottle",
