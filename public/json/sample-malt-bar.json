@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "version": 1,
+  "generated_at": "2026-05-27T00:00:00.000Z",
+  "bar": {
+    "id": "sample",
+    "name": "Sample Malt Bar",
+    "slug": "sample-malt-bar",
+    "bar_type": "malt",
+    "description": "A focused malt list with bottle, half, and shot service."
+  },
+  "presentation": {
+    "theme": {
+      "variant": "malt"
+    },
+    "features": {
+      "showCombos": true,
+      "showDescriptions": true,
+      "showTastingNotes": true,
+      "showServingDetails": true
+    }
+  },
+  "categories": [
+    {
+      "id": "spirits",
+      "name": "Spirits",
+      "slug": "spirits",
+      "sort_order": 0,
+      "subcategories": [
+        {
+          "id": "whisky",
+          "name": "Whisky",
+          "slug": "whisky",
+          "sort_order": 0,
+          "products": [
+            {
+              "id": "macallan-12",
+              "name": "The Macallan 12 Sherry Oak",
+              "product_type": "alcohol",
+              "origin": "Scotland",
+              "producer": "The Macallan",
+              "abv": 40,
+              "cask_info": "Sherry Oak",
+              "currency": "KRW",
+              "description": "Rich dried fruit, oak spice, and soft vanilla.",
+              "tasting_notes": "Raisin, ginger, orange peel, polished oak.",
+              "servings": [
+                {
+                  "label": "bottle",
+                  "serving_ml": 700,
+                  "price": 320000,
+                  "currency": "KRW",
+                  "sort_order": 0
+                },
+                {
+                  "label": "half",
+                  "serving_ml": 350,
+                  "price": 170000,
+                  "currency": "KRW",
+                  "sort_order": 1
+                },
+                {
+                  "label": "shot",
+                  "serving_ml": 30,
+                  "price": 25000,
+                  "currency": "KRW",
+                  "sort_order": 2
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "combos": [
+    {
+      "id": "tasting-set",
+      "name": "Sherry Cask Tasting",
+      "combo_type": "tasting_set",
+      "description": "Three 15ml pours selected from sherry cask whiskies.",
+      "price": 59000,
+      "currency": "KRW",
+      "items": [
+        {
+          "product_id": "macallan-12",
+          "product_name": "The Macallan 12 Sherry Oak",
+          "quantity": 1,
+          "pour_ml": 15,
+          "note": "15ml"
+        }
+      ]
+    }
+  ]
+}
