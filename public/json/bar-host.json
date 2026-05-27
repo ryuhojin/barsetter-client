@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "version": 6,
-  "generated_at": "2026-05-27T04:38:15.123Z",
+  "version": 7,
+  "generated_at": "2026-05-27T05:04:42.290Z",
   "bar": {
     "id": "afe150c9-84e4-4d57-aeb9-aba929b34715",
     "name": "Bar host",
@@ -33,6 +33,20 @@
           "slug": "brandy",
           "sort_order": 0,
           "products": []
+        },
+        {
+          "id": "40623d81-c035-4b42-964c-fabbe0e32001",
+          "name": "Whisky",
+          "slug": "whisky",
+          "sort_order": 1,
+          "products": []
+        },
+        {
+          "id": "ccadfaf7-4f9d-4bbf-952e-ad8373fba5de",
+          "name": "Wine",
+          "slug": "wine",
+          "sort_order": 2,
+          "products": []
         }
       ]
     },
@@ -41,14 +55,44 @@
       "name": "Cigar",
       "slug": "cigar",
       "sort_order": 1,
-      "subcategories": []
+      "subcategories": [
+        {
+          "id": "efc337e8-909e-4f00-8b0e-66c9882787d1",
+          "name": "Cuban",
+          "slug": "cuban",
+          "sort_order": 0,
+          "products": []
+        },
+        {
+          "id": "be08f9eb-2c00-4402-8e4e-e81c242abb2a",
+          "name": "Non Cuban",
+          "slug": "non-cuban",
+          "sort_order": 1,
+          "products": []
+        }
+      ]
     },
     {
       "id": "3aaf91ce-57cf-4005-994a-581c3af31ca7",
       "name": "Etc",
       "slug": "etc",
       "sort_order": 2,
-      "subcategories": []
+      "subcategories": [
+        {
+          "id": "a4e10362-b106-41b9-8e71-0b5adab945f3",
+          "name": "Drink",
+          "slug": "drink",
+          "sort_order": 0,
+          "products": []
+        },
+        {
+          "id": "86338dcd-0516-4add-aaf0-5b9efed23d8e",
+          "name": "Etc",
+          "slug": "etc",
+          "sort_order": 1,
+          "products": []
+        }
+      ]
     }
   ],
   "combos": []
