@@ -619,7 +619,11 @@ function ProductCard({
       >
         <Icon name="bookmark" filled={isWishlisted} />
       </button>
-      <button type="button" className="product-open" onClick={() => onOpen(item)}>
+      <button
+        type="button"
+        className={isNativeSinglePriceProduct(product) ? "product-open single-price-product" : "product-open"}
+        onClick={() => onOpen(item)}
+      >
         <div className="product-info">
           <div className="product-title-line">
             <h3>{productTitle(product)}</h3>
@@ -734,7 +738,20 @@ function PriceBlock({ product }: { product: MenuProduct }) {
     );
   }
 
+  if (isNativeSinglePriceProduct(product)) {
+    return (
+      <div className="single-price-block">
+        <span>PRICE</span>
+        <strong className="single-price">{formatMenuPrice(product.base_price)}</strong>
+      </div>
+    );
+  }
+
   return <strong className="single-price">{formatMenuPrice(product.base_price)}</strong>;
+}
+
+function isNativeSinglePriceProduct(product: MenuProduct) {
+  return product.product_type !== "alcohol";
 }
 
 function ComboSection({ combos }: { combos: MenuCombo[] }) {

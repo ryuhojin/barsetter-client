@@ -487,6 +487,10 @@ svg.is-filled {
   width: 100%;
 }
 
+.product-open.single-price-product {
+  grid-template-columns: minmax(0, 1fr) minmax(58px, max-content);
+}
+
 .product-open:focus-visible {
   outline: 2px solid color-mix(in srgb, var(--accent) 64%, transparent);
   outline-offset: 5px;
@@ -613,6 +617,22 @@ svg.is-filled {
   font-size: 14px;
   font-weight: 500;
   white-space: nowrap;
+}
+
+.single-price-block {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  justify-self: end;
+  min-width: 58px;
+  text-align: right;
+}
+
+.single-price-block span {
+  color: color-mix(in srgb, var(--muted) 70%, var(--text));
+  font-size: 10px;
+  line-height: 1;
 }
 
 .single-price {
@@ -1043,12 +1063,20 @@ svg.is-filled {
     grid-template-columns: minmax(0, 1fr) minmax(118px, 32%);
   }
 
+  .product-open.single-price-product {
+    grid-template-columns: minmax(0, 1fr) minmax(54px, max-content);
+  }
+
   .serving-row {
     min-width: 34px;
     text-align: right;
   }
 
   .serving-row span {
+    font-size: 9px;
+  }
+
+  .single-price-block span {
     font-size: 9px;
   }
 
