@@ -688,7 +688,7 @@ function ProductDetail({
         <h2>{productTitle(product)}</h2>
 
         <div className="detail-price-panel">
-          <PriceBlock product={product} />
+          <PriceBlock product={product} variant="detail" />
         </div>
 
         {detailRows.length ? (
@@ -723,14 +723,15 @@ function ProductDetail({
   );
 }
 
-function PriceBlock({ product }: { product: MenuProduct }) {
+function PriceBlock({ product, variant = "list" }: { product: MenuProduct; variant?: "list" | "detail" }) {
   if (product.product_type === "alcohol" && product.servings?.length) {
     const servings = [...product.servings].sort((a, b) => servingSortOrder(a.label) - servingSortOrder(b.label));
     return (
-      <div className="servings">
+      <div className={variant === "detail" ? "servings detail-servings" : "servings"}>
         {servings.map((serving) => (
           <div key={serving.label} className="serving-row">
             <span>{servingLabel(serving.label)}</span>
+            {variant === "detail" ? <small className="serving-ml">{formatServingMl(serving.serving_ml)}</small> : null}
             <strong>{formatMenuPrice(serving.price)}</strong>
           </div>
         ))}
@@ -1101,6 +1102,10 @@ function servingLabel(value: string) {
     glass: "Glass"
   };
   return labels[value] ?? value;
+}
+
+function formatServingMl(value?: number | null) {
+  return typeof value === "number" ? `${value}ml` : "-";
 }
 
 function servingSortOrder(value: string) {

@@ -615,6 +615,12 @@ svg.is-filled {
   text-transform: uppercase;
 }
 
+.serving-ml {
+  color: color-mix(in srgb, var(--muted) 72%, var(--text));
+  font-size: 11px;
+  line-height: 1;
+}
+
 .serving-row strong,
 .single-price,
 .combo-single-price,
@@ -816,9 +822,36 @@ svg.is-filled {
 }
 
 .detail-price-panel .servings {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(92px, 1fr));
+  justify-content: center;
   justify-self: stretch;
   min-width: 0;
   width: 100%;
+}
+
+.detail-servings .serving-row {
+  align-items: center;
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--surface) 92%, white 4%), color-mix(in srgb, var(--surface) 86%, black 8%));
+  border: 1px solid color-mix(in srgb, var(--accent) 22%, var(--text) 8%);
+  border-radius: 12px;
+  gap: 6px;
+  min-width: 0;
+  padding: 12px 10px;
+  text-align: center;
+}
+
+.detail-servings .serving-row span {
+  color: color-mix(in srgb, var(--text) 92%, var(--accent));
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.detail-servings .serving-row strong {
+  font-size: 17px;
+  font-weight: 650;
 }
 
 .detail-section {
@@ -1087,8 +1120,32 @@ svg.is-filled {
     font-size: 9px;
   }
 
+  .detail-price-panel {
+    padding: 14px 0;
+  }
+
+  .detail-price-panel .servings {
+    gap: 7px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .detail-servings .serving-row {
+    border-radius: 10px;
+    gap: 5px;
+    padding: 10px 6px;
+  }
+
+  .detail-servings .serving-row span,
   .single-price-block span {
     font-size: 9px;
+  }
+
+  .serving-ml {
+    font-size: 10px;
+  }
+
+  .detail-servings .serving-row strong {
+    font-size: 15px;
   }
 
   .serving-row strong,
