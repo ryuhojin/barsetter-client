@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "version": 8,
-  "generated_at": "2026-05-27T16:05:01.948Z",
+  "version": 9,
+  "generated_at": "2026-05-27T16:15:46.705Z",
   "bar": {
     "id": "28754067-952c-4f89-9618-62d358bb7566",
     "name": "BARO",
@@ -48,8 +48,8 @@
               "cigar_filler": "",
               "cigar_body": null,
               "base_price": null,
-              "origin": "",
-              "producer": "",
+              "origin": "France",
+              "producer": "Camus",
               "abv": 40,
               "vintage": "VSOP",
               "cask_info": "",
