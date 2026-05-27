@@ -95,10 +95,27 @@ svg.is-filled {
   width: 100%;
 }
 
+.bar-title-link {
+  color: inherit;
+  display: block;
+  min-width: 0;
+  text-decoration: none;
+}
+
+.bar-title-link:hover h1,
+.bar-title-link:focus-visible h1 {
+  color: color-mix(in srgb, var(--accent) 72%, var(--text));
+}
+
+.bar-title-link:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--accent) 58%, transparent);
+  outline-offset: 4px;
+}
+
 .bar-title-block h1 {
   color: color-mix(in srgb, var(--text) 92%, var(--accent));
   font-family: inherit;
-  font-size: 24px;
+  font-size: 23px;
   font-weight: 500;
   line-height: 1.06;
   min-width: 0;
@@ -923,6 +940,18 @@ svg.is-filled {
     left: 50%;
     max-width: 900px;
     transform: translateX(-50%);
+  }
+}
+
+@media (min-width: 768px) {
+  .product-feed {
+    align-content: start;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .product-card {
+    height: 100%;
   }
 }
 

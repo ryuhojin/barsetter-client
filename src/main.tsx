@@ -40,7 +40,6 @@ type MenuProduct = {
   cask_info?: string;
   volume_ml?: number | null;
   unit?: string;
-  currency?: string;
   description?: string;
   tasting_notes?: string;
   is_featured?: number;
@@ -51,7 +50,6 @@ type MenuServing = {
   label: string;
   serving_ml?: number | null;
   price?: number | null;
-  currency?: string;
   sort_order?: number;
 };
 
@@ -77,7 +75,6 @@ type MenuCombo = {
   combo_type: string;
   description?: string;
   price?: number | null;
-  currency?: string;
   discount_type?: string;
   discount_value?: number | null;
   items?: Array<{
@@ -99,6 +96,7 @@ type MenuData = {
     slug: string;
     bar_type: ThemeVariant;
     description?: string;
+    website_url?: string;
   };
   presentation?: {
     theme?: MenuTheme;
@@ -344,7 +342,13 @@ function MenuPage({ menu }: { menu: MenuData }) {
     <main className="customer-menu-page" data-variant={theme.variant} style={themeStyle}>
       <header className="menu-app-header">
         <div className="bar-title-block">
-          <h1>{menu.bar.name}</h1>
+          {menu.bar.website_url ? (
+            <a className="bar-title-link" href={menu.bar.website_url} target="_blank" rel="noreferrer">
+              <h1>{menu.bar.name}</h1>
+            </a>
+          ) : (
+            <h1>{menu.bar.name}</h1>
+          )}
           {features.showDescriptions && menu.bar.description ? <p>{menu.bar.description}</p> : null}
         </div>
       </header>
@@ -723,14 +727,14 @@ function PriceBlock({ product }: { product: MenuProduct }) {
         {servings.map((serving) => (
           <div key={serving.label} className="serving-row">
             <span>{servingLabel(serving.label)}</span>
-            <strong>{formatMenuPrice(serving.price, serving.currency)}</strong>
+            <strong>{formatMenuPrice(serving.price)}</strong>
           </div>
         ))}
       </div>
     );
   }
 
-  return <strong className="single-price">{formatMenuPrice(product.base_price, product.currency)}</strong>;
+  return <strong className="single-price">{formatMenuPrice(product.base_price)}</strong>;
 }
 
 function ComboSection({ combos }: { combos: MenuCombo[] }) {
@@ -768,18 +772,18 @@ function ComboSection({ combos }: { combos: MenuCombo[] }) {
 function ComboPrice({ combo }: { combo: MenuCombo }) {
   const discountedPrice = comboDiscountedPrice(combo);
   if (discountedPrice === null || discountedPrice === combo.price) {
-    return <strong className="combo-single-price">{formatPrice(combo.price, combo.currency)}</strong>;
+    return <strong className="combo-single-price">{formatPrice(combo.price)}</strong>;
   }
 
   return (
     <div className="combo-price">
       <div className="combo-price-row combo-price-original">
         <span>원가</span>
-        <del>{formatPrice(combo.price, combo.currency)}</del>
+        <del>{formatPrice(combo.price)}</del>
       </div>
       <div className="combo-price-row combo-price-sale">
         <span>할인가</span>
-        <strong>{formatPrice(discountedPrice, combo.currency)}</strong>
+        <strong>{formatPrice(discountedPrice)}</strong>
       </div>
     </div>
   );
@@ -1043,20 +1047,17 @@ function productTitle(product: MenuProduct) {
   return product.name;
 }
 
-function formatMenuPrice(value: number | null | undefined, currency = "KRW") {
+function formatMenuPrice(value: number | null | undefined) {
   if (value === null || value === undefined) return "-";
-  if (currency === "KRW") return (value / 10000).toFixed(1);
-  return new Intl.NumberFormat("ko-KR", {
-    maximumFractionDigits: 1
-  }).format(value);
+  return (value / 10000).toFixed(1);
 }
 
-function formatPrice(value: number | null | undefined, currency = "KRW") {
+function formatPrice(value: number | null | undefined) {
   if (value === null || value === undefined) return "-";
   return new Intl.NumberFormat("ko-KR", {
     style: "currency",
-    currency,
-    maximumFractionDigits: currency === "KRW" ? 0 : 2
+    currency: "KRW",
+    maximumFractionDigits: 0
   }).format(value);
 }
 
