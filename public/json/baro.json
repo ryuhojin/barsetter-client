@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "version": 3,
-  "generated_at": "2026-05-27T11:13:24.803Z",
+  "version": 4,
+  "generated_at": "2026-05-27T11:52:23.343Z",
   "bar": {
     "id": "28754067-952c-4f89-9618-62d358bb7566",
     "name": "BARO",
@@ -35,7 +35,51 @@
           "name": "Brandy",
           "slug": "brandy",
           "sort_order": 0,
-          "products": []
+          "products": [
+            {
+              "id": "7340312f-fe09-4dae-bcee-74771b8b686f",
+              "name": "GlenDronach 21Y",
+              "sku": null,
+              "product_type": "alcohol",
+              "food_type": null,
+              "cigar_vitola": "",
+              "cigar_wrapper": "",
+              "cigar_binder": "",
+              "cigar_filler": "",
+              "cigar_body": null,
+              "base_price": null,
+              "origin": "Scotland",
+              "producer": "GlenDronach",
+              "abv": 43,
+              "vintage": "21Y",
+              "cask_info": "Oloroso Sherry Butt",
+              "volume_ml": null,
+              "unit": "bottle",
+              "description": "시가랑 페어링이 좋은 위스키",
+              "tasting_notes": "바닐라, 꿀, 건과일",
+              "is_featured": 0,
+              "servings": [
+                {
+                  "label": "bottle",
+                  "serving_ml": 700,
+                  "price": 500000,
+                  "sort_order": 0
+                },
+                {
+                  "label": "glass",
+                  "serving_ml": 30,
+                  "price": 60000,
+                  "sort_order": 1
+                },
+                {
+                  "label": "half",
+                  "serving_ml": 15,
+                  "price": 30000,
+                  "sort_order": 2
+                }
+              ]
+            }
+          ]
         },
         {
           "id": "79fca6b6-7fce-4ebb-90ec-c83809059a56",
