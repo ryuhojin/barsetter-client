@@ -24,8 +24,8 @@ type MenuFeatures = {
 type MenuProduct = {
   id: string;
   name: string;
-  sku?: string | null;
   product_type: "alcohol" | "food" | "cigar" | "other";
+  alcohol_type?: string;
   food_type?: string | null;
   cigar_vitola?: string;
   cigar_wrapper?: string;
@@ -40,8 +40,10 @@ type MenuProduct = {
   cask_info?: string;
   volume_ml?: number | null;
   unit?: string;
+  list_price_label?: string;
   description?: string;
   tasting_notes?: string;
+  details?: Record<string, string | number | null | undefined>;
   is_featured?: number;
   servings?: MenuServing[];
 };
@@ -295,6 +297,7 @@ function MenuPage({ menu }: { menu: MenuData }) {
   const [priceFilter, setPriceFilter] = React.useState<PriceFilterId>("all");
   const [sortMode, setSortMode] = React.useState<SortMode>("default");
   const [activeDialog, setActiveDialog] = React.useState<MenuDialog>(null);
+  const feedScrollPositions = React.useRef<Record<string, number>>({});
   const { wishlistIds, toggleWishlist } = useWishlist(menu.bar.slug);
 
   React.useEffect(() => {
@@ -337,6 +340,10 @@ function MenuPage({ menu }: { menu: MenuData }) {
     }
     return menu.categories.find((category) => category.id === activeCategoryId)?.subcategories ?? [];
   }, [activeCategoryId, menu.categories]);
+  const productListScrollKey = React.useMemo(
+    () => [view, activeCategoryId, activeSubcategoryId, query, priceFilter, sortMode].join("|"),
+    [activeCategoryId, activeSubcategoryId, priceFilter, query, sortMode, view]
+  );
 
   return (
     <main className="customer-menu-page" data-variant={theme.variant} style={themeStyle}>
@@ -458,9 +465,9 @@ function MenuPage({ menu }: { menu: MenuData }) {
             ) : (
               <ProductList
                 items={visibleProducts}
-                wishlistIds={wishlistIds}
+                scrollKey={productListScrollKey}
+                scrollPositions={feedScrollPositions}
                 onOpen={setSelectedItem}
-                onToggleWishlist={toggleWishlist}
                 emptyTitle={
                   view === "wishlist"
                     ? "저장한 메뉴가 없습니다."
@@ -568,28 +575,55 @@ function OptionDialog({
 
 function ProductList({
   items,
-  wishlistIds,
+  scrollKey,
+  scrollPositions,
   onOpen,
-  onToggleWishlist,
   emptyTitle
 }: {
   items: ProductWithContext[];
-  wishlistIds: Set<string>;
+  scrollKey: string;
+  scrollPositions: React.MutableRefObject<Record<string, number>>;
   onOpen: (item: ProductWithContext) => void;
-  onToggleWishlist: (productId: string) => void;
   emptyTitle: string;
 }) {
+  const feedRef = React.useRef<HTMLDivElement | null>(null);
+
+  React.useLayoutEffect(() => {
+    const feed = feedRef.current;
+    if (!feed) return;
+
+    const restoreFrame = window.requestAnimationFrame(() => {
+      feed.scrollTop = scrollPositions.current[scrollKey] ?? 0;
+    });
+
+    return () => window.cancelAnimationFrame(restoreFrame);
+  }, [scrollKey, scrollPositions]);
+
+  const handleOpen = React.useCallback(
+    (item: ProductWithContext) => {
+      if (feedRef.current) {
+        scrollPositions.current[scrollKey] = feedRef.current.scrollTop;
+      }
+      onOpen(item);
+    },
+    [onOpen, scrollKey, scrollPositions]
+  );
+
   if (!items.length) return <EmptyState title={emptyTitle} />;
 
   return (
-    <div className="product-feed">
+    <div
+      ref={feedRef}
+      className="product-feed"
+      onScroll={(event) => {
+        scrollPositions.current[scrollKey] = event.currentTarget.scrollTop;
+      }}
+    >
       {items.map((item) => (
         <ProductCard
           key={`${item.category.id}-${item.subcategory.id}-${item.product.id}`}
           item={item}
-          isWishlisted={wishlistIds.has(item.product.id)}
-          onOpen={onOpen}
-          onToggleWishlist={onToggleWishlist}
+          onOpen={handleOpen}
         />
       ))}
     </div>
@@ -598,14 +632,10 @@ function ProductList({
 
 function ProductCard({
   item,
-  isWishlisted,
-  onOpen,
-  onToggleWishlist
+  onOpen
 }: {
   item: ProductWithContext;
-  isWishlisted: boolean;
   onOpen: (item: ProductWithContext) => void;
-  onToggleWishlist: (productId: string) => void;
 }) {
   const { product } = item;
 
@@ -613,15 +643,7 @@ function ProductCard({
     <article className={product.is_featured ? "product-card featured" : "product-card"}>
       <button
         type="button"
-        className={isWishlisted ? "wishlist-toggle is-active" : "wishlist-toggle"}
-        onClick={() => onToggleWishlist(product.id)}
-        aria-label={isWishlisted ? "위시리스트에서 제거" : "위시리스트에 저장"}
-      >
-        <Icon name="bookmark" filled={isWishlisted} />
-      </button>
-      <button
-        type="button"
-        className={isNativeSinglePriceProduct(product) ? "product-open single-price-product" : "product-open"}
+        className={isSinglePriceDisplayProduct(product) ? "product-open single-price-product" : "product-open"}
         onClick={() => onOpen(item)}
       >
         <div className="product-info">
@@ -638,15 +660,27 @@ function ProductCard({
 }
 
 function ProductMeta({ product }: { product: MenuProduct }) {
+  const parts = productListMetaParts(product);
+
+  return parts.length ? <p className="meta">{parts.join(" · ")}</p> : null;
+}
+
+function productListMetaParts(product: MenuProduct) {
   const parts: string[] = [];
   if (product.product_type === "alcohol") {
+    const details = product.details ?? {};
+    if (product.alcohol_type) parts.push(alcoholTypeLabel(product.alcohol_type));
+    for (const key of alcoholListDetailKeys(product.alcohol_type)) {
+      const value = detailValue(details[key]);
+      if (value) parts.push(value);
+    }
     if (product.cask_info) parts.push(product.cask_info);
     if (product.origin) parts.push(product.origin);
   } else if (product.product_type === "cigar") {
     if (product.cigar_vitola) parts.push(product.cigar_vitola);
   }
 
-  return parts.length ? <p className="meta">{parts.join(" · ")}</p> : null;
+  return parts.slice(0, 4);
 }
 
 function ProductDetail({
@@ -725,9 +759,34 @@ function ProductDetail({
 
 function PriceBlock({ product, variant = "list" }: { product: MenuProduct; variant?: "list" | "detail" }) {
   if (product.product_type === "alcohol" && product.servings?.length) {
-    const servings = [...product.servings].sort((a, b) => servingSortOrder(a.label) - servingSortOrder(b.label));
+    const servings = pricedServings(product.servings);
+    if (!servings.length) return null;
+    if (variant === "list") {
+      const serving = representativeServing(product, servings);
+      if (!serving) return null;
+      return (
+        <div className="single-price-block">
+          <span>{servingLabel(serving.label)}</span>
+          <strong className="single-price">{formatMenuPrice(serving.price)}</strong>
+        </div>
+      );
+    }
+    const singlePriceServing = servings.length === 1 && servings[0].label === "price" ? servings[0] : null;
+    if (singlePriceServing) {
+      return (
+        <div className={variant === "detail" ? "single-price-block detail-single-price" : "single-price-block"}>
+          <span>PRICE</span>
+          {variant === "detail" && singlePriceServing.serving_ml ? (
+            <small className="serving-ml">{formatServingMl(singlePriceServing.serving_ml)}</small>
+          ) : null}
+          <strong className="single-price">{formatMenuPrice(singlePriceServing.price)}</strong>
+        </div>
+      );
+    }
+    const countClass = `servings serving-count-${Math.min(servings.length, 3)}`;
+
     return (
-      <div className={variant === "detail" ? "servings detail-servings" : "servings"}>
+      <div className={variant === "detail" ? `${countClass} detail-servings` : countClass}>
         {servings.map((serving) => (
           <div key={serving.label} className="serving-row">
             <span>{servingLabel(serving.label)}</span>
@@ -741,7 +800,7 @@ function PriceBlock({ product, variant = "list" }: { product: MenuProduct; varia
 
   if (isNativeSinglePriceProduct(product)) {
     return (
-      <div className="single-price-block">
+      <div className={variant === "detail" ? "single-price-block detail-single-price" : "single-price-block"}>
         <span>PRICE</span>
         <strong className="single-price">{formatMenuPrice(product.base_price)}</strong>
       </div>
@@ -753,6 +812,11 @@ function PriceBlock({ product, variant = "list" }: { product: MenuProduct; varia
 
 function isNativeSinglePriceProduct(product: MenuProduct) {
   return product.product_type !== "alcohol";
+}
+
+function isSinglePriceDisplayProduct(product: MenuProduct) {
+  if (isNativeSinglePriceProduct(product)) return true;
+  return representativeServing(product, pricedServings(product.servings)) !== null;
 }
 
 function ComboSection({ combos }: { combos: MenuCombo[] }) {
@@ -965,9 +1029,31 @@ function comparePrice(a: MenuProduct, b: MenuProduct, direction: "asc" | "desc")
 }
 
 function productDisplayPrice(product: MenuProduct) {
-  const servingPrices = product.servings?.map((serving) => serving.price).filter((price): price is number => typeof price === "number") ?? [];
-  if (servingPrices.length) return Math.min(...servingPrices);
+  const serving = representativeServing(product, pricedServings(product.servings));
+  if (serving && isPriced(serving.price)) return serving.price;
   return typeof product.base_price === "number" ? product.base_price : null;
+}
+
+function representativeServing(product: MenuProduct, servings: MenuServing[]) {
+  if (!servings.length) return null;
+  const preferred = product.list_price_label?.trim();
+  if (preferred) {
+    const matched = servings.find((serving) => serving.label === preferred);
+    if (matched) return matched;
+  }
+  const glass = servings.find((serving) => serving.label === "glass");
+  if (glass) return glass;
+  return servings[0];
+}
+
+function pricedServings(servings: MenuServing[] | undefined) {
+  return (servings ?? [])
+    .filter((serving) => isPriced(serving.price))
+    .sort((a, b) => servingSortOrder(a.label) - servingSortOrder(b.label));
+}
+
+function isPriced(value: number | null | undefined): value is number {
+  return typeof value === "number" && Number.isFinite(value);
 }
 
 function useWishlist(barSlug: string) {
@@ -1014,11 +1100,12 @@ function productSearchText(item: ProductWithContext) {
       category.name,
       subcategory.name,
       product.name,
-      product.sku,
       product.producer,
       product.origin,
+      product.alcohol_type ? alcoholTypeLabel(product.alcohol_type) : "",
       product.vintage,
       product.cask_info,
+      ...Object.values(product.details ?? {}).map((value) => detailValue(value)),
       product.food_type ? foodLabel(product.food_type) : "",
       product.cigar_vitola,
       product.cigar_wrapper,
@@ -1041,12 +1128,14 @@ function productDetailRows(product: MenuProduct): Array<[string, string]> {
   const rows: Array<[string, string]> = [];
 
   if (product.product_type === "alcohol") {
+    if (product.alcohol_type) rows.push(["주류 종류", alcoholTypeLabel(product.alcohol_type)]);
     if (product.producer) rows.push(["생산자", product.producer]);
     if (product.origin) rows.push(["원산지", product.origin]);
     if (product.vintage) rows.push(["빈티지/연산", product.vintage]);
     if (product.abv) rows.push(["도수", `${product.abv}%`]);
     if (product.cask_info) rows.push(["캐스크", product.cask_info]);
     if (product.volume_ml) rows.push(["기준 용량", `${product.volume_ml}ml`]);
+    rows.push(...alcoholDetailRows(product));
   } else if (product.product_type === "cigar") {
     if (product.cigar_vitola) rows.push(["비톨라", product.cigar_vitola]);
     if (product.cigar_body) rows.push(["바디", bodyLabel(product.cigar_body)]);
@@ -1056,9 +1145,51 @@ function productDetailRows(product: MenuProduct): Array<[string, string]> {
   } else if (product.product_type === "food") {
     if (product.food_type) rows.push(["분류", foodLabel(product.food_type)]);
   }
-
-  if (product.sku) rows.push(["SKU", product.sku]);
   return rows;
+}
+
+function alcoholDetailRows(product: MenuProduct): Array<[string, string]> {
+  const details = product.details ?? {};
+  return alcoholDetailLabels(product.alcohol_type)
+    .map(([key, label]) => [label, detailValue(details[key])] as [string, string])
+    .filter(([, value]) => Boolean(value));
+}
+
+function alcoholListDetailKeys(value?: string) {
+  const keys: Record<string, string[]> = {
+    whisky: ["region", "distillery"],
+    wine: ["grape", "appellation"],
+    beer: ["beer_style", "brewery"],
+    cocktail: ["base_spirit", "glassware"],
+    brandy: ["region", "grade"],
+    rum: ["style", "age"],
+    gin: ["style", "botanicals"],
+    vodka: ["base"],
+    tequila: ["class", "agave"],
+    liqueur: ["flavor"]
+  };
+  return keys[value ?? ""] ?? ["style"];
+}
+
+function alcoholDetailLabels(value?: string): Array<[string, string]> {
+  const labels: Record<string, Array<[string, string]>> = {
+    whisky: [["region", "지역"], ["distillery", "증류소"], ["bottler", "병입자"], ["peated", "피트"], ["cask_finish", "피니시"]],
+    wine: [["grape", "품종"], ["appellation", "아펠라시옹"], ["wine_style", "스타일"], ["sweetness", "당도"], ["body", "바디"]],
+    beer: [["brewery", "브루어리"], ["beer_style", "스타일"], ["ibu", "IBU"], ["package", "패키지"]],
+    cocktail: [["base_spirit", "베이스"], ["ingredients", "재료"], ["glassware", "글라스"], ["garnish", "가니시"]],
+    brandy: [["region", "지역"], ["grade", "등급"], ["grape", "품종"]],
+    rum: [["style", "스타일"], ["age", "숙성"], ["raw_material", "원료"]],
+    gin: [["style", "스타일"], ["botanicals", "보태니컬"]],
+    vodka: [["base", "원료"], ["distillation", "증류/여과"]],
+    tequila: [["class", "등급"], ["agave", "아가베"]],
+    liqueur: [["flavor", "향/맛"], ["base", "베이스"]],
+    other: [["style", "스타일"], ["detail", "상세"]]
+  };
+  return labels[value ?? ""] ?? labels.other;
+}
+
+function detailValue(value: string | number | null | undefined) {
+  return value === null || value === undefined ? "" : String(value).trim();
 }
 
 function productTitle(product: MenuProduct) {
@@ -1096,6 +1227,7 @@ function comboDiscountedPrice(combo: MenuCombo) {
 
 function servingLabel(value: string) {
   const labels: Record<string, string> = {
+    price: "Price",
     bottle: "Bottle",
     half: "Half",
     shot: "Glass",
@@ -1110,6 +1242,7 @@ function formatServingMl(value?: number | null) {
 
 function servingSortOrder(value: string) {
   const order: Record<string, number> = {
+    price: -1,
     half: 0,
     glass: 1,
     shot: 1,
@@ -1124,6 +1257,23 @@ function bodyLabel(value: string) {
     medium: "Medium",
     medium_full: "Medium Full",
     full: "Full"
+  };
+  return labels[value] ?? value;
+}
+
+function alcoholTypeLabel(value: string) {
+  const labels: Record<string, string> = {
+    whisky: "위스키",
+    wine: "와인",
+    beer: "맥주",
+    cocktail: "칵테일",
+    brandy: "브랜디",
+    rum: "럼",
+    gin: "진",
+    vodka: "보드카",
+    tequila: "데킬라",
+    liqueur: "리큐르",
+    other: "기타 주류"
   };
   return labels[value] ?? value;
 }

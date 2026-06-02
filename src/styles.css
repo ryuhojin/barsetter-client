@@ -439,9 +439,7 @@ svg.is-filled {
 
 .product-card {
   align-items: center;
-  display: grid;
-  gap: 10px;
-  grid-template-columns: 26px minmax(0, 1fr);
+  display: flex;
   padding: 15px 18px;
 }
 
@@ -456,10 +454,6 @@ svg.is-filled {
   justify-content: center;
   padding: 0;
   width: 26px;
-}
-
-.product-card > .wishlist-toggle {
-  align-self: center;
 }
 
 .wishlist-toggle svg {
@@ -485,8 +479,9 @@ svg.is-filled {
   color: inherit;
   cursor: pointer;
   display: grid;
-  gap: 6px;
-  grid-template-columns: minmax(0, 1fr) minmax(158px, 34%);
+  flex: 1 1 auto;
+  gap: 9px;
+  grid-template-columns: minmax(0, 1fr) minmax(44px, max-content);
   min-width: 0;
   padding: 0;
   text-align: left;
@@ -494,7 +489,7 @@ svg.is-filled {
 }
 
 .product-open.single-price-product {
-  grid-template-columns: minmax(0, 1fr) minmax(58px, max-content);
+  grid-template-columns: minmax(0, 1fr) minmax(44px, max-content);
 }
 
 .product-open:focus-visible {
@@ -593,10 +588,18 @@ svg.is-filled {
 .servings {
   align-self: center;
   display: flex;
-  gap: 9px;
+  gap: 7px;
   justify-content: flex-end;
   justify-self: end;
-  min-width: 158px;
+  min-width: 138px;
+}
+
+.servings.serving-count-1 {
+  min-width: 48px;
+}
+
+.servings.serving-count-2 {
+  min-width: 99px;
 }
 
 .serving-row {
@@ -604,7 +607,7 @@ svg.is-filled {
   display: flex;
   flex-direction: column;
   gap: 4px;
-  min-width: 42px;
+  min-width: 38px;
   text-align: right;
 }
 
@@ -636,15 +639,16 @@ svg.is-filled {
   align-self: center;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 3px;
   justify-self: end;
-  min-width: 58px;
+  min-width: 44px;
   text-align: right;
 }
 
 .single-price-block span {
   color: color-mix(in srgb, var(--muted) 70%, var(--text));
-  font-size: 10px;
+  font-size: 9px;
+  font-weight: 700;
   line-height: 1;
 }
 
@@ -831,6 +835,32 @@ svg.is-filled {
   width: 100%;
 }
 
+.detail-price-panel .detail-single-price {
+  align-items: center;
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--surface) 92%, white 4%), color-mix(in srgb, var(--surface) 86%, black 8%));
+  border: 1px solid color-mix(in srgb, var(--accent) 22%, var(--text) 8%);
+  border-radius: 12px;
+  gap: 7px;
+  justify-self: stretch;
+  min-width: 0;
+  padding: 14px 12px;
+  text-align: center;
+  width: 100%;
+}
+
+.detail-single-price span {
+  color: color-mix(in srgb, var(--text) 92%, var(--accent));
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.detail-single-price .single-price {
+  align-self: center;
+  font-size: 17px;
+  font-weight: 650;
+}
+
 .detail-servings .serving-row {
   align-items: center;
   background:
@@ -875,7 +905,7 @@ svg.is-filled {
 .detail-grid {
   display: grid;
   gap: 8px 14px;
-  grid-template-columns: 82px minmax(0, 1fr);
+  grid-template-columns: minmax(70px, max-content) minmax(0, 1fr);
   margin: 0;
 }
 
@@ -888,6 +918,8 @@ svg.is-filled {
   color: var(--text);
   font-size: 13px;
   margin: 0;
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .empty-state {
@@ -1067,8 +1099,6 @@ svg.is-filled {
   }
 
   .product-card {
-    gap: 10px;
-    grid-template-columns: 24px minmax(0, 1fr);
     padding: 14px 12px;
   }
 
@@ -1098,21 +1128,21 @@ svg.is-filled {
 
   .servings {
     grid-column: auto;
-    gap: 6px;
-    min-width: 118px;
+    gap: 5px;
+    min-width: 112px;
   }
 
   .product-open {
-    gap: 5px;
-    grid-template-columns: minmax(0, 1fr) minmax(118px, 32%);
+    gap: 8px;
+    grid-template-columns: minmax(0, 1fr) minmax(42px, max-content);
   }
 
   .product-open.single-price-product {
-    grid-template-columns: minmax(0, 1fr) minmax(54px, max-content);
+    grid-template-columns: minmax(0, 1fr) minmax(42px, max-content);
   }
 
   .serving-row {
-    min-width: 34px;
+    min-width: 32px;
     text-align: right;
   }
 
@@ -1165,5 +1195,15 @@ svg.is-filled {
 
   .detail-card {
     padding: 16px;
+  }
+}
+
+@media (max-width: 380px) {
+  .customer-menu-page {
+    padding-inline: 10px;
+  }
+
+  .product-card h3 {
+    max-width: 100%;
   }
 }
