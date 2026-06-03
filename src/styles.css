@@ -5,7 +5,7 @@
     sans-serif;
   --accent: #d8a657;
   --bg: #12100d;
-  --bottom-nav-clearance: calc(72px + env(safe-area-inset-bottom));
+  --bottom-nav-clearance: calc(62px + env(safe-area-inset-bottom));
   --surface: #1e1a15;
   --text: #fff7ed;
   --muted: #c9b49a;
@@ -78,7 +78,7 @@ svg.is-filled {
   max-width: 900px;
   min-height: 0;
   overflow: hidden;
-  padding: 14px clamp(16px, 4vw, 40px) var(--bottom-nav-clearance);
+  padding: 14px clamp(16px, 4vw, 40px) calc(var(--bottom-nav-clearance) + 8px);
 }
 
 .menu-app-header {
@@ -419,7 +419,7 @@ svg.is-filled {
   min-height: 0;
   overflow-y: auto;
   overscroll-behavior: contain;
-  padding-bottom: 18px;
+  padding-bottom: 6px;
   scrollbar-width: none;
 }
 
@@ -481,7 +481,7 @@ svg.is-filled {
   display: grid;
   flex: 1 1 auto;
   gap: 9px;
-  grid-template-columns: minmax(0, 1fr) minmax(44px, max-content);
+  grid-template-columns: minmax(0, 1fr) fit-content(142px);
   min-width: 0;
   padding: 0;
   text-align: left;
@@ -489,7 +489,7 @@ svg.is-filled {
 }
 
 .product-open.single-price-product {
-  grid-template-columns: minmax(0, 1fr) minmax(44px, max-content);
+  grid-template-columns: minmax(0, 1fr) fit-content(92px);
 }
 
 .product-open:focus-visible {
@@ -591,7 +591,7 @@ svg.is-filled {
   gap: 7px;
   justify-content: flex-end;
   justify-self: end;
-  min-width: 138px;
+  min-width: 0;
 }
 
 .servings.serving-count-1 {
@@ -661,6 +661,32 @@ svg.is-filled {
 
 .single-price-block .single-price {
   align-self: flex-end;
+}
+
+.price-unavailable {
+  align-items: flex-end;
+  align-self: center;
+  color: color-mix(in srgb, var(--muted) 74%, var(--text));
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  justify-self: end;
+  min-width: 58px;
+  text-align: right;
+}
+
+.price-unavailable span {
+  color: color-mix(in srgb, var(--muted) 70%, var(--text));
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.price-unavailable strong {
+  color: color-mix(in srgb, var(--muted) 86%, var(--text));
+  font-size: 13px;
+  font-weight: 650;
+  white-space: nowrap;
 }
 
 .combo-card {
@@ -849,6 +875,23 @@ svg.is-filled {
   width: 100%;
 }
 
+.detail-price-panel .detail-price-unavailable {
+  align-items: center;
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--surface) 90%, white 3%), color-mix(in srgb, var(--surface) 84%, black 8%));
+  border: 1px solid color-mix(in srgb, var(--text) 12%, transparent);
+  border-radius: 12px;
+  justify-self: stretch;
+  min-width: 0;
+  padding: 14px 12px;
+  text-align: center;
+  width: 100%;
+}
+
+.detail-price-panel .detail-price-unavailable strong {
+  font-size: 16px;
+}
+
 .detail-single-price span {
   color: color-mix(in srgb, var(--text) 92%, var(--accent));
   font-size: 11px;
@@ -942,7 +985,7 @@ svg.is-filled {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   left: 0;
-  padding: 5px max(12px, env(safe-area-inset-left)) calc(5px + env(safe-area-inset-bottom)) max(12px, env(safe-area-inset-right));
+  padding: 4px max(12px, env(safe-area-inset-left)) calc(4px + env(safe-area-inset-bottom)) max(12px, env(safe-area-inset-right));
   position: fixed;
   right: 0;
   z-index: 20;
@@ -957,7 +1000,7 @@ svg.is-filled {
   display: inline-flex;
   flex-direction: column;
   gap: 2px;
-  min-height: 46px;
+  min-height: 44px;
   padding: 2px;
   position: relative;
 }
@@ -1129,16 +1172,16 @@ svg.is-filled {
   .servings {
     grid-column: auto;
     gap: 5px;
-    min-width: 112px;
+    min-width: 0;
   }
 
   .product-open {
     gap: 8px;
-    grid-template-columns: minmax(0, 1fr) minmax(42px, max-content);
+    grid-template-columns: minmax(0, 1fr) fit-content(126px);
   }
 
   .product-open.single-price-product {
-    grid-template-columns: minmax(0, 1fr) minmax(42px, max-content);
+    grid-template-columns: minmax(0, 1fr) fit-content(88px);
   }
 
   .serving-row {

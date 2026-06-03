@@ -760,10 +760,10 @@ function ProductDetail({
 function PriceBlock({ product, variant = "list" }: { product: MenuProduct; variant?: "list" | "detail" }) {
   if (product.product_type === "alcohol" && product.servings?.length) {
     const servings = pricedServings(product.servings);
-    if (!servings.length) return null;
+    if (!servings.length) return <PriceUnavailable variant={variant} />;
     if (variant === "list") {
       const serving = representativeServing(product, servings);
-      if (!serving) return null;
+      if (!serving) return <PriceUnavailable variant={variant} />;
       return (
         <div className="single-price-block">
           <span>{servingLabel(serving.label)}</span>
@@ -799,6 +799,7 @@ function PriceBlock({ product, variant = "list" }: { product: MenuProduct; varia
   }
 
   if (isNativeSinglePriceProduct(product)) {
+    if (!isPriced(product.base_price)) return <PriceUnavailable variant={variant} />;
     return (
       <div className={variant === "detail" ? "single-price-block detail-single-price" : "single-price-block"}>
         <span>PRICE</span>
@@ -807,7 +808,17 @@ function PriceBlock({ product, variant = "list" }: { product: MenuProduct; varia
     );
   }
 
+  if (!isPriced(product.base_price)) return <PriceUnavailable variant={variant} />;
   return <strong className="single-price">{formatMenuPrice(product.base_price)}</strong>;
+}
+
+function PriceUnavailable({ variant = "list" }: { variant?: "list" | "detail" }) {
+  return (
+    <div className={variant === "detail" ? "price-unavailable detail-price-unavailable" : "price-unavailable"}>
+      <span>PRICE</span>
+      <strong>가격 미정</strong>
+    </div>
+  );
 }
 
 function isNativeSinglePriceProduct(product: MenuProduct) {
@@ -1230,8 +1241,11 @@ function servingLabel(value: string) {
     price: "Price",
     bottle: "Bottle",
     half: "Half",
-    shot: "Glass",
-    glass: "Glass"
+    glass: "Glass",
+    shot: "Shot",
+    dram: "Dram",
+    stick: "Stick",
+    plate: "Plate"
   };
   return labels[value] ?? value;
 }
