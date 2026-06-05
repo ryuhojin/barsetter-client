@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "version": 12,
-  "generated_at": "2026-05-27T16:41:59.102Z",
+  "version": 13,
+  "generated_at": "2026-06-05T11:38:45.786Z",
   "bar": {
     "id": "28754067-952c-4f89-9618-62d358bb7566",
     "name": "BARO",
@@ -40,8 +40,8 @@
             {
               "id": "43b7950f-7cc6-490c-93b6-f2bce72c35b9",
               "name": "까뮤 보더리 vsop",
-              "sku": null,
               "product_type": "alcohol",
+              "alcohol_type": "brandy",
               "food_type": null,
               "cigar_vitola": "",
               "cigar_wrapper": "",
@@ -56,8 +56,10 @@
               "cask_info": "",
               "volume_ml": null,
               "unit": "bottle",
+              "list_price_label": "glass",
               "description": "",
               "tasting_notes": "포도",
+              "details": {},
               "is_featured": 0,
               "servings": [
                 {
@@ -83,8 +85,8 @@
             {
               "id": "5f56f5ac-e24c-4702-a610-091d6fc3fc36",
               "name": "까뮤 꾸베",
-              "sku": null,
               "product_type": "alcohol",
+              "alcohol_type": "brandy",
               "food_type": null,
               "cigar_vitola": "",
               "cigar_wrapper": "",
@@ -99,8 +101,10 @@
               "cask_info": "",
               "volume_ml": null,
               "unit": "bottle",
+              "list_price_label": "",
               "description": "",
               "tasting_notes": "",
+              "details": {},
               "is_featured": 0,
               "servings": [
                 {
@@ -126,8 +130,8 @@
             {
               "id": "00ba88a7-1d3c-4faa-a5fa-31d563e31d1d",
               "name": "까뮤 라그랑마르크 vsop",
-              "sku": null,
               "product_type": "alcohol",
+              "alcohol_type": "brandy",
               "food_type": null,
               "cigar_vitola": "",
               "cigar_wrapper": "",
@@ -142,8 +146,10 @@
               "cask_info": "",
               "volume_ml": null,
               "unit": "bottle",
+              "list_price_label": "",
               "description": "",
               "tasting_notes": "",
+              "details": {},
               "is_featured": 0,
               "servings": [
                 {
@@ -169,8 +175,8 @@
             {
               "id": "442400d4-eb8a-4235-8737-821b66a1e163",
               "name": "까뮤 라그랑마르크 NAPOLEON",
-              "sku": null,
               "product_type": "alcohol",
+              "alcohol_type": "brandy",
               "food_type": null,
               "cigar_vitola": "",
               "cigar_wrapper": "",
@@ -185,8 +191,10 @@
               "cask_info": "",
               "volume_ml": null,
               "unit": "bottle",
+              "list_price_label": "",
               "description": "",
               "tasting_notes": "",
+              "details": {},
               "is_featured": 0,
               "servings": [
                 {
@@ -212,8 +220,8 @@
             {
               "id": "f8da1015-2364-4ed8-bd92-74910a0e19ff",
               "name": "마르텔 vsop 스폐셜리저브",
-              "sku": null,
               "product_type": "alcohol",
+              "alcohol_type": "brandy",
               "food_type": null,
               "cigar_vitola": "",
               "cigar_wrapper": "",
@@ -228,8 +236,10 @@
               "cask_info": "",
               "volume_ml": null,
               "unit": "bottle",
+              "list_price_label": "",
               "description": "",
               "tasting_notes": "",
+              "details": {},
               "is_featured": 0,
               "servings": [
                 {
@@ -255,8 +265,8 @@
             {
               "id": "f5eb6993-2c0a-47e2-a022-a6cc6250e008",
               "name": "마르텔 구형 vsop",
-              "sku": null,
               "product_type": "alcohol",
+              "alcohol_type": "brandy",
               "food_type": null,
               "cigar_vitola": "",
               "cigar_wrapper": "",
@@ -271,8 +281,10 @@
               "cask_info": "",
               "volume_ml": null,
               "unit": "bottle",
+              "list_price_label": "",
               "description": "",
               "tasting_notes": "",
+              "details": {},
               "is_featured": 0,
               "servings": [
                 {
@@ -298,8 +310,8 @@
             {
               "id": "228a648d-f769-43b9-ba97-87863236ac0e",
               "name": "꾸르부아제 나폴레옹",
-              "sku": null,
               "product_type": "alcohol",
+              "alcohol_type": "brandy",
               "food_type": null,
               "cigar_vitola": "",
               "cigar_wrapper": "",
@@ -314,8 +326,10 @@
               "cask_info": "",
               "volume_ml": null,
               "unit": "bottle",
+              "list_price_label": "",
               "description": "",
               "tasting_notes": "",
+              "details": {},
               "is_featured": 0,
               "servings": [
                 {
@@ -341,8 +355,8 @@
             {
               "id": "d2d9e319-e161-4dcb-a215-02f39b61c592",
               "name": "레미마르탱 VSOP",
-              "sku": null,
               "product_type": "alcohol",
+              "alcohol_type": "brandy",
               "food_type": null,
               "cigar_vitola": "",
               "cigar_wrapper": "",
@@ -357,8 +371,10 @@
               "cask_info": "",
               "volume_ml": null,
               "unit": "bottle",
+              "list_price_label": "",
               "description": "",
               "tasting_notes": "",
+              "details": {},
               "is_featured": 0,
               "servings": [
                 {
@@ -384,8 +400,8 @@
             {
               "id": "3184af22-4cf5-4dd5-bb2e-8502ceb90a9d",
               "name": "헤네시 VSOP",
-              "sku": null,
               "product_type": "alcohol",
+              "alcohol_type": "brandy",
               "food_type": null,
               "cigar_vitola": "",
               "cigar_wrapper": "",
@@ -400,8 +416,10 @@
               "cask_info": "",
               "volume_ml": null,
               "unit": "bottle",
+              "list_price_label": "",
               "description": "",
               "tasting_notes": "",
+              "details": {},
               "is_featured": 0,
               "servings": [
                 {
@@ -427,8 +445,8 @@
             {
               "id": "0ff0814e-ba37-435c-bdfe-11612d9ade80",
               "name": "브렌든 나폴레옹",
-              "sku": null,
               "product_type": "alcohol",
+              "alcohol_type": "brandy",
               "food_type": null,
               "cigar_vitola": "",
               "cigar_wrapper": "",
@@ -443,8 +461,10 @@
               "cask_info": "",
               "volume_ml": null,
               "unit": "bottle",
+              "list_price_label": "",
               "description": "",
               "tasting_notes": "",
+              "details": {},
               "is_featured": 0,
               "servings": [
                 {
@@ -470,8 +490,8 @@
             {
               "id": "1c233a1f-b805-47ea-ba62-1c8e999cd8c5",
               "name": "가스통 나폴레옹",
-              "sku": null,
               "product_type": "alcohol",
+              "alcohol_type": "brandy",
               "food_type": null,
               "cigar_vitola": "",
               "cigar_wrapper": "",
@@ -486,8 +506,10 @@
               "cask_info": "",
               "volume_ml": null,
               "unit": "bottle",
+              "list_price_label": "",
               "description": "",
               "tasting_notes": "",
+              "details": {},
               "is_featured": 0,
               "servings": [
                 {
@@ -513,8 +535,8 @@
             {
               "id": "f9debc0e-2293-498e-8696-625089ba8951",
               "name": "크로제 나폴레옹",
-              "sku": null,
               "product_type": "alcohol",
+              "alcohol_type": "brandy",
               "food_type": null,
               "cigar_vitola": "",
               "cigar_wrapper": "",
@@ -529,8 +551,10 @@
               "cask_info": "",
               "volume_ml": null,
               "unit": "bottle",
+              "list_price_label": "",
               "description": "",
               "tasting_notes": "",
+              "details": {},
               "is_featured": 0,
               "servings": [
                 {
@@ -556,8 +580,8 @@
             {
               "id": "dbbddcdf-44e0-4f9e-9407-e3eb1689d221",
               "name": "발레앙 테시니에 빌리리저브",
-              "sku": null,
               "product_type": "alcohol",
+              "alcohol_type": "brandy",
               "food_type": null,
               "cigar_vitola": "",
               "cigar_wrapper": "",
@@ -572,8 +596,10 @@
               "cask_info": "",
               "volume_ml": null,
               "unit": "bottle",
+              "list_price_label": "",
               "description": "",
               "tasting_notes": "",
+              "details": {},
               "is_featured": 0,
               "servings": [
                 {
@@ -599,8 +625,8 @@
             {
               "id": "a2045ea0-cacc-43fa-9d10-a8b21fd3d214",
               "name": "레미마르탱 Extra",
-              "sku": null,
               "product_type": "alcohol",
+              "alcohol_type": "brandy",
               "food_type": null,
               "cigar_vitola": "",
               "cigar_wrapper": "",
@@ -615,8 +641,10 @@
               "cask_info": "",
               "volume_ml": null,
               "unit": "bottle",
+              "list_price_label": "",
               "description": "",
               "tasting_notes": "",
+              "details": {},
               "is_featured": 0,
               "servings": [
                 {
@@ -642,8 +670,8 @@
             {
               "id": "c4b6aea1-5bf5-4ba4-8730-dab952a10671",
               "name": "프라팡 XO Old",
-              "sku": null,
               "product_type": "alcohol",
+              "alcohol_type": "brandy",
               "food_type": null,
               "cigar_vitola": "",
               "cigar_wrapper": "",
@@ -658,8 +686,10 @@
               "cask_info": "",
               "volume_ml": null,
               "unit": "bottle",
+              "list_price_label": "",
               "description": "",
               "tasting_notes": "",
+              "details": {},
               "is_featured": 0,
               "servings": [
                 {
@@ -685,8 +715,8 @@
             {
               "id": "878b1e12-4f93-405f-91f3-0e716d5b8cb5",
               "name": "꾸르부아제 12",
-              "sku": null,
               "product_type": "alcohol",
+              "alcohol_type": "brandy",
               "food_type": null,
               "cigar_vitola": "",
               "cigar_wrapper": "",
@@ -701,8 +731,10 @@
               "cask_info": "",
               "volume_ml": null,
               "unit": "bottle",
+              "list_price_label": "",
               "description": "",
               "tasting_notes": "",
+              "details": {},
               "is_featured": 0,
               "servings": [
                 {
@@ -743,8 +775,8 @@
             {
               "id": "96be3e02-30ae-4b61-828a-af605fd97bf2",
               "name": "아드벡 헤비 베이퍼",
-              "sku": null,
               "product_type": "alcohol",
+              "alcohol_type": "whisky",
               "food_type": null,
               "cigar_vitola": "",
               "cigar_wrapper": "",
@@ -759,8 +791,10 @@
               "cask_info": "",
               "volume_ml": null,
               "unit": "bottle",
+              "list_price_label": "",
               "description": "",
               "tasting_notes": "",
+              "details": {},
               "is_featured": 0,
               "servings": [
                 {
@@ -786,8 +820,8 @@
             {
               "id": "c820ed36-0549-43da-a622-fb35f3fcbc84",
               "name": "조니워커 스윙",
-              "sku": null,
               "product_type": "alcohol",
+              "alcohol_type": "whisky",
               "food_type": null,
               "cigar_vitola": "",
               "cigar_wrapper": "",
@@ -802,8 +836,10 @@
               "cask_info": "",
               "volume_ml": null,
               "unit": "bottle",
+              "list_price_label": "",
               "description": "",
               "tasting_notes": "",
+              "details": {},
               "is_featured": 0,
               "servings": [
                 {
@@ -829,8 +865,8 @@
             {
               "id": "2fdaf102-a4b8-4324-ae23-62336865ed85",
               "name": "아마하간 에디션 2 레드우드 피니쉬",
-              "sku": null,
               "product_type": "alcohol",
+              "alcohol_type": "whisky",
               "food_type": null,
               "cigar_vitola": "",
               "cigar_wrapper": "",
@@ -845,8 +881,10 @@
               "cask_info": "",
               "volume_ml": null,
               "unit": "bottle",
+              "list_price_label": "",
               "description": "",
               "tasting_notes": "",
+              "details": {},
               "is_featured": 0,
               "servings": [
                 {
@@ -872,8 +910,8 @@
             {
               "id": "32666f4a-e8f7-4249-8546-c06ac959327a",
               "name": "올드 파 15",
-              "sku": null,
               "product_type": "alcohol",
+              "alcohol_type": "whisky",
               "food_type": null,
               "cigar_vitola": "",
               "cigar_wrapper": "",
@@ -888,8 +926,10 @@
               "cask_info": "",
               "volume_ml": null,
               "unit": "bottle",
+              "list_price_label": "",
               "description": "",
               "tasting_notes": "",
+              "details": {},
               "is_featured": 0,
               "servings": [
                 {
@@ -915,8 +955,8 @@
             {
               "id": "3daaff2b-f785-4513-b3ec-5a5f980ec5bd",
               "name": "발레친 10",
-              "sku": null,
               "product_type": "alcohol",
+              "alcohol_type": "whisky",
               "food_type": null,
               "cigar_vitola": "",
               "cigar_wrapper": "",
@@ -931,8 +971,10 @@
               "cask_info": "",
               "volume_ml": null,
               "unit": "bottle",
+              "list_price_label": "",
               "description": "",
               "tasting_notes": "",
+              "details": {},
               "is_featured": 0,
               "servings": [
                 {
@@ -958,8 +1000,8 @@
             {
               "id": "82553228-4783-40b1-a765-f16e252cab57",
               "name": "웨스트콕 깔바도스 캐스크",
-              "sku": null,
               "product_type": "alcohol",
+              "alcohol_type": "whisky",
               "food_type": null,
               "cigar_vitola": "",
               "cigar_wrapper": "",
@@ -974,8 +1016,10 @@
               "cask_info": "",
               "volume_ml": null,
               "unit": "bottle",
+              "list_price_label": "",
               "description": "",
               "tasting_notes": "",
+              "details": {},
               "is_featured": 0,
               "servings": [
                 {
@@ -1001,8 +1045,8 @@
             {
               "id": "983a214d-d3e5-4627-955f-4f7481a3bd55",
               "name": "야마자쿠라",
-              "sku": null,
               "product_type": "alcohol",
+              "alcohol_type": "whisky",
               "food_type": null,
               "cigar_vitola": "",
               "cigar_wrapper": "",
@@ -1017,8 +1061,10 @@
               "cask_info": "",
               "volume_ml": null,
               "unit": "bottle",
+              "list_price_label": "",
               "description": "",
               "tasting_notes": "",
+              "details": {},
               "is_featured": 0,
               "servings": [
                 {
@@ -1044,8 +1090,8 @@
             {
               "id": "7a303326-79a9-45b5-9019-2dd438a8727c",
               "name": "에반 윌리엄스",
-              "sku": null,
               "product_type": "alcohol",
+              "alcohol_type": "whisky",
               "food_type": null,
               "cigar_vitola": "",
               "cigar_wrapper": "",
@@ -1060,8 +1106,10 @@
               "cask_info": "",
               "volume_ml": null,
               "unit": "bottle",
+              "list_price_label": "",
               "description": "",
               "tasting_notes": "",
+              "details": {},
               "is_featured": 0,
               "servings": [
                 {
@@ -1087,8 +1135,8 @@
             {
               "id": "a0415974-d0c7-4596-990f-f7198ddb4852",
               "name": "러셀 싱글배럴",
-              "sku": null,
               "product_type": "alcohol",
+              "alcohol_type": "whisky",
               "food_type": null,
               "cigar_vitola": "",
               "cigar_wrapper": "",
@@ -1103,8 +1151,10 @@
               "cask_info": "",
               "volume_ml": null,
               "unit": "bottle",
+              "list_price_label": "",
               "description": "",
               "tasting_notes": "",
+              "details": {},
               "is_featured": 0,
               "servings": [
                 {
@@ -1130,8 +1180,8 @@
             {
               "id": "2e1e7f8d-1889-40ee-ae79-658c65e5e275",
               "name": "발베니 12",
-              "sku": null,
               "product_type": "alcohol",
+              "alcohol_type": "whisky",
               "food_type": null,
               "cigar_vitola": "",
               "cigar_wrapper": "",
@@ -1146,8 +1196,10 @@
               "cask_info": "",
               "volume_ml": null,
               "unit": "bottle",
+              "list_price_label": "",
               "description": "",
               "tasting_notes": "",
+              "details": {},
               "is_featured": 0,
               "servings": [
                 {
@@ -1173,8 +1225,8 @@
             {
               "id": "995b4ec5-c0e8-4424-a4d0-41040570dbf7",
               "name": "발베니 14 캐리비안 캐스크",
-              "sku": null,
               "product_type": "alcohol",
+              "alcohol_type": "whisky",
               "food_type": null,
               "cigar_vitola": "",
               "cigar_wrapper": "",
@@ -1189,8 +1241,10 @@
               "cask_info": "",
               "volume_ml": null,
               "unit": "bottle",
+              "list_price_label": "",
               "description": "",
               "tasting_notes": "",
+              "details": {},
               "is_featured": 0,
               "servings": [
                 {
@@ -1216,8 +1270,8 @@
             {
               "id": "1fac418b-7111-4ade-a6bd-73e08641b652",
               "name": "조니워커 블랙",
-              "sku": null,
               "product_type": "alcohol",
+              "alcohol_type": "whisky",
               "food_type": null,
               "cigar_vitola": "",
               "cigar_wrapper": "",
@@ -1232,8 +1286,10 @@
               "cask_info": "",
               "volume_ml": null,
               "unit": "bottle",
+              "list_price_label": "",
               "description": "",
               "tasting_notes": "",
+              "details": {},
               "is_featured": 0,
               "servings": [
                 {
@@ -1259,8 +1315,8 @@
             {
               "id": "3b406049-7339-464a-b021-a8382a9ba3dd",
               "name": "조니워커 그린",
-              "sku": null,
               "product_type": "alcohol",
+              "alcohol_type": "whisky",
               "food_type": null,
               "cigar_vitola": "",
               "cigar_wrapper": "",
@@ -1275,8 +1331,10 @@
               "cask_info": "",
               "volume_ml": null,
               "unit": "bottle",
+              "list_price_label": "",
               "description": "",
               "tasting_notes": "",
+              "details": {},
               "is_featured": 0,
               "servings": [
                 {
@@ -1302,8 +1360,8 @@
             {
               "id": "917ef927-ffa8-4a20-99b5-80981416e78d",
               "name": "그란츠 12",
-              "sku": null,
               "product_type": "alcohol",
+              "alcohol_type": "whisky",
               "food_type": null,
               "cigar_vitola": "",
               "cigar_wrapper": "",
@@ -1318,8 +1376,10 @@
               "cask_info": "",
               "volume_ml": null,
               "unit": "bottle",
+              "list_price_label": "",
               "description": "",
               "tasting_notes": "",
+              "details": {},
               "is_featured": 0,
               "servings": [
                 {
@@ -1345,8 +1405,8 @@
             {
               "id": "2ad5f985-9b0b-4b07-93f9-e761fd469f96",
               "name": "와일드터키 101",
-              "sku": null,
               "product_type": "alcohol",
+              "alcohol_type": "whisky",
               "food_type": null,
               "cigar_vitola": "",
               "cigar_wrapper": "",
@@ -1361,8 +1421,10 @@
               "cask_info": "",
               "volume_ml": null,
               "unit": "bottle",
+              "list_price_label": "",
               "description": "",
               "tasting_notes": "",
+              "details": {},
               "is_featured": 0,
               "servings": [
                 {
@@ -1388,8 +1450,8 @@
             {
               "id": "e75c3dc3-b6d0-43f0-b681-c2f0e6ea98ff",
               "name": "하이랜드 파크 12",
-              "sku": null,
               "product_type": "alcohol",
+              "alcohol_type": "whisky",
               "food_type": null,
               "cigar_vitola": "",
               "cigar_wrapper": "",
@@ -1404,8 +1466,10 @@
               "cask_info": "",
               "volume_ml": null,
               "unit": "bottle",
+              "list_price_label": "",
               "description": "",
               "tasting_notes": "",
+              "details": {},
               "is_featured": 0,
               "servings": [
                 {
@@ -1431,8 +1495,8 @@
             {
               "id": "78cb408d-b475-4826-ab07-cad9e6677137",
               "name": "글렌피딕 15",
-              "sku": null,
               "product_type": "alcohol",
+              "alcohol_type": "whisky",
               "food_type": null,
               "cigar_vitola": "",
               "cigar_wrapper": "",
@@ -1447,8 +1511,10 @@
               "cask_info": "",
               "volume_ml": null,
               "unit": "bottle",
+              "list_price_label": "",
               "description": "",
               "tasting_notes": "",
+              "details": {},
               "is_featured": 0,
               "servings": [
                 {
@@ -1474,8 +1540,8 @@
             {
               "id": "babda431-16a3-484b-aaad-7f4b54e3af46",
               "name": "조니워커 Swing 90’s",
-              "sku": null,
               "product_type": "alcohol",
+              "alcohol_type": "whisky",
               "food_type": null,
               "cigar_vitola": "",
               "cigar_wrapper": "",
@@ -1490,8 +1556,10 @@
               "cask_info": "",
               "volume_ml": null,
               "unit": "bottle",
+              "list_price_label": "",
               "description": "",
               "tasting_notes": "",
+              "details": {},
               "is_featured": 0,
               "servings": [
                 {
@@ -1517,8 +1585,8 @@
             {
               "id": "7783425a-ee95-4063-8e5d-6b55a7ef0d3d",
               "name": "J&B Rare 00’s",
-              "sku": null,
               "product_type": "alcohol",
+              "alcohol_type": "whisky",
               "food_type": null,
               "cigar_vitola": "",
               "cigar_wrapper": "",
@@ -1533,8 +1601,10 @@
               "cask_info": "",
               "volume_ml": null,
               "unit": "bottle",
+              "list_price_label": "",
               "description": "",
               "tasting_notes": "",
+              "details": {},
               "is_featured": 0,
               "servings": [
                 {
@@ -1560,8 +1630,8 @@
             {
               "id": "73c3623a-884b-4101-9a15-848696653049",
               "name": "달모어 킹 알렉산더",
-              "sku": null,
               "product_type": "alcohol",
+              "alcohol_type": "whisky",
               "food_type": null,
               "cigar_vitola": "",
               "cigar_wrapper": "",
@@ -1576,8 +1646,10 @@
               "cask_info": "",
               "volume_ml": null,
               "unit": "bottle",
+              "list_price_label": "",
               "description": "",
               "tasting_notes": "",
+              "details": {},
               "is_featured": 0,
               "servings": [
                 {
@@ -1603,8 +1675,8 @@
             {
               "id": "586b90eb-a313-4697-8a9c-dce02f418d29",
               "name": "애버펠디 12",
-              "sku": null,
               "product_type": "alcohol",
+              "alcohol_type": "whisky",
               "food_type": null,
               "cigar_vitola": "",
               "cigar_wrapper": "",
@@ -1619,8 +1691,10 @@
               "cask_info": "",
               "volume_ml": null,
               "unit": "bottle",
+              "list_price_label": "",
               "description": "",
               "tasting_notes": "",
+              "details": {},
               "is_featured": 0,
               "servings": [
                 {
@@ -1646,8 +1720,8 @@
             {
               "id": "9c24d5b7-e6b2-419e-b21c-8ec0c1a178ea",
               "name": "애버펠디 16",
-              "sku": null,
               "product_type": "alcohol",
+              "alcohol_type": "whisky",
               "food_type": null,
               "cigar_vitola": "",
               "cigar_wrapper": "",
@@ -1662,8 +1736,10 @@
               "cask_info": "",
               "volume_ml": null,
               "unit": "bottle",
+              "list_price_label": "",
               "description": "",
               "tasting_notes": "",
+              "details": {},
               "is_featured": 0,
               "servings": [
                 {
@@ -1689,8 +1765,8 @@
             {
               "id": "186360d6-9320-4624-9180-9ff9740d2eb3",
               "name": "글렌드로낙 12 CS",
-              "sku": null,
               "product_type": "alcohol",
+              "alcohol_type": "whisky",
               "food_type": null,
               "cigar_vitola": "",
               "cigar_wrapper": "",
@@ -1705,8 +1781,10 @@
               "cask_info": "",
               "volume_ml": null,
               "unit": "bottle",
+              "list_price_label": "",
               "description": "",
               "tasting_notes": "",
+              "details": {},
               "is_featured": 0,
               "servings": [
                 {
@@ -1732,8 +1810,8 @@
             {
               "id": "000dc059-9df4-47bf-8f73-cabfafd15cc0",
               "name": "글렌리벳 25",
-              "sku": null,
               "product_type": "alcohol",
+              "alcohol_type": "whisky",
               "food_type": null,
               "cigar_vitola": "",
               "cigar_wrapper": "",
@@ -1748,8 +1826,10 @@
               "cask_info": "",
               "volume_ml": null,
               "unit": "bottle",
+              "list_price_label": "",
               "description": "",
               "tasting_notes": "",
+              "details": {},
               "is_featured": 0,
               "servings": [
                 {
@@ -1783,8 +1863,8 @@
             {
               "id": "8efeda74-6591-4718-9cf0-fe9b52f8927a",
               "name": "시즌스 비달 아이스바인",
-              "sku": null,
               "product_type": "alcohol",
+              "alcohol_type": "wine",
               "food_type": null,
               "cigar_vitola": "",
               "cigar_wrapper": "",
@@ -1799,8 +1879,10 @@
               "cask_info": "",
               "volume_ml": null,
               "unit": "bottle",
+              "list_price_label": "",
               "description": "",
               "tasting_notes": "",
+              "details": {},
               "is_featured": 0,
               "servings": [
                 {
@@ -1826,8 +1908,8 @@
             {
               "id": "df4d584e-eb6a-4d29-bcab-f3f1dd5bc840",
               "name": "루이자도 피노누아",
-              "sku": null,
               "product_type": "alcohol",
+              "alcohol_type": "wine",
               "food_type": null,
               "cigar_vitola": "",
               "cigar_wrapper": "",
@@ -1842,8 +1924,10 @@
               "cask_info": "",
               "volume_ml": null,
               "unit": "bottle",
+              "list_price_label": "",
               "description": "",
               "tasting_notes": "",
+              "details": {},
               "is_featured": 0,
               "servings": [
                 {
@@ -1869,8 +1953,8 @@
             {
               "id": "d16f1168-4178-468b-b61a-dc4ac5361e00",
               "name": "루이자도 샤도네이",
-              "sku": null,
               "product_type": "alcohol",
+              "alcohol_type": "wine",
               "food_type": null,
               "cigar_vitola": "",
               "cigar_wrapper": "",
@@ -1885,8 +1969,10 @@
               "cask_info": "",
               "volume_ml": null,
               "unit": "bottle",
+              "list_price_label": "",
               "description": "",
               "tasting_notes": "",
+              "details": {},
               "is_featured": 0,
               "servings": [
                 {
@@ -1912,8 +1998,8 @@
             {
               "id": "e71a536c-c54f-473f-be70-7a8c36eda80c",
               "name": "이기갈 꼬뜨 뒤 론",
-              "sku": null,
               "product_type": "alcohol",
+              "alcohol_type": "wine",
               "food_type": null,
               "cigar_vitola": "",
               "cigar_wrapper": "",
@@ -1928,8 +2014,10 @@
               "cask_info": "",
               "volume_ml": null,
               "unit": "bottle",
+              "list_price_label": "",
               "description": "",
               "tasting_notes": "",
+              "details": {},
               "is_featured": 0,
               "servings": [
                 {
@@ -1955,8 +2043,8 @@
             {
               "id": "a59142c3-5ba5-461c-b7d3-09e15eb1fd53",
               "name": "폰토디 끼안티 클라시코",
-              "sku": null,
               "product_type": "alcohol",
+              "alcohol_type": "wine",
               "food_type": null,
               "cigar_vitola": "",
               "cigar_wrapper": "",
@@ -1971,8 +2059,10 @@
               "cask_info": "",
               "volume_ml": null,
               "unit": "bottle",
+              "list_price_label": "",
               "description": "",
               "tasting_notes": "",
+              "details": {},
               "is_featured": 0,
               "servings": [
                 {
@@ -1998,8 +2088,8 @@
             {
               "id": "aa0308d3-6da7-4c84-a177-de4e35c9825f",
               "name": "캄파 아레피아노",
-              "sku": null,
               "product_type": "alcohol",
+              "alcohol_type": "wine",
               "food_type": null,
               "cigar_vitola": "",
               "cigar_wrapper": "",
@@ -2014,8 +2104,10 @@
               "cask_info": "",
               "volume_ml": null,
               "unit": "bottle",
+              "list_price_label": "",
               "description": "",
               "tasting_notes": "",
+              "details": {},
               "is_featured": 0,
               "servings": [
                 {
@@ -2041,8 +2133,8 @@
             {
               "id": "2e744217-7e40-4368-975b-0540f096171c",
               "name": "테르 드 픽 생그",
-              "sku": null,
               "product_type": "alcohol",
+              "alcohol_type": "wine",
               "food_type": null,
               "cigar_vitola": "",
               "cigar_wrapper": "",
@@ -2057,8 +2149,10 @@
               "cask_info": "",
               "volume_ml": null,
               "unit": "bottle",
+              "list_price_label": "",
               "description": "",
               "tasting_notes": "",
+              "details": {},
               "is_featured": 0,
               "servings": [
                 {
@@ -2084,8 +2178,8 @@
             {
               "id": "2b8cfe88-cd97-49bc-b899-c2689100c80f",
               "name": "동그레예 레테흐핀",
-              "sku": null,
               "product_type": "alcohol",
+              "alcohol_type": "wine",
               "food_type": null,
               "cigar_vitola": "",
               "cigar_wrapper": "",
@@ -2100,8 +2194,10 @@
               "cask_info": "",
               "volume_ml": null,
               "unit": "bottle",
+              "list_price_label": "",
               "description": "",
               "tasting_notes": "",
+              "details": {},
               "is_featured": 0,
               "servings": [
                 {
@@ -2127,8 +2223,8 @@
             {
               "id": "eda1b564-f081-4894-b02a-bdc53e4d4680",
               "name": "샤또가쟁 포메롤",
-              "sku": null,
               "product_type": "alcohol",
+              "alcohol_type": "wine",
               "food_type": null,
               "cigar_vitola": "",
               "cigar_wrapper": "",
@@ -2143,8 +2239,10 @@
               "cask_info": "",
               "volume_ml": null,
               "unit": "bottle",
+              "list_price_label": "",
               "description": "",
               "tasting_notes": "",
+              "details": {},
               "is_featured": 0,
               "servings": [
                 {
@@ -2170,8 +2268,8 @@
             {
               "id": "a95fa57e-61f8-4195-9041-9e6d478b08d0",
               "name": "샤또 뒤포르비방",
-              "sku": null,
               "product_type": "alcohol",
+              "alcohol_type": "wine",
               "food_type": null,
               "cigar_vitola": "",
               "cigar_wrapper": "",
@@ -2186,8 +2284,10 @@
               "cask_info": "",
               "volume_ml": null,
               "unit": "bottle",
+              "list_price_label": "",
               "description": "",
               "tasting_notes": "",
+              "details": {},
               "is_featured": 0,
               "servings": [
                 {
@@ -2213,8 +2313,8 @@
             {
               "id": "580a6bac-4fc7-42d1-b148-c031287b556d",
               "name": "오레무스 드라이 만둘라스",
-              "sku": null,
               "product_type": "alcohol",
+              "alcohol_type": "wine",
               "food_type": null,
               "cigar_vitola": "",
               "cigar_wrapper": "",
@@ -2229,8 +2329,10 @@
               "cask_info": "",
               "volume_ml": null,
               "unit": "bottle",
+              "list_price_label": "",
               "description": "",
               "tasting_notes": "",
+              "details": {},
               "is_featured": 0,
               "servings": [
                 {
@@ -2256,8 +2358,8 @@
             {
               "id": "485c2a32-91ab-4a93-b8b9-9310f4738719",
               "name": "이갈스 지공다스",
-              "sku": null,
               "product_type": "alcohol",
+              "alcohol_type": "wine",
               "food_type": null,
               "cigar_vitola": "",
               "cigar_wrapper": "",
@@ -2272,8 +2374,10 @@
               "cask_info": "",
               "volume_ml": null,
               "unit": "bottle",
+              "list_price_label": "",
               "description": "",
               "tasting_notes": "",
+              "details": {},
               "is_featured": 0,
               "servings": [
                 {
@@ -2299,8 +2403,8 @@
             {
               "id": "4638d641-6014-4987-96ec-540eae1f8c13",
               "name": "트리벤토 골든리저브 말벡",
-              "sku": null,
               "product_type": "alcohol",
+              "alcohol_type": "wine",
               "food_type": null,
               "cigar_vitola": "",
               "cigar_wrapper": "",
@@ -2315,8 +2419,10 @@
               "cask_info": "",
               "volume_ml": null,
               "unit": "bottle",
+              "list_price_label": "",
               "description": "",
               "tasting_notes": "",
+              "details": {},
               "is_featured": 0,
               "servings": [
                 {
@@ -2342,8 +2448,8 @@
             {
               "id": "ca8655fe-11bc-4e26-8d2e-ffdf75582ab5",
               "name": "셀락오리진소비뇽블랑",
-              "sku": null,
               "product_type": "alcohol",
+              "alcohol_type": "wine",
               "food_type": null,
               "cigar_vitola": "",
               "cigar_wrapper": "",
@@ -2358,8 +2464,10 @@
               "cask_info": "",
               "volume_ml": null,
               "unit": "bottle",
+              "list_price_label": "",
               "description": "",
               "tasting_notes": "",
+              "details": {},
               "is_featured": 0,
               "servings": [
                 {
@@ -2385,8 +2493,8 @@
             {
               "id": "f5644d60-f144-4afa-afbc-39e133710040",
               "name": "아만테",
-              "sku": null,
               "product_type": "alcohol",
+              "alcohol_type": "wine",
               "food_type": null,
               "cigar_vitola": "",
               "cigar_wrapper": "",
@@ -2401,8 +2509,10 @@
               "cask_info": "",
               "volume_ml": null,
               "unit": "bottle",
+              "list_price_label": "",
               "description": "",
               "tasting_notes": "",
+              "details": {},
               "is_featured": 0,
               "servings": [
                 {
@@ -2428,8 +2538,8 @@
             {
               "id": "a969a9ea-664f-486b-a664-916d74f55172",
               "name": "마르셀마틴 크레망",
-              "sku": null,
               "product_type": "alcohol",
+              "alcohol_type": "wine",
               "food_type": null,
               "cigar_vitola": "",
               "cigar_wrapper": "",
@@ -2444,8 +2554,10 @@
               "cask_info": "",
               "volume_ml": null,
               "unit": "bottle",
+              "list_price_label": "",
               "description": "",
               "tasting_notes": "",
+              "details": {},
               "is_featured": 0,
               "servings": [
                 {
@@ -2471,8 +2583,8 @@
             {
               "id": "0b9b8a9c-d12b-4a39-a66b-5a60a9b076b7",
               "name": "에고메이",
-              "sku": null,
               "product_type": "alcohol",
+              "alcohol_type": "wine",
               "food_type": null,
               "cigar_vitola": "",
               "cigar_wrapper": "",
@@ -2487,8 +2599,10 @@
               "cask_info": "",
               "volume_ml": null,
               "unit": "bottle",
+              "list_price_label": "",
               "description": "",
               "tasting_notes": "",
+              "details": {},
               "is_featured": 0,
               "servings": [
                 {
@@ -2514,8 +2628,8 @@
             {
               "id": "e88c9bf7-00c0-4fd7-86ca-04cf03e437c5",
               "name": "이터 피노누아",
-              "sku": null,
               "product_type": "alcohol",
+              "alcohol_type": "wine",
               "food_type": null,
               "cigar_vitola": "",
               "cigar_wrapper": "",
@@ -2530,8 +2644,10 @@
               "cask_info": "",
               "volume_ml": null,
               "unit": "bottle",
+              "list_price_label": "",
               "description": "",
               "tasting_notes": "",
+              "details": {},
               "is_featured": 0,
               "servings": [
                 {
@@ -2557,8 +2673,8 @@
             {
               "id": "24311636-db7f-4c02-bbc4-02aa0eba99a7",
               "name": "루이지레오나르도",
-              "sku": null,
               "product_type": "alcohol",
+              "alcohol_type": "wine",
               "food_type": null,
               "cigar_vitola": "",
               "cigar_wrapper": "",
@@ -2573,8 +2689,10 @@
               "cask_info": "",
               "volume_ml": null,
               "unit": "bottle",
+              "list_price_label": "",
               "description": "",
               "tasting_notes": "",
+              "details": {},
               "is_featured": 0,
               "servings": [
                 {
@@ -2600,8 +2718,8 @@
             {
               "id": "ac477920-c285-44c6-99c8-54051447ce9e",
               "name": "블루눈 돈펠더",
-              "sku": null,
               "product_type": "alcohol",
+              "alcohol_type": "wine",
               "food_type": null,
               "cigar_vitola": "",
               "cigar_wrapper": "",
@@ -2616,8 +2734,10 @@
               "cask_info": "",
               "volume_ml": null,
               "unit": "bottle",
+              "list_price_label": "",
               "description": "",
               "tasting_notes": "",
+              "details": {},
               "is_featured": 0,
               "servings": [
                 {
@@ -2643,8 +2763,8 @@
             {
               "id": "4a51ea45-9506-4818-b9d4-eec21a2d2f41",
               "name": "엘레시오",
-              "sku": null,
               "product_type": "alcohol",
+              "alcohol_type": "wine",
               "food_type": null,
               "cigar_vitola": "",
               "cigar_wrapper": "",
@@ -2659,8 +2779,10 @@
               "cask_info": "",
               "volume_ml": null,
               "unit": "bottle",
+              "list_price_label": "",
               "description": "",
               "tasting_notes": "",
+              "details": {},
               "is_featured": 0,
               "servings": [
                 {
@@ -2686,8 +2808,8 @@
             {
               "id": "b75e6b3e-7571-455a-af61-5dda256d16ec",
               "name": "엘비에호",
-              "sku": null,
               "product_type": "alcohol",
+              "alcohol_type": "wine",
               "food_type": null,
               "cigar_vitola": "",
               "cigar_wrapper": "",
@@ -2702,8 +2824,10 @@
               "cask_info": "",
               "volume_ml": null,
               "unit": "bottle",
+              "list_price_label": "",
               "description": "",
               "tasting_notes": "",
+              "details": {},
               "is_featured": 0,
               "servings": [
                 {
@@ -2729,8 +2853,8 @@
             {
               "id": "e7656875-0c1a-4194-9f2b-9c4b316226fd",
               "name": "뱅상르구 오뜨꼬뜨뉘 블랑",
-              "sku": null,
               "product_type": "alcohol",
+              "alcohol_type": "wine",
               "food_type": null,
               "cigar_vitola": "",
               "cigar_wrapper": "",
@@ -2745,8 +2869,10 @@
               "cask_info": "",
               "volume_ml": null,
               "unit": "bottle",
+              "list_price_label": "",
               "description": "",
               "tasting_notes": "",
+              "details": {},
               "is_featured": 0,
               "servings": [
                 {
@@ -2772,8 +2898,8 @@
             {
               "id": "776435f7-8f29-4694-a891-41d403dd88f3",
               "name": "마르셀 마틴 크레망",
-              "sku": null,
               "product_type": "alcohol",
+              "alcohol_type": "wine",
               "food_type": null,
               "cigar_vitola": "",
               "cigar_wrapper": "",
@@ -2788,8 +2914,10 @@
               "cask_info": "",
               "volume_ml": null,
               "unit": "bottle",
+              "list_price_label": "",
               "description": "",
               "tasting_notes": "",
+              "details": {},
               "is_featured": 0,
               "servings": [
                 {
@@ -2815,8 +2943,8 @@
             {
               "id": "7073ebaf-ef3a-4926-916b-f9955fa75597",
               "name": "스피릿 오브 스시",
-              "sku": null,
               "product_type": "alcohol",
+              "alcohol_type": "wine",
               "food_type": null,
               "cigar_vitola": "",
               "cigar_wrapper": "",
@@ -2831,8 +2959,10 @@
               "cask_info": "",
               "volume_ml": null,
               "unit": "bottle",
+              "list_price_label": "",
               "description": "",
               "tasting_notes": "",
+              "details": {},
               "is_featured": 0,
               "servings": [
                 {
@@ -2858,8 +2988,8 @@
             {
               "id": "86bfa85d-f777-447a-9538-ecfe646bab5f",
               "name": "스칼리알라 지오크 피오레",
-              "sku": null,
               "product_type": "alcohol",
+              "alcohol_type": "wine",
               "food_type": null,
               "cigar_vitola": "",
               "cigar_wrapper": "",
@@ -2874,8 +3004,10 @@
               "cask_info": "",
               "volume_ml": null,
               "unit": "bottle",
+              "list_price_label": "",
               "description": "",
               "tasting_notes": "",
+              "details": {},
               "is_featured": 0,
               "servings": [
                 {
@@ -2901,8 +3033,8 @@
             {
               "id": "adecb9d3-ac10-43fd-8e96-f110585c1a99",
               "name": "스칼리알라 지오크 피오레",
-              "sku": null,
               "product_type": "alcohol",
+              "alcohol_type": "wine",
               "food_type": null,
               "cigar_vitola": "",
               "cigar_wrapper": "",
@@ -2917,8 +3049,10 @@
               "cask_info": "",
               "volume_ml": null,
               "unit": "bottle",
+              "list_price_label": "",
               "description": "",
               "tasting_notes": "",
+              "details": {},
               "is_featured": 0,
               "servings": [
                 {
@@ -2944,8 +3078,8 @@
             {
               "id": "e4e764c6-cf95-443b-af42-561634c99073",
               "name": "투핸즈 앤젤스 쉐어",
-              "sku": null,
               "product_type": "alcohol",
+              "alcohol_type": "wine",
               "food_type": null,
               "cigar_vitola": "",
               "cigar_wrapper": "",
@@ -2960,8 +3094,10 @@
               "cask_info": "",
               "volume_ml": null,
               "unit": "bottle",
+              "list_price_label": "",
               "description": "",
               "tasting_notes": "",
+              "details": {},
               "is_featured": 0,
               "servings": [
                 {
@@ -2987,8 +3123,8 @@
             {
               "id": "921f569b-5a08-4e5c-b068-28ae7189e6ab",
               "name": "비첸티니 아고스티노",
-              "sku": null,
               "product_type": "alcohol",
+              "alcohol_type": "wine",
               "food_type": null,
               "cigar_vitola": "",
               "cigar_wrapper": "",
@@ -3003,8 +3139,10 @@
               "cask_info": "",
               "volume_ml": null,
               "unit": "bottle",
+              "list_price_label": "",
               "description": "",
               "tasting_notes": "",
+              "details": {},
               "is_featured": 0,
               "servings": [
                 {
@@ -3030,8 +3168,8 @@
             {
               "id": "39c6afa3-a32a-4537-9027-56066abd2c05",
               "name": "지니 바이라 모스카토 다스티",
-              "sku": null,
               "product_type": "alcohol",
+              "alcohol_type": "wine",
               "food_type": null,
               "cigar_vitola": "",
               "cigar_wrapper": "",
@@ -3046,8 +3184,10 @@
               "cask_info": "",
               "volume_ml": null,
               "unit": "bottle",
+              "list_price_label": "",
               "description": "",
               "tasting_notes": "",
+              "details": {},
               "is_featured": 0,
               "servings": [
                 {
@@ -3073,8 +3213,8 @@
             {
               "id": "d6f0a4b1-149f-4bdf-9047-8fda3e7e93c7",
               "name": "따발리 탈리나이 피노누아",
-              "sku": null,
               "product_type": "alcohol",
+              "alcohol_type": "wine",
               "food_type": null,
               "cigar_vitola": "",
               "cigar_wrapper": "",
@@ -3089,8 +3229,10 @@
               "cask_info": "",
               "volume_ml": null,
               "unit": "bottle",
+              "list_price_label": "",
               "description": "",
               "tasting_notes": "",
+              "details": {},
               "is_featured": 0,
               "servings": [
                 {
@@ -3116,8 +3258,8 @@
             {
               "id": "db812a6a-d097-4ecf-b1f3-c69e608ee339",
               "name": "오이스터 베이",
-              "sku": null,
               "product_type": "alcohol",
+              "alcohol_type": "wine",
               "food_type": null,
               "cigar_vitola": "",
               "cigar_wrapper": "",
@@ -3132,8 +3274,10 @@
               "cask_info": "",
               "volume_ml": null,
               "unit": "bottle",
+              "list_price_label": "",
               "description": "",
               "tasting_notes": "",
+              "details": {},
               "is_featured": 0,
               "servings": [
                 {
@@ -3159,8 +3303,8 @@
             {
               "id": "d6fc5815-2ecf-4147-b136-7de7928fbf7a",
               "name": "폰토디 끼안티 클라시코",
-              "sku": null,
               "product_type": "alcohol",
+              "alcohol_type": "wine",
               "food_type": null,
               "cigar_vitola": "",
               "cigar_wrapper": "",
@@ -3175,8 +3319,10 @@
               "cask_info": "",
               "volume_ml": null,
               "unit": "bottle",
+              "list_price_label": "",
               "description": "",
               "tasting_notes": "",
+              "details": {},
               "is_featured": 0,
               "servings": [
                 {
@@ -3202,8 +3348,8 @@
             {
               "id": "464dabf8-1ce7-4db7-be39-a628b38e7dbf",
               "name": "마츠 청년",
-              "sku": null,
               "product_type": "alcohol",
+              "alcohol_type": "wine",
               "food_type": null,
               "cigar_vitola": "",
               "cigar_wrapper": "",
@@ -3218,8 +3364,10 @@
               "cask_info": "",
               "volume_ml": null,
               "unit": "bottle",
+              "list_price_label": "",
               "description": "",
               "tasting_notes": "",
+              "details": {},
               "is_featured": 0,
               "servings": [
                 {
@@ -3253,8 +3401,8 @@
             {
               "id": "8da3c9f9-d21a-4aa0-a778-d3e7bf7b3a76",
               "name": "하바나 엑스트라",
-              "sku": null,
               "product_type": "alcohol",
+              "alcohol_type": "rum",
               "food_type": null,
               "cigar_vitola": "",
               "cigar_wrapper": "",
@@ -3269,8 +3417,10 @@
               "cask_info": "",
               "volume_ml": null,
               "unit": "bottle",
+              "list_price_label": "",
               "description": "",
               "tasting_notes": "",
+              "details": {},
               "is_featured": 0,
               "servings": [
                 {
@@ -3312,8 +3462,8 @@
             {
               "id": "e46a9401-dc2e-4957-806d-e8ca153fa599",
               "name": "몬테크리스토 No.2",
-              "sku": null,
               "product_type": "cigar",
+              "alcohol_type": "",
               "food_type": null,
               "cigar_vitola": "",
               "cigar_wrapper": "",
@@ -3328,16 +3478,18 @@
               "cask_info": "",
               "volume_ml": null,
               "unit": "",
+              "list_price_label": "",
               "description": "",
               "tasting_notes": "",
+              "details": {},
               "is_featured": 0,
               "servings": []
             },
             {
               "id": "101b1612-4320-4b1f-9246-2bcb01016ad0",
               "name": "몬테크리스토 No.4",
-              "sku": null,
               "product_type": "cigar",
+              "alcohol_type": "",
               "food_type": null,
               "cigar_vitola": "",
               "cigar_wrapper": "",
@@ -3352,16 +3504,18 @@
               "cask_info": "",
               "volume_ml": null,
               "unit": "",
+              "list_price_label": "",
               "description": "",
               "tasting_notes": "",
+              "details": {},
               "is_featured": 0,
               "servings": []
             },
             {
               "id": "c2b5e73f-2d3a-4e19-a43d-eac07f6c9eb9",
               "name": "몬테크리스토 에드문도",
-              "sku": null,
               "product_type": "cigar",
+              "alcohol_type": "",
               "food_type": null,
               "cigar_vitola": "",
               "cigar_wrapper": "",
@@ -3376,8 +3530,10 @@
               "cask_info": "",
               "volume_ml": null,
               "unit": "",
+              "list_price_label": "",
               "description": "",
               "tasting_notes": "",
+              "details": {},
               "is_featured": 0,
               "servings": []
             }
@@ -3392,8 +3548,8 @@
             {
               "id": "25184318-77c0-46a9-8dec-3deee9fbab79",
               "name": "패드론 3000 내추럴",
-              "sku": null,
               "product_type": "cigar",
+              "alcohol_type": "",
               "food_type": null,
               "cigar_vitola": "",
               "cigar_wrapper": "",
@@ -3408,16 +3564,18 @@
               "cask_info": "",
               "volume_ml": null,
               "unit": "",
+              "list_price_label": "",
               "description": "",
               "tasting_notes": "",
+              "details": {},
               "is_featured": 0,
               "servings": []
             },
             {
               "id": "aa3d3555-59d3-4d89-a9e5-7fa2ef4240ef",
               "name": "패드론 3000 마두로",
-              "sku": null,
               "product_type": "cigar",
+              "alcohol_type": "",
               "food_type": null,
               "cigar_vitola": "",
               "cigar_wrapper": "",
@@ -3432,16 +3590,18 @@
               "cask_info": "",
               "volume_ml": null,
               "unit": "",
+              "list_price_label": "",
               "description": "",
               "tasting_notes": "",
+              "details": {},
               "is_featured": 0,
               "servings": []
             },
             {
               "id": "3181002d-3b95-4592-8484-5e9e70773299",
               "name": "패드론 1926 No.9 내추럴",
-              "sku": null,
               "product_type": "cigar",
+              "alcohol_type": "",
               "food_type": null,
               "cigar_vitola": "",
               "cigar_wrapper": "",
@@ -3456,16 +3616,18 @@
               "cask_info": "",
               "volume_ml": null,
               "unit": "",
+              "list_price_label": "",
               "description": "",
               "tasting_notes": "",
+              "details": {},
               "is_featured": 0,
               "servings": []
             },
             {
               "id": "82a65544-88e1-485f-ae98-d3282d0a80b1",
               "name": "패드론 1926 No.9 마두로",
-              "sku": null,
               "product_type": "cigar",
+              "alcohol_type": "",
               "food_type": null,
               "cigar_vitola": "",
               "cigar_wrapper": "",
@@ -3480,16 +3642,18 @@
               "cask_info": "",
               "volume_ml": null,
               "unit": "",
+              "list_price_label": "",
               "description": "",
               "tasting_notes": "",
+              "details": {},
               "is_featured": 0,
               "servings": []
             },
             {
               "id": "f3b6be59-05db-4573-aeda-e2e9e2c0159b",
               "name": "아르투로 푸엔테 Eye of the Shark",
-              "sku": null,
               "product_type": "cigar",
+              "alcohol_type": "",
               "food_type": null,
               "cigar_vitola": "",
               "cigar_wrapper": "",
@@ -3504,16 +3668,18 @@
               "cask_info": "",
               "volume_ml": null,
               "unit": "",
+              "list_price_label": "",
               "description": "",
               "tasting_notes": "",
+              "details": {},
               "is_featured": 0,
               "servings": []
             },
             {
               "id": "afbb7d1c-73e8-4971-b2d0-2975c03b5d4d",
               "name": "다비도프 레이트아워 처칠",
-              "sku": null,
               "product_type": "cigar",
+              "alcohol_type": "",
               "food_type": null,
               "cigar_vitola": "",
               "cigar_wrapper": "",
@@ -3528,16 +3694,18 @@
               "cask_info": "",
               "volume_ml": null,
               "unit": "",
+              "list_price_label": "",
               "description": "",
               "tasting_notes": "",
+              "details": {},
               "is_featured": 0,
               "servings": []
             },
             {
               "id": "18890e19-a60f-4170-b0a6-5eea1fa1687e",
               "name": "다비도프 처칠",
-              "sku": null,
               "product_type": "cigar",
+              "alcohol_type": "",
               "food_type": null,
               "cigar_vitola": "",
               "cigar_wrapper": "",
@@ -3552,16 +3720,18 @@
               "cask_info": "",
               "volume_ml": null,
               "unit": "",
+              "list_price_label": "",
               "description": "",
               "tasting_notes": "",
+              "details": {},
               "is_featured": 0,
               "servings": []
             },
             {
               "id": "c3188465-3e12-427b-8692-6a201f7067bb",
               "name": "다비도프 벨리코소",
-              "sku": null,
               "product_type": "cigar",
+              "alcohol_type": "",
               "food_type": null,
               "cigar_vitola": "",
               "cigar_wrapper": "",
@@ -3576,16 +3746,18 @@
               "cask_info": "",
               "volume_ml": null,
               "unit": "",
+              "list_price_label": "",
               "description": "",
               "tasting_notes": "",
+              "details": {},
               "is_featured": 0,
               "servings": []
             },
             {
               "id": "834e6ab4-aca0-44e0-be08-8666b546933f",
               "name": "다비도프 레이트아워 벨리코소",
-              "sku": null,
               "product_type": "cigar",
+              "alcohol_type": "",
               "food_type": null,
               "cigar_vitola": "",
               "cigar_wrapper": "",
@@ -3600,16 +3772,18 @@
               "cask_info": "",
               "volume_ml": null,
               "unit": "",
+              "list_price_label": "",
               "description": "",
               "tasting_notes": "",
+              "details": {},
               "is_featured": 0,
               "servings": []
             },
             {
               "id": "6fd40f3f-2fdb-42b2-a603-bd567192681b",
               "name": "숏스토리",
-              "sku": null,
               "product_type": "cigar",
+              "alcohol_type": "",
               "food_type": null,
               "cigar_vitola": "",
               "cigar_wrapper": "",
@@ -3624,16 +3798,18 @@
               "cask_info": "",
               "volume_ml": null,
               "unit": "",
+              "list_price_label": "",
               "description": "",
               "tasting_notes": "",
+              "details": {},
               "is_featured": 0,
               "servings": []
             },
             {
               "id": "e595ecc0-b815-44da-a3b4-146860e2ab0d",
               "name": "페르도모 샴페인",
-              "sku": null,
               "product_type": "cigar",
+              "alcohol_type": "",
               "food_type": null,
               "cigar_vitola": "",
               "cigar_wrapper": "",
@@ -3648,8 +3824,10 @@
               "cask_info": "",
               "volume_ml": null,
               "unit": "",
+              "list_price_label": "",
               "description": "",
               "tasting_notes": "",
+              "details": {},
               "is_featured": 0,
               "servings": []
             }
