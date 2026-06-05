@@ -3,6 +3,7 @@ import * as React from "react";
 import "./styles.css";
 
 type ThemeVariant = "cocktail" | "malt" | "cigar" | "wine" | "beer" | "multi";
+type MenuStyle = "luxury" | "clean";
 
 type MenuTheme = {
   variant?: ThemeVariant;
@@ -101,6 +102,7 @@ type MenuData = {
     website_url?: string;
   };
   presentation?: {
+    style?: MenuStyle;
     theme?: MenuTheme;
     features?: MenuFeatures;
   };
@@ -248,6 +250,7 @@ function App() {
   }
   if (state.kind === "loading") return <LoadingShell />;
   if (state.kind === "error") return <EmptyShell title={state.slug} message={state.message} />;
+  if (resolveMenuStyle(state.menu) === "clean") return <CleanMenuPage menu={state.menu} />;
   return <MenuPage menu={state.menu} />;
 }
 
@@ -261,6 +264,378 @@ type ProductWithContext = {
   category: MenuCategory;
   subcategory: MenuSubcategory;
 };
+
+function CleanMenuPage({ menu }: { menu: MenuData }) {
+  const theme = resolveTheme(menu);
+  const allCleanProducts = React.useMemo(() => productsWithContext(menu), [menu]);
+  const validProductIds = React.useMemo(() => new Set(allCleanProducts.map((item) => item.product.id)), [allCleanProducts]);
+  const cleanProductsById = React.useMemo(() => new Map(allCleanProducts.map((item) => [item.product.id, item])), [allCleanProducts]);
+  const validScreens = React.useMemo(() => new Set(["intro", "index", "events", ...menu.categories.map((category) => category.id)]), [menu.categories]);
+  const [screen, setScreenState] = React.useState<"intro" | "index" | "events" | string>(() => cleanScreenFromHistory(validScreens) ?? "intro");
+  const [selectedCleanProductId, setSelectedCleanProductId] = React.useState<string | null>(() => cleanProductIdFromHistory(validProductIds));
+  const [cleanQuery, setCleanQuery] = React.useState("");
+  const [isCleanSearchOpen, setCleanSearchOpen] = React.useState(false);
+  const selectedCategory = menu.categories.find((category) => category.id === screen);
+  const selectedCleanItem = selectedCleanProductId ? cleanProductsById.get(selectedCleanProductId) ?? null : null;
+  const selectedProducts = selectedCategory ? productsWithContext({ ...menu, categories: [selectedCategory] }) : [];
+  const normalizedCleanQuery = normalizeSearch(cleanQuery);
+  const filteredCleanProducts = normalizedCleanQuery
+    ? selectedProducts.filter((item) => productSearchText(item).includes(normalizedCleanQuery))
+    : selectedProducts;
+  const filteredCleanCombos = normalizedCleanQuery
+    ? menu.combos.filter((combo) => comboSearchText(combo).includes(normalizedCleanQuery))
+    : menu.combos;
+
+  React.useEffect(() => {
+    document.title = `${menu.bar.name} Menu`;
+  }, [menu.bar.name]);
+
+  React.useEffect(() => {
+    if (!cleanScreenFromHistory(validScreens)) {
+      replaceCleanHistoryState(screen, false);
+    }
+
+    const handlePopState = () => {
+      setScreenState(cleanScreenFromHistory(validScreens) ?? "intro");
+      setCleanSearchOpen(cleanSearchOpenFromHistory());
+      setSelectedCleanProductId(cleanProductIdFromHistory(validProductIds));
+    };
+    window.addEventListener("popstate", handlePopState);
+    return () => window.removeEventListener("popstate", handlePopState);
+  }, [screen, validProductIds, validScreens]);
+
+  const setScreen = React.useCallback(
+    (nextScreen: "intro" | "index" | "events" | string) => {
+      const normalized = validScreens.has(nextScreen) ? nextScreen : "intro";
+      setScreenState(normalized);
+      setSelectedCleanProductId(null);
+      setCleanQuery("");
+      setCleanSearchOpen(false);
+      pushCleanHistoryState(normalized, false);
+    },
+    [validScreens]
+  );
+
+  const openCleanSearch = React.useCallback(() => {
+    setCleanSearchOpen(true);
+    pushCleanHistoryState(screen, true);
+  }, [screen]);
+
+  const closeCleanSearch = React.useCallback(() => {
+    if (isCleanSearchOpen && cleanSearchOpenFromHistory()) {
+      window.history.back();
+      return;
+    }
+    setCleanSearchOpen(false);
+    replaceCleanHistoryState(screen, false);
+  }, [isCleanSearchOpen, screen]);
+
+  const openCleanDetail = React.useCallback(
+    (item: ProductWithContext) => {
+      setSelectedCleanProductId(item.product.id);
+      setCleanSearchOpen(false);
+      pushCleanHistoryState(screen, false, item.product.id);
+    },
+    [screen]
+  );
+
+  const closeCleanDetail = React.useCallback(() => {
+    if (selectedCleanProductId && cleanProductIdFromHistory(validProductIds)) {
+      window.history.back();
+      return;
+    }
+    setSelectedCleanProductId(null);
+    replaceCleanHistoryState(screen, false);
+  }, [screen, selectedCleanProductId, validProductIds]);
+
+  if (screen === "intro") {
+    return (
+      <main className="clean-menu-page" style={themeVars(theme)}>
+        <section className="clean-intro">
+          <div>
+            <h1>{menu.bar.name}</h1>
+            {menu.bar.description ? <p>{menu.bar.description}</p> : null}
+          </div>
+          <button type="button" onClick={() => setScreen("index")}>
+            메뉴판 보기
+          </button>
+        </section>
+      </main>
+    );
+  }
+
+  if (screen === "index") {
+    return (
+      <main className="clean-menu-page" style={themeVars(theme)}>
+        <section className="clean-category-screen">
+          <button type="button" className="clean-text-button" onClick={() => setScreen("intro")}>
+            소개
+          </button>
+          <div className="clean-category-title">
+            <h1>{menu.bar.name}</h1>
+            <p>카테고리를 선택하세요</p>
+          </div>
+          <nav className="clean-category-list" aria-label="메뉴 카테고리">
+            {menu.combos.length ? (
+              <button type="button" onClick={() => setScreen("events")}>
+                <span>Event</span>
+                <small>{menu.combos.length}</small>
+              </button>
+            ) : null}
+            {menu.categories.map((category) => (
+              <button key={category.id} type="button" onClick={() => setScreen(category.id)}>
+                <span>{category.name}</span>
+                <small>{categoryProductCount(category)}</small>
+              </button>
+            ))}
+          </nav>
+        </section>
+      </main>
+    );
+  }
+
+  if (screen === "events") {
+    return (
+      <main className="clean-menu-page clean-list-page" style={themeVars(theme)}>
+        <CleanListHeader
+          title="Event"
+          count={filteredCleanCombos.length}
+          onBack={() => setScreen("index")}
+          onSearch={openCleanSearch}
+          searchActive={Boolean(cleanQuery)}
+        />
+        <div className="clean-menu-list">
+          {filteredCleanCombos.length ? (
+            filteredCleanCombos.map((combo) => (
+              <article key={combo.id} className="clean-menu-row">
+                <div className="clean-menu-row-content">
+                  <div>
+                    <h2>{combo.name}</h2>
+                    {combo.description ? <p>{combo.description}</p> : null}
+                  </div>
+                  <strong>{formatCleanPrice(comboDiscountedPrice(combo) ?? combo.price)}</strong>
+                </div>
+              </article>
+            ))
+          ) : (
+            <CleanEmptyState title={cleanQuery ? "검색 결과가 없습니다." : "등록된 이벤트가 없습니다."} />
+          )}
+        </div>
+        {isCleanSearchOpen ? (
+          <CleanSearchDialog value={cleanQuery} onChange={setCleanQuery} onClose={closeCleanSearch} />
+        ) : null}
+      </main>
+    );
+  }
+
+  if (selectedCleanItem) {
+    return (
+      <CleanProductDetailPage
+        item={selectedCleanItem}
+        onBack={closeCleanDetail}
+        style={themeVars(theme)}
+      />
+    );
+  }
+
+  return (
+    <main className="clean-menu-page clean-list-page" style={themeVars(theme)}>
+      <CleanListHeader
+        title={selectedCategory?.name ?? "Menu"}
+        count={filteredCleanProducts.length}
+        onBack={() => setScreen("index")}
+        onSearch={openCleanSearch}
+        searchActive={Boolean(cleanQuery)}
+      />
+      <div className="clean-menu-list">
+        {filteredCleanProducts.length ? (
+          filteredCleanProducts.map((item) => {
+            const price = cleanProductPrice(item.product);
+            return (
+              <article key={`${item.category.id}-${item.subcategory.id}-${item.product.id}`} className="clean-menu-row">
+                <button type="button" className="clean-menu-row-button" onClick={() => openCleanDetail(item)}>
+                  <div>
+                    <h2>{productTitle(item.product)}</h2>
+                    <p>{item.subcategory.name}</p>
+                  </div>
+                  <div className="clean-price">
+                    <span>{price.label}</span>
+                    <strong>{price.value}</strong>
+                  </div>
+                </button>
+              </article>
+            );
+          })
+        ) : (
+          <CleanEmptyState title={cleanQuery ? "검색 결과가 없습니다." : "등록된 메뉴가 없습니다."} />
+        )}
+      </div>
+      {isCleanSearchOpen ? (
+        <CleanSearchDialog value={cleanQuery} onChange={setCleanQuery} onClose={closeCleanSearch} />
+      ) : null}
+    </main>
+  );
+}
+
+function CleanProductDetailPage({ item, onBack, style }: { item: ProductWithContext; onBack: () => void; style: React.CSSProperties }) {
+  const { product, category, subcategory } = item;
+  const detailRows = productDetailRows(product);
+
+  return (
+    <main className="clean-menu-page clean-detail-page" style={style}>
+      <header className="clean-detail-header">
+        <button type="button" className="clean-text-button" onClick={onBack}>
+          뒤로가기
+        </button>
+        <p>
+          {category.name} / {subcategory.name}
+        </p>
+      </header>
+
+      <article className="clean-detail-card">
+        <div className="clean-detail-title">
+          <h1>{productTitle(product)}</h1>
+        </div>
+
+        <section className="clean-detail-section clean-detail-price-section">
+          <h2>가격</h2>
+          <CleanDetailPrice product={product} />
+        </section>
+
+        {detailRows.length ? (
+          <section className="clean-detail-section">
+            <h2>정보</h2>
+            <dl>
+              {detailRows.map(([label, value]) => (
+                <React.Fragment key={label}>
+                  <dt>{label}</dt>
+                  <dd>{value}</dd>
+                </React.Fragment>
+              ))}
+            </dl>
+          </section>
+        ) : null}
+
+        {product.tasting_notes ? (
+          <section className="clean-detail-section">
+            <h2>노트</h2>
+            <p>{product.tasting_notes}</p>
+          </section>
+        ) : null}
+
+        {product.description ? (
+          <section className="clean-detail-section">
+            <h2>설명</h2>
+            <p>{product.description}</p>
+          </section>
+        ) : null}
+      </article>
+    </main>
+  );
+}
+
+function CleanDetailPrice({ product }: { product: MenuProduct }) {
+  const rows = cleanDetailPriceRows(product);
+
+  if (!rows.length) {
+    return (
+      <div className="clean-detail-price-empty">
+        <span>Price</span>
+        <strong>가격 미정</strong>
+      </div>
+    );
+  }
+
+  return (
+    <dl className="clean-detail-price-list">
+      {rows.map((row) => (
+        <React.Fragment key={row.label}>
+          <dt>
+            <span>{row.label}</span>
+            {row.subLabel ? <small>{row.subLabel}</small> : null}
+          </dt>
+          <dd>{row.price}</dd>
+        </React.Fragment>
+      ))}
+    </dl>
+  );
+}
+
+function CleanListHeader({
+  title,
+  count,
+  onBack,
+  onSearch,
+  searchActive
+}: {
+  title: string;
+  count: number;
+  onBack: () => void;
+  onSearch: () => void;
+  searchActive: boolean;
+}) {
+  return (
+    <header className="clean-list-header">
+      <div className="clean-list-tools">
+        <button type="button" className="clean-text-button" onClick={onBack}>
+          뒤로가기
+        </button>
+        <button type="button" className={searchActive ? "clean-search-button is-active" : "clean-search-button"} onClick={onSearch} aria-label="검색">
+          <Icon name="search" />
+        </button>
+      </div>
+      <div className="clean-list-title">
+        <h1>{title}</h1>
+        <p className="clean-list-count">총 {count}개</p>
+      </div>
+    </header>
+  );
+}
+function CleanEmptyState({ title }: { title: string }) {
+  return (
+    <div className="clean-empty-state">
+      <p>{title}</p>
+    </div>
+  );
+}
+
+function CleanSearchDialog({
+  value,
+  onChange,
+  onClose
+}: {
+  value: string;
+  onChange: (value: string) => void;
+  onClose: () => void;
+}) {
+  const inputRef = React.useRef<HTMLInputElement | null>(null);
+
+  React.useEffect(() => {
+    inputRef.current?.focus();
+  }, []);
+
+  return (
+    <div className="clean-search-backdrop" role="presentation" onClick={onClose}>
+      <section className="clean-search-dialog" role="dialog" aria-modal="true" aria-label="메뉴 검색" onClick={(event) => event.stopPropagation()}>
+        <div className="clean-search-dialog-header">
+          <h2>검색</h2>
+          <button type="button" onClick={onClose} aria-label="닫기">
+            ×
+          </button>
+        </div>
+        <label className="clean-search-field">
+          <Icon name="search" />
+          <input ref={inputRef} value={value} onChange={(event) => onChange(event.target.value)} placeholder="메뉴명을 입력하세요" type="search" />
+        </label>
+        {value ? (
+          <button type="button" className="clean-search-clear" onClick={() => onChange("")}>
+            검색어 지우기
+          </button>
+        ) : null}
+      </section>
+    </div>
+  );
+}
 
 const priceFilterOptions: Array<{
   id: PriceFilterId;
@@ -547,6 +922,48 @@ function themeVars(theme: Required<MenuTheme>) {
     "--text": theme.text,
     "--muted": theme.muted
   } as React.CSSProperties;
+}
+
+function resolveMenuStyle(menu: MenuData): MenuStyle {
+  return menu.presentation?.style === "clean" ? "clean" : "luxury";
+}
+
+function cleanScreenFromHistory(validScreens: ReadonlySet<string>) {
+  const state = window.history.state;
+  if (!state || typeof state !== "object") return null;
+  const screen = (state as { barsetterCleanScreen?: unknown }).barsetterCleanScreen;
+  return typeof screen === "string" && validScreens.has(screen) ? screen : null;
+}
+
+function cleanSearchOpenFromHistory() {
+  const state = window.history.state;
+  if (!state || typeof state !== "object") return false;
+  return (state as { barsetterCleanSearchOpen?: unknown }).barsetterCleanSearchOpen === true;
+}
+
+function cleanProductIdFromHistory(validProductIds: ReadonlySet<string>) {
+  const state = window.history.state;
+  if (!state || typeof state !== "object") return null;
+  const productId = (state as { barsetterCleanProductId?: unknown }).barsetterCleanProductId;
+  return typeof productId === "string" && validProductIds.has(productId) ? productId : null;
+}
+
+function replaceCleanHistoryState(screen: string, searchOpen: boolean, productId: string | null = null) {
+  const state = window.history.state && typeof window.history.state === "object" ? window.history.state : {};
+  window.history.replaceState(
+    { ...state, barsetterCleanScreen: screen, barsetterCleanSearchOpen: searchOpen, barsetterCleanProductId: productId },
+    "",
+    window.location.href
+  );
+}
+
+function pushCleanHistoryState(screen: string, searchOpen: boolean, productId: string | null = null) {
+  const state = window.history.state && typeof window.history.state === "object" ? window.history.state : {};
+  window.history.pushState(
+    { ...state, barsetterCleanScreen: screen, barsetterCleanSearchOpen: searchOpen, barsetterCleanProductId: productId },
+    "",
+    window.location.href
+  );
 }
 
 function OptionDialog({
@@ -1005,6 +1422,45 @@ function productsWithContext(menu: MenuData) {
   return products;
 }
 
+function categoryProductCount(category: MenuCategory) {
+  return category.subcategories.reduce((sum, subcategory) => sum + subcategory.products.length, 0);
+}
+
+function cleanProductPrice(product: MenuProduct) {
+  if (product.product_type === "alcohol") {
+    const servings = pricedServings(product.servings);
+    const serving = representativeServing(product, servings);
+    return {
+      label: serving ? servingLabel(serving.label) : "Price",
+      value: serving ? formatCleanPrice(serving.price) : "가격 미정"
+    };
+  }
+
+  return {
+    label: "Price",
+    value: isPriced(product.base_price) ? formatCleanPrice(product.base_price) : "가격 미정"
+  };
+}
+
+function cleanDetailPriceRows(product: MenuProduct) {
+  if (product.product_type === "alcohol") {
+    return pricedServings(product.servings).map((serving) => ({
+      label: servingLabel(serving.label),
+      subLabel: serving.serving_ml ? formatServingMl(serving.serving_ml) : "",
+      price: formatCleanPrice(serving.price)
+    }));
+  }
+
+  if (!isPriced(product.base_price)) return [];
+  return [
+    {
+      label: "Price",
+      subLabel: product.volume_ml ? `${product.volume_ml}${product.unit ? product.unit : "ml"}` : "",
+      price: formatCleanPrice(product.base_price)
+    }
+  ];
+}
+
 function matchesPriceFilter(product: MenuProduct, filterId: PriceFilterId) {
   const option = priceFilterOptions.find((item) => item.id === filterId);
   if (!option || option.id === "all") return true;
@@ -1131,6 +1587,19 @@ function productSearchText(item: ProductWithContext) {
   );
 }
 
+function comboSearchText(combo: MenuCombo) {
+  return normalizeSearch(
+    [
+      combo.name,
+      combo.description,
+      combo.combo_type ? comboTypeLabel(combo.combo_type) : "",
+      ...(combo.items ?? []).flatMap((item) => [item.product_name, item.note])
+    ]
+      .filter(Boolean)
+      .join(" ")
+  );
+}
+
 function normalizeSearch(value: string) {
   return value.trim().toLocaleLowerCase("ko-KR");
 }
@@ -1210,6 +1679,11 @@ function productTitle(product: MenuProduct) {
 function formatMenuPrice(value: number | null | undefined) {
   if (value === null || value === undefined) return "-";
   return (value / 10000).toFixed(1);
+}
+
+function formatCleanPrice(value: number | null | undefined) {
+  if (value === null || value === undefined) return "가격 미정";
+  return formatMenuPrice(value);
 }
 
 function formatPrice(value: number | null | undefined) {

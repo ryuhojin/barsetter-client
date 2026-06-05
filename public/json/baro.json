@@ -11,6 +11,7 @@
     "website_url": "https://www.instagram.com/baro_busan/"
   },
   "presentation": {
+    "style": "clean",
     "theme": {
       "variant": "cigar",
       "accent": "#d8a657"
