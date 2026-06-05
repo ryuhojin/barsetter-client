@@ -582,6 +582,7 @@ function CleanListHeader({
         </button>
         <button type="button" className={searchActive ? "clean-search-button is-active" : "clean-search-button"} onClick={onSearch} aria-label="검색">
           <Icon name="search" />
+          <span>검색</span>
         </button>
       </div>
       <div className="clean-list-title">

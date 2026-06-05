@@ -1417,16 +1417,23 @@ svg.is-filled {
   color: #7b7368;
   cursor: pointer;
   display: inline-flex;
+  gap: 6px;
   height: 34px;
   justify-content: center;
   justify-self: start;
   padding: 0;
-  width: 34px;
+  width: auto;
 }
 
 .clean-search-button svg {
   height: 17px;
   width: 17px;
+}
+
+.clean-search-button span {
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1;
 }
 
 .clean-search-button:hover,
@@ -1442,6 +1449,7 @@ svg.is-filled {
   display: flex;
   inset: 0;
   justify-content: center;
+  overflow-x: hidden;
   padding: 24px;
   position: fixed;
   z-index: 40;
@@ -1455,9 +1463,10 @@ svg.is-filled {
   display: flex;
   flex-direction: column;
   gap: 14px;
-  max-width: 360px;
+  max-width: min(360px, calc(100vw - 32px));
+  min-width: 0;
   padding: 18px;
-  width: min(100%, 360px);
+  width: 100%;
 }
 
 .clean-search-dialog-header {
@@ -1496,7 +1505,9 @@ svg.is-filled {
   gap: 10px;
   grid-template-columns: auto minmax(0, 1fr);
   min-height: 46px;
+  min-width: 0;
   padding: 0 14px;
+  width: 100%;
 }
 
 .clean-search-field:focus-within {
@@ -1516,6 +1527,7 @@ svg.is-filled {
   font-size: 15px;
   min-width: 0;
   outline: none;
+  width: 100%;
 }
 
 .clean-search-clear {
@@ -1551,7 +1563,9 @@ svg.is-filled {
 }
 
 .clean-menu-row {
+  align-items: center;
   border-bottom: 1px solid #ebe5dc;
+  display: flex;
   min-height: 68px;
   padding: 15px 0;
 }
@@ -1565,6 +1579,7 @@ svg.is-filled {
   display: grid;
   gap: 18px;
   grid-template-columns: minmax(0, 1fr) auto;
+  min-height: 100%;
   padding: 0;
   text-align: left;
   width: 100%;
@@ -1800,6 +1815,15 @@ svg.is-filled {
 @media (max-width: 520px) {
   .clean-menu-page {
     padding: 24px 22px;
+  }
+
+  .clean-search-backdrop {
+    padding: 18px 16px;
+  }
+
+  .clean-search-dialog {
+    max-width: calc(100vw - 32px);
+    padding: 16px;
   }
 
   .clean-category-list span {
