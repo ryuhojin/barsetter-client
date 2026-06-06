@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "version": 2,
-  "generated_at": "2026-05-27T11:13:31.525Z",
+  "version": 3,
+  "generated_at": "2026-06-06T07:31:55.550Z",
   "bar": {
     "id": "543bca85-d752-4401-854c-a5e535b21042",
     "name": "NuttyOak",
@@ -11,6 +11,7 @@
     "website_url": "https://www.instagram.com/nuttyoak_bar/"
   },
   "presentation": {
+    "style": "clean",
     "theme": {
       "variant": "malt",
       "accent": "#10941f"
