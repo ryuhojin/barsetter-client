@@ -45,8 +45,19 @@ type MenuProduct = {
   description?: string;
   tasting_notes?: string;
   details?: Record<string, string | number | null | undefined>;
+  image?: MenuProductImage | null;
   is_featured?: number;
   servings?: MenuServing[];
+};
+
+type MenuProductImage = {
+  url: string;
+  public_id?: string;
+  width?: number | null;
+  height?: number | null;
+  bytes?: number | null;
+  format?: string;
+  updated_at?: string | null;
 };
 
 type MenuServing = {
@@ -270,13 +281,17 @@ function CleanMenuPage({ menu }: { menu: MenuData }) {
   const allCleanProducts = React.useMemo(() => productsWithContext(menu), [menu]);
   const validProductIds = React.useMemo(() => new Set(allCleanProducts.map((item) => item.product.id)), [allCleanProducts]);
   const cleanProductsById = React.useMemo(() => new Map(allCleanProducts.map((item) => [item.product.id, item])), [allCleanProducts]);
+  const validComboIds = React.useMemo(() => new Set(menu.combos.map((combo) => combo.id)), [menu.combos]);
+  const cleanCombosById = React.useMemo(() => new Map(menu.combos.map((combo) => [combo.id, combo])), [menu.combos]);
   const validScreens = React.useMemo(() => new Set(["intro", "index", "events", ...menu.categories.map((category) => category.id)]), [menu.categories]);
   const [screen, setScreenState] = React.useState<"intro" | "index" | "events" | string>(() => cleanScreenFromHistory(validScreens) ?? "intro");
   const [selectedCleanProductId, setSelectedCleanProductId] = React.useState<string | null>(() => cleanProductIdFromHistory(validProductIds));
+  const [selectedCleanComboId, setSelectedCleanComboId] = React.useState<string | null>(() => cleanComboIdFromHistory(validComboIds));
   const [cleanQuery, setCleanQuery] = React.useState("");
   const [isCleanSearchOpen, setCleanSearchOpen] = React.useState(false);
   const selectedCategory = menu.categories.find((category) => category.id === screen);
   const selectedCleanItem = selectedCleanProductId ? cleanProductsById.get(selectedCleanProductId) ?? null : null;
+  const selectedCleanCombo = selectedCleanComboId ? cleanCombosById.get(selectedCleanComboId) ?? null : null;
   const selectedProducts = selectedCategory ? productsWithContext({ ...menu, categories: [selectedCategory] }) : [];
   const normalizedCleanQuery = normalizeSearch(cleanQuery);
   const filteredCleanProducts = normalizedCleanQuery
@@ -299,16 +314,18 @@ function CleanMenuPage({ menu }: { menu: MenuData }) {
       setScreenState(cleanScreenFromHistory(validScreens) ?? "intro");
       setCleanSearchOpen(cleanSearchOpenFromHistory());
       setSelectedCleanProductId(cleanProductIdFromHistory(validProductIds));
+      setSelectedCleanComboId(cleanComboIdFromHistory(validComboIds));
     };
     window.addEventListener("popstate", handlePopState);
     return () => window.removeEventListener("popstate", handlePopState);
-  }, [screen, validProductIds, validScreens]);
+  }, [screen, validComboIds, validProductIds, validScreens]);
 
   const setScreen = React.useCallback(
     (nextScreen: "intro" | "index" | "events" | string) => {
       const normalized = validScreens.has(nextScreen) ? nextScreen : "intro";
       setScreenState(normalized);
       setSelectedCleanProductId(null);
+      setSelectedCleanComboId(null);
       setCleanQuery("");
       setCleanSearchOpen(false);
       pushCleanHistoryState(normalized, false);
@@ -333,8 +350,9 @@ function CleanMenuPage({ menu }: { menu: MenuData }) {
   const openCleanDetail = React.useCallback(
     (item: ProductWithContext) => {
       setSelectedCleanProductId(item.product.id);
+      setSelectedCleanComboId(null);
       setCleanSearchOpen(false);
-      pushCleanHistoryState(screen, false, item.product.id);
+      pushCleanHistoryState(screen, false, { productId: item.product.id });
     },
     [screen]
   );
@@ -347,6 +365,25 @@ function CleanMenuPage({ menu }: { menu: MenuData }) {
     setSelectedCleanProductId(null);
     replaceCleanHistoryState(screen, false);
   }, [screen, selectedCleanProductId, validProductIds]);
+
+  const openCleanComboDetail = React.useCallback(
+    (combo: MenuCombo) => {
+      setSelectedCleanComboId(combo.id);
+      setSelectedCleanProductId(null);
+      setCleanSearchOpen(false);
+      pushCleanHistoryState(screen, false, { comboId: combo.id });
+    },
+    [screen]
+  );
+
+  const closeCleanComboDetail = React.useCallback(() => {
+    if (selectedCleanComboId && cleanComboIdFromHistory(validComboIds)) {
+      window.history.back();
+      return;
+    }
+    setSelectedCleanComboId(null);
+    replaceCleanHistoryState(screen, false);
+  }, [screen, selectedCleanComboId, validComboIds]);
 
   if (screen === "intro") {
     return (
@@ -395,6 +432,10 @@ function CleanMenuPage({ menu }: { menu: MenuData }) {
   }
 
   if (screen === "events") {
+    if (selectedCleanCombo) {
+      return <CleanComboDetailPage combo={selectedCleanCombo} onBack={closeCleanComboDetail} style={themeVars(theme)} />;
+    }
+
     return (
       <main className="clean-menu-page clean-list-page" style={themeVars(theme)}>
         <CleanListHeader
@@ -408,13 +449,13 @@ function CleanMenuPage({ menu }: { menu: MenuData }) {
           {filteredCleanCombos.length ? (
             filteredCleanCombos.map((combo) => (
               <article key={combo.id} className="clean-menu-row">
-                <div className="clean-menu-row-content">
+                <button type="button" className="clean-menu-row-button" onClick={() => openCleanComboDetail(combo)}>
                   <div>
                     <h2>{combo.name}</h2>
                     {combo.description ? <p>{combo.description}</p> : null}
                   </div>
                   <strong>{formatCleanPrice(comboDiscountedPrice(combo) ?? combo.price)}</strong>
-                </div>
+                </button>
               </article>
             ))
           ) : (
@@ -497,6 +538,8 @@ function CleanProductDetailPage({ item, onBack, style }: { item: ProductWithCont
           <h1>{productTitle(product)}</h1>
         </div>
 
+        <ProductDetailImage product={product} variant="clean" />
+
         <section className="clean-detail-section clean-detail-price-section">
           <h2>가격</h2>
           <CleanDetailPrice product={product} />
@@ -531,6 +574,85 @@ function CleanProductDetailPage({ item, onBack, style }: { item: ProductWithCont
         ) : null}
       </article>
     </main>
+  );
+}
+
+function CleanComboDetailPage({ combo, onBack, style }: { combo: MenuCombo; onBack: () => void; style: React.CSSProperties }) {
+  const items = combo.items ?? [];
+
+  return (
+    <main className="clean-menu-page clean-detail-page" style={style}>
+      <header className="clean-detail-header">
+        <button type="button" className="clean-text-button" onClick={onBack}>
+          뒤로가기
+        </button>
+        <p>Event</p>
+      </header>
+
+      <article className="clean-detail-card">
+        <div className="clean-detail-title">
+          <h1>{combo.name}</h1>
+        </div>
+
+        <section className="clean-detail-section clean-detail-price-section">
+          <h2>가격</h2>
+          <CleanComboDetailPrice combo={combo} />
+        </section>
+
+        {items.length ? (
+          <section className="clean-detail-section">
+            <h2>구성 상품</h2>
+            <ul className="clean-combo-item-list">
+              {items.map((item, index) => {
+                const summary = comboItemSummary(item);
+                return (
+                  <li key={`${item.product_id}-${index}`}>
+                    <strong>{item.product_name}</strong>
+                    {summary ? <span>{summary}</span> : null}
+                  </li>
+                );
+              })}
+            </ul>
+          </section>
+        ) : null}
+
+        {combo.description ? (
+          <section className="clean-detail-section">
+            <h2>설명</h2>
+            <p>{combo.description}</p>
+          </section>
+        ) : null}
+      </article>
+    </main>
+  );
+}
+
+function CleanComboDetailPrice({ combo }: { combo: MenuCombo }) {
+  const discountedPrice = comboDiscountedPrice(combo);
+  const hasDiscount = discountedPrice !== null && combo.price !== null && combo.price !== undefined && discountedPrice !== combo.price;
+
+  if (hasDiscount) {
+    return (
+      <dl className="clean-detail-price-list">
+        <dt>
+          <span>원가</span>
+        </dt>
+        <dd>
+          <del>{formatCleanPrice(combo.price)}</del>
+        </dd>
+        <dt>
+          <span>할인가</span>
+        </dt>
+        <dd>{formatCleanPrice(discountedPrice)}</dd>
+      </dl>
+    );
+  }
+
+  return (
+    <div className="clean-detail-price-empty">
+      <span>Price</span>
+      <strong>{formatCleanPrice(discountedPrice ?? combo.price)}</strong>
+    </div>
   );
 }
 
@@ -949,19 +1071,43 @@ function cleanProductIdFromHistory(validProductIds: ReadonlySet<string>) {
   return typeof productId === "string" && validProductIds.has(productId) ? productId : null;
 }
 
-function replaceCleanHistoryState(screen: string, searchOpen: boolean, productId: string | null = null) {
+function cleanComboIdFromHistory(validComboIds: ReadonlySet<string>) {
+  const state = window.history.state;
+  if (!state || typeof state !== "object") return null;
+  const comboId = (state as { barsetterCleanComboId?: unknown }).barsetterCleanComboId;
+  return typeof comboId === "string" && validComboIds.has(comboId) ? comboId : null;
+}
+
+type CleanHistoryDetail = {
+  productId?: string | null;
+  comboId?: string | null;
+};
+
+function replaceCleanHistoryState(screen: string, searchOpen: boolean, detail: CleanHistoryDetail = {}) {
   const state = window.history.state && typeof window.history.state === "object" ? window.history.state : {};
   window.history.replaceState(
-    { ...state, barsetterCleanScreen: screen, barsetterCleanSearchOpen: searchOpen, barsetterCleanProductId: productId },
+    {
+      ...state,
+      barsetterCleanScreen: screen,
+      barsetterCleanSearchOpen: searchOpen,
+      barsetterCleanProductId: detail.productId ?? null,
+      barsetterCleanComboId: detail.comboId ?? null
+    },
     "",
     window.location.href
   );
 }
 
-function pushCleanHistoryState(screen: string, searchOpen: boolean, productId: string | null = null) {
+function pushCleanHistoryState(screen: string, searchOpen: boolean, detail: CleanHistoryDetail = {}) {
   const state = window.history.state && typeof window.history.state === "object" ? window.history.state : {};
   window.history.pushState(
-    { ...state, barsetterCleanScreen: screen, barsetterCleanSearchOpen: searchOpen, barsetterCleanProductId: productId },
+    {
+      ...state,
+      barsetterCleanScreen: screen,
+      barsetterCleanSearchOpen: searchOpen,
+      barsetterCleanProductId: detail.productId ?? null,
+      barsetterCleanComboId: detail.comboId ?? null
+    },
     "",
     window.location.href
   );
@@ -1139,6 +1285,8 @@ function ProductDetail({
         </div>
         <h2>{productTitle(product)}</h2>
 
+        <ProductDetailImage product={product} variant="default" />
+
         <div className="detail-price-panel">
           <PriceBlock product={product} variant="detail" />
         </div>
@@ -1172,6 +1320,17 @@ function ProductDetail({
         ) : null}
       </article>
     </section>
+  );
+}
+
+function ProductDetailImage({ product, variant }: { product: MenuProduct; variant: "default" | "clean" }) {
+  const imageUrl = product.image?.url?.trim();
+  if (!imageUrl) return null;
+
+  return (
+    <figure className={variant === "clean" ? "clean-detail-image" : "detail-product-image"}>
+      <img src={imageUrl} alt={`${productTitle(product)} 이미지`} loading="lazy" decoding="async" />
+    </figure>
   );
 }
 
@@ -1599,6 +1758,16 @@ function comboSearchText(combo: MenuCombo) {
       .filter(Boolean)
       .join(" ")
   );
+}
+
+function comboItemSummary(item: NonNullable<MenuCombo["items"]>[number]) {
+  return [
+    item.quantity && item.quantity !== 1 ? `${item.quantity}개` : "",
+    item.pour_ml ? `${item.pour_ml}ml` : "",
+    item.note
+  ]
+    .filter(Boolean)
+    .join(" · ");
 }
 
 function normalizeSearch(value: string) {

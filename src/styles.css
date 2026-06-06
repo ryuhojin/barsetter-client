@@ -846,6 +846,30 @@ svg.is-filled {
   margin: 0;
 }
 
+.detail-product-image {
+  align-self: center;
+  aspect-ratio: 1 / 1;
+  background: linear-gradient(135deg, color-mix(in srgb, var(--surface) 92%, white 4%), color-mix(in srgb, var(--surface) 84%, black 8%));
+  border: 1px solid color-mix(in srgb, var(--text) 12%, transparent);
+  border-radius: 14px;
+  box-shadow: 0 16px 42px rgba(0, 0, 0, 0.22);
+  display: block;
+  flex: 0 0 auto;
+  height: min(72vw, 360px);
+  margin: 0;
+  max-width: 360px;
+  overflow: hidden;
+  width: min(100%, 360px);
+}
+
+.detail-product-image img,
+.clean-detail-image img {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
 .detail-price-panel {
   border-block: 1px solid color-mix(in srgb, var(--text) 10%, transparent);
   padding: 16px 0;
@@ -1239,6 +1263,11 @@ svg.is-filled {
   .detail-card {
     padding: 16px;
   }
+
+  .detail-product-image {
+    max-width: 300px;
+    width: min(100%, 300px);
+  }
 }
 
 @media (max-width: 380px) {
@@ -1524,7 +1553,8 @@ svg.is-filled {
   background: transparent;
   border: 0;
   color: #171512;
-  font-size: 15px;
+  font-size: 16px;
+  line-height: 1.25;
   min-width: 0;
   outline: none;
   width: 100%;
@@ -1714,6 +1744,21 @@ svg.is-filled {
   overflow-wrap: anywhere;
 }
 
+.clean-detail-image {
+  align-self: center;
+  aspect-ratio: 1 / 1;
+  background: #f4eee5;
+  border: 1px solid #e2dace;
+  border-radius: 16px;
+  display: block;
+  flex: 0 0 auto;
+  height: min(72vw, 420px);
+  margin: 0;
+  max-width: 420px;
+  overflow: hidden;
+  width: min(100%, 420px);
+}
+
 .clean-detail-price-list {
   display: grid;
   gap: 13px 22px;
@@ -1742,6 +1787,12 @@ svg.is-filled {
   margin: 0;
   text-align: right;
   white-space: nowrap;
+}
+
+.clean-detail-price-list dd del {
+  color: #8c8378;
+  font-weight: 400;
+  text-decoration-thickness: 1px;
 }
 
 .clean-detail-price-empty {
@@ -1804,6 +1855,37 @@ svg.is-filled {
   text-align: right;
 }
 
+.clean-combo-item-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.clean-combo-item-list li {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: center;
+  min-height: 48px;
+  padding: 12px 0;
+}
+
+.clean-combo-item-list strong {
+  color: #25221d;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.clean-combo-item-list span {
+  color: #7b7368;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
 @media (min-width: 700px) {
   .clean-menu-list {
     display: grid;
@@ -1818,7 +1900,8 @@ svg.is-filled {
   }
 
   .clean-search-backdrop {
-    padding: 18px 16px;
+    align-items: flex-start;
+    padding: max(86px, calc(env(safe-area-inset-top) + 72px)) 16px 18px;
   }
 
   .clean-search-dialog {
@@ -1853,6 +1936,11 @@ svg.is-filled {
 
   .clean-detail-title h1 {
     font-size: 27px;
+  }
+
+  .clean-detail-image {
+    max-width: 320px;
+    width: min(100%, 320px);
   }
 
   .clean-detail-section dl,
