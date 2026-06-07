@@ -1,48 +1,8 @@
-@font-face {
-  font-family: "Barsetter Sans";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src:
-    url("/fonts/pretendard/Pretendard-Regular.woff2") format("woff2"),
-    url("/fonts/pretendard/Pretendard-Regular.woff") format("woff");
-}
-
-@font-face {
-  font-family: "Barsetter Sans";
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src:
-    url("/fonts/pretendard/Pretendard-Medium.woff2") format("woff2"),
-    url("/fonts/pretendard/Pretendard-Medium.woff") format("woff");
-}
-
-@font-face {
-  font-family: "Barsetter Sans";
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src:
-    url("/fonts/pretendard/Pretendard-SemiBold.woff2") format("woff2"),
-    url("/fonts/pretendard/Pretendard-SemiBold.woff") format("woff");
-}
-
-@font-face {
-  font-family: "Barsetter Sans";
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src:
-    url("/fonts/pretendard/Pretendard-Bold.woff2") format("woff2"),
-    url("/fonts/pretendard/Pretendard-Bold.woff") format("woff");
-}
-
 :root {
   color-scheme: dark;
   font-family:
-    "Barsetter Sans", Inter, ui-sans-serif, system-ui, -apple-system,
-    BlinkMacSystemFont, "Segoe UI", sans-serif;
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
   --accent: #d8a657;
   --bg: #12100d;
   --bottom-nav-clearance: calc(62px + env(safe-area-inset-bottom));
@@ -1726,11 +1686,6 @@ svg.is-filled {
   width: 100%;
 }
 
-.clean-featured-card.has-image .clean-featured-card-button {
-  align-items: center;
-  grid-template-columns: 86px minmax(0, 1fr);
-}
-
 .clean-featured-card-button:hover h2,
 .clean-featured-card-button:focus-visible h2 {
   color: color-mix(in srgb, var(--accent) 72%, #171512);
@@ -1739,24 +1694,6 @@ svg.is-filled {
 .clean-featured-card-button:focus-visible {
   outline: 2px solid color-mix(in srgb, var(--accent) 46%, transparent);
   outline-offset: 4px;
-}
-
-.clean-featured-image {
-  aspect-ratio: 1 / 1;
-  background: #f4eee5;
-  border: 1px solid #e2dace;
-  border-radius: 8px;
-  margin: 0;
-  min-width: 0;
-  overflow: hidden;
-  width: 86px;
-}
-
-.clean-featured-image img {
-  display: block;
-  height: 100%;
-  object-fit: cover;
-  width: 100%;
 }
 
 .clean-featured-body {
@@ -2150,10 +2087,6 @@ svg.is-filled {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .clean-featured-card:only-child {
-    grid-column: 1 / -1;
-  }
-
   .clean-menu-list {
     display: grid;
     gap: 0 42px;
@@ -2258,9 +2191,8 @@ svg.is-filled {
   background: #fbfaf7;
   color: #1d1c19;
   font-family:
-    "Barsetter Sans", Inter, ui-sans-serif, system-ui, -apple-system,
-    BlinkMacSystemFont, "Segoe UI", "Noto Sans KR", "Apple SD Gothic Neo",
-    "Malgun Gothic", sans-serif;
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
   -webkit-font-smoothing: antialiased;
   height: 100vh;
   margin: 0;
@@ -2296,7 +2228,7 @@ svg.is-filled {
 .barsetter-android-app .clean-list-header h1 {
   color: #171512;
   font-size: 33px;
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.08;
   text-transform: uppercase;
 }
@@ -2307,6 +2239,7 @@ svg.is-filled {
 .barsetter-android-app .clean-menu-row p {
   color: #7b7368;
   font-size: 15px;
+  font-weight: 500;
   line-height: 1.55;
   margin-top: 10px;
 }
@@ -2335,6 +2268,7 @@ svg.is-filled {
   border: 0;
   color: #7b7368;
   font-size: 16px;
+  font-weight: 500;
   margin: 0;
   padding: 0;
   text-align: left;
@@ -2376,13 +2310,14 @@ svg.is-filled {
 
 .barsetter-android-app .clean-category-list span {
   font-size: 30px;
-  font-weight: 500;
+  font-weight: 700;
   line-height: 1;
 }
 
 .barsetter-android-app .clean-category-list small {
   color: #8c8378;
   font-size: 14px;
+  font-weight: 600;
 }
 
 .barsetter-android-app .clean-list-page,
@@ -2440,6 +2375,7 @@ svg.is-filled {
   -webkit-align-items: center;
   align-items: center;
   font-size: 16px;
+  font-weight: 500;
   height: 30px;
   -webkit-justify-content: flex-end;
   justify-content: flex-end;
@@ -2585,33 +2521,14 @@ svg.is-filled {
   color: inherit;
   display: -webkit-flex;
   display: flex;
-  -webkit-align-items: center;
-  align-items: center;
+  -webkit-align-items: stretch;
+  align-items: stretch;
   gap: 0;
   height: 142px;
   margin: 0;
   overflow: hidden;
   padding: 14px;
   text-align: left;
-  width: 100%;
-}
-
-.barsetter-android-app .clean-featured-image {
-  background: #f4eee5;
-  border: 1px solid #e2dace;
-  border-radius: 8px;
-  -webkit-flex: 0 0 86px;
-  flex: 0 0 86px;
-  height: 86px;
-  margin: 0 14px 0 0;
-  overflow: hidden;
-  width: 86px;
-}
-
-.barsetter-android-app .clean-featured-image img {
-  display: block;
-  height: 100%;
-  object-fit: cover;
   width: 100%;
 }
 
@@ -2684,7 +2601,7 @@ svg.is-filled {
   -webkit-flex: 1 1 auto;
   flex: 1 1 auto;
   font-size: 19px;
-  font-weight: 500;
+  font-weight: 700;
   line-height: 1.18;
   margin: 0 14px 0 0;
   min-width: 0;
@@ -2758,7 +2675,7 @@ svg.is-filled {
   -webkit-flex: 0 1 auto;
   flex: 0 1 auto;
   font-size: 20px;
-  font-weight: 500;
+  font-weight: 700;
   line-height: 1.2;
   min-width: 0;
   overflow: hidden;
@@ -2798,7 +2715,7 @@ svg.is-filled {
 .barsetter-android-app .clean-menu-row-content > strong {
   color: #8b5e2d;
   font-size: 20px;
-  font-weight: 500;
+  font-weight: 700;
   white-space: nowrap;
 }
 
@@ -2873,7 +2790,7 @@ svg.is-filled {
 .barsetter-android-app .clean-detail-title h1 {
   color: #171512;
   font-size: 32px;
-  font-weight: 500;
+  font-weight: 700;
   line-height: 1.12;
   word-break: break-word;
 }
@@ -2916,12 +2833,13 @@ svg.is-filled {
 .barsetter-android-app .clean-detail-price-empty span {
   color: #8c8378;
   font-size: 16px;
+  font-weight: 600;
 }
 
 .barsetter-android-app .clean-detail-price-empty strong {
   color: #8b5e2d;
   font-size: 19px;
-  font-weight: 500;
+  font-weight: 700;
   text-align: right;
   white-space: nowrap;
 }
@@ -2931,6 +2849,7 @@ svg.is-filled {
   color: #8c8378;
   float: left;
   font-size: 16px;
+  font-weight: 600;
   clear: left;
 }
 
@@ -2938,6 +2857,7 @@ svg.is-filled {
 .barsetter-android-app .clean-detail-section dd {
   color: #25221d;
   font-size: 17px;
+  font-weight: 600;
   margin: 0 0 13px 45%;
   min-width: 0;
   text-align: right;
@@ -2947,6 +2867,7 @@ svg.is-filled {
 .barsetter-android-app .clean-detail-price-list dd {
   color: #8b5e2d;
   font-size: 19px;
+  font-weight: 700;
 }
 
 .barsetter-android-app .clean-detail-section {
@@ -2959,13 +2880,14 @@ svg.is-filled {
 .barsetter-android-app .clean-detail-section h2 {
   color: #171512;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 700;
   margin: 0 0 14px;
 }
 
 .barsetter-android-app .clean-detail-section p {
   color: #5f584f;
   font-size: 16px;
+  font-weight: 500;
   line-height: 1.65;
 }
 

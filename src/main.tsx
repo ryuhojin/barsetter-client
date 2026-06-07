@@ -358,12 +358,10 @@ function CleanFeaturedProduct({ item, onOpen }: { item: ProductWithContext; onOp
   const price = cleanProductPrice(product);
   const metaParts = cleanFeaturedMetaParts(item);
   const summary = cleanFeaturedSummary(product);
-  const imageUrl = product.image?.url?.trim();
 
   return (
-    <article className={imageUrl ? "clean-featured-card has-image" : "clean-featured-card"}>
+    <article className="clean-featured-card">
       <button type="button" className="clean-featured-card-button" onClick={() => onOpen(item)}>
-        <CleanFeaturedImage product={product} />
         <div className="clean-featured-body">
           <div className="clean-featured-kicker">
             {product.is_featured ? <span>추천</span> : null}
@@ -381,29 +379,6 @@ function CleanFeaturedProduct({ item, onOpen }: { item: ProductWithContext; onOp
         </div>
       </button>
     </article>
-  );
-}
-
-function CleanFeaturedImage({ product }: { product: MenuProduct }) {
-  const imageUrl = product.image?.url?.trim();
-  const [failed, setFailed] = React.useState(false);
-
-  React.useEffect(() => {
-    setFailed(false);
-  }, [imageUrl]);
-
-  if (!imageUrl || failed) return null;
-
-  return (
-    <figure className="clean-featured-image">
-      <img
-        src={imageUrl}
-        alt={`${productTitle(product)} 이미지`}
-        loading="lazy"
-        decoding="async"
-        onError={() => setFailed(true)}
-      />
-    </figure>
   );
 }
 
