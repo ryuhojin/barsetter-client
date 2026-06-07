@@ -1,228 +1,17 @@
 import { createRoot } from "react-dom/client";
 import * as React from "react";
 import "./styles.css";
-
-type ThemeVariant = "cocktail" | "malt" | "cigar" | "wine" | "beer" | "multi";
-type MenuStyle = "luxury" | "clean";
-
-type MenuTheme = {
-  variant?: ThemeVariant;
-  accent?: string;
-  background?: string;
-  surface?: string;
-  text?: string;
-  muted?: string;
-};
-
-type MenuFeatures = {
-  showFeatured?: boolean;
-  showCombos?: boolean;
-  showDescriptions?: boolean;
-  showTastingNotes?: boolean;
-  showServingDetails?: boolean;
-};
-
-type MenuProduct = {
-  id: string;
-  name: string;
-  product_type: "alcohol" | "food" | "cigar" | "other";
-  alcohol_type?: string;
-  food_type?: string | null;
-  cigar_vitola?: string;
-  cigar_wrapper?: string;
-  cigar_binder?: string;
-  cigar_filler?: string;
-  cigar_body?: string | null;
-  base_price?: number | null;
-  origin?: string;
-  producer?: string;
-  abv?: number | null;
-  vintage?: string;
-  cask_info?: string;
-  volume_ml?: number | null;
-  unit?: string;
-  list_price_label?: string;
-  description?: string;
-  tasting_notes?: string;
-  details?: Record<string, string | number | null | undefined>;
-  image?: MenuProductImage | null;
-  is_featured?: number;
-  servings?: MenuServing[];
-};
-
-type MenuProductImage = {
-  url: string;
-  public_id?: string;
-  width?: number | null;
-  height?: number | null;
-  bytes?: number | null;
-  format?: string;
-  updated_at?: string | null;
-};
-
-type MenuServing = {
-  label: string;
-  serving_ml?: number | null;
-  price?: number | null;
-  sort_order?: number;
-};
-
-type MenuSubcategory = {
-  id: string;
-  name: string;
-  slug: string;
-  sort_order?: number;
-  products: MenuProduct[];
-};
-
-type MenuCategory = {
-  id: string;
-  name: string;
-  slug: string;
-  sort_order?: number;
-  subcategories: MenuSubcategory[];
-};
-
-type MenuCombo = {
-  id: string;
-  name: string;
-  combo_type: string;
-  description?: string;
-  price?: number | null;
-  discount_type?: string;
-  discount_value?: number | null;
-  items?: Array<{
-    product_id: string;
-    product_name: string;
-    quantity?: number;
-    pour_ml?: number | null;
-    note?: string;
-  }>;
-};
-
-type MenuData = {
-  schema_version: number;
-  version: number;
-  generated_at: string;
-  bar: {
-    id: string;
-    name: string;
-    slug: string;
-    bar_type: ThemeVariant;
-    description?: string;
-    website_url?: string;
-  };
-  presentation?: {
-    style?: MenuStyle;
-    theme?: MenuTheme;
-    features?: MenuFeatures;
-  };
-  categories: MenuCategory[];
-  combos: MenuCombo[];
-};
-
-type LoadState =
-  | { kind: "idle" }
-  | { kind: "loading"; slug: string }
-  | { kind: "ready"; menu: MenuData }
-  | { kind: "error"; slug: string; message: string };
-
-const defaultFeatures: Required<MenuFeatures> = {
-  showFeatured: true,
-  showCombos: true,
-  showDescriptions: true,
-  showTastingNotes: true,
-  showServingDetails: true
-};
-
-const themePresets: Record<ThemeVariant, Required<MenuTheme>> = {
-  cocktail: {
-    variant: "cocktail",
-    accent: "#e879f9",
-    background: "#130f18",
-    surface: "#211827",
-    text: "#fff7ed",
-    muted: "#c4b5fd"
-  },
-  malt: {
-    variant: "malt",
-    accent: "#d8a657",
-    background: "#17110d",
-    surface: "#241a12",
-    text: "#fff7ed",
-    muted: "#c9b49a"
-  },
-  cigar: {
-    variant: "cigar",
-    accent: "#c08457",
-    background: "#18120f",
-    surface: "#251a15",
-    text: "#fff7ed",
-    muted: "#cbb8a7"
-  },
-  wine: {
-    variant: "wine",
-    accent: "#e11d48",
-    background: "#160d13",
-    surface: "#24111b",
-    text: "#fff1f2",
-    muted: "#f0b6c2"
-  },
-  beer: {
-    variant: "beer",
-    accent: "#fbbf24",
-    background: "#15120b",
-    surface: "#242013",
-    text: "#fff7d6",
-    muted: "#d7c68a"
-  },
-  multi: {
-    variant: "multi",
-    accent: "#38bdf8",
-    background: "#101418",
-    surface: "#19212a",
-    text: "#f8fafc",
-    muted: "#a7b6c7"
-  }
-};
-
-function slugFromLocation() {
-  return decodeSlugToken(window.location.pathname.split("/").filter(Boolean)[0] ?? "");
-}
-
-function decodeSlugToken(value: string) {
-  const token = decodeURIComponent(value).trim();
-  if (!token) return "";
-
-  try {
-    const normalized = token.replace(/-/g, "+").replace(/_/g, "/");
-    const padded = normalized.padEnd(Math.ceil(normalized.length / 4) * 4, "=");
-    const binary = atob(padded);
-    const bytes = Uint8Array.from(binary, (char) => char.charCodeAt(0));
-    const decoded = new TextDecoder().decode(bytes).trim();
-    if (/^[a-z0-9가-힣-]+$/i.test(decoded)) return decoded;
-  } catch {
-    return "";
-  }
-
-  return "";
-}
-
-async function loadMenu(slug: string): Promise<MenuData> {
-  const response = await fetch(`/json/${encodeURIComponent(slug)}.json`, { cache: "no-store" });
-  if (!response.ok) {
-    throw new Error(response.status === 404 ? "메뉴판을 찾을 수 없습니다." : "메뉴 데이터를 불러오지 못했습니다.");
-  }
-  const raw = await response.text();
-  try {
-    return JSON.parse(raw) as MenuData;
-  } catch {
-    if (raw.trimStart().startsWith("<!doctype") || raw.trimStart().startsWith("<html")) {
-      throw new Error("메뉴 JSON 파일을 찾을 수 없습니다. 발행 후 클라이언트 배포가 완료되었는지 확인하세요.");
-    }
-    throw new Error("메뉴 JSON 형식이 올바르지 않습니다.");
-  }
-}
+import { canRequestMenuRefresh, isAndroidMenuApp, loadMenu, requestMenuRefresh, slugFromLocation } from "./menu-routing";
+import { defaultFeatures, resolveMenuStyle, resolveTheme, themeVars } from "./menu-theme";
+import type {
+  LoadState,
+  MenuCategory,
+  MenuCombo,
+  MenuData,
+  MenuProduct,
+  MenuServing,
+  MenuSubcategory
+} from "./menu-types";
 
 function useMenu(): LoadState {
   const slug = slugFromLocation();
@@ -256,6 +45,11 @@ function useMenu(): LoadState {
 function App() {
   const state = useMenu();
 
+  React.useEffect(() => {
+    document.documentElement.classList.toggle("barsetter-android-app", isAndroidMenuApp());
+    return () => document.documentElement.classList.remove("barsetter-android-app");
+  }, []);
+
   if (state.kind === "idle") {
     return <EmptyShell title="Bar Setter Menu" message="메뉴 주소가 필요합니다." />;
   }
@@ -276,8 +70,54 @@ type ProductWithContext = {
   subcategory: MenuSubcategory;
 };
 
+function useMenuRefreshLongPress(): React.HTMLAttributes<HTMLElement> {
+  const timerRef = React.useRef<number | null>(null);
+  const touchActiveRef = React.useRef(false);
+
+  const clearTimer = React.useCallback(() => {
+    if (timerRef.current !== null) {
+      window.clearTimeout(timerRef.current);
+      timerRef.current = null;
+    }
+  }, []);
+
+  const startTimer = React.useCallback(() => {
+    if (!canRequestMenuRefresh()) return;
+    clearTimer();
+    timerRef.current = window.setTimeout(() => {
+      timerRef.current = null;
+      requestMenuRefresh();
+    }, 650);
+  }, [clearTimer]);
+
+  React.useEffect(() => clearTimer, [clearTimer]);
+
+  return React.useMemo(
+    () => ({
+      onTouchStart: () => {
+        touchActiveRef.current = true;
+        startTimer();
+      },
+      onTouchEnd: clearTimer,
+      onTouchCancel: clearTimer,
+      onMouseDown: (event) => {
+        if (touchActiveRef.current || event.button !== 0) return;
+        startTimer();
+      },
+      onMouseUp: clearTimer,
+      onMouseLeave: clearTimer,
+      onContextMenu: (event) => {
+        if (!canRequestMenuRefresh()) return;
+        event.preventDefault();
+      }
+    }),
+    [clearTimer, startTimer]
+  );
+}
+
 function CleanMenuPage({ menu }: { menu: MenuData }) {
   const theme = resolveTheme(menu);
+  const refreshLongPress = useMenuRefreshLongPress();
   const allCleanProducts = React.useMemo(() => productsWithContext(menu), [menu]);
   const validProductIds = React.useMemo(() => new Set(allCleanProducts.map((item) => item.product.id)), [allCleanProducts]);
   const cleanProductsById = React.useMemo(() => new Map(allCleanProducts.map((item) => [item.product.id, item])), [allCleanProducts]);
@@ -288,7 +128,6 @@ function CleanMenuPage({ menu }: { menu: MenuData }) {
   const [selectedCleanProductId, setSelectedCleanProductId] = React.useState<string | null>(() => cleanProductIdFromHistory(validProductIds));
   const [selectedCleanComboId, setSelectedCleanComboId] = React.useState<string | null>(() => cleanComboIdFromHistory(validComboIds));
   const [cleanQuery, setCleanQuery] = React.useState("");
-  const [isCleanSearchOpen, setCleanSearchOpen] = React.useState(false);
   const selectedCategory = menu.categories.find((category) => category.id === screen);
   const selectedCleanItem = selectedCleanProductId ? cleanProductsById.get(selectedCleanProductId) ?? null : null;
   const selectedCleanCombo = selectedCleanComboId ? cleanCombosById.get(selectedCleanComboId) ?? null : null;
@@ -312,7 +151,6 @@ function CleanMenuPage({ menu }: { menu: MenuData }) {
 
     const handlePopState = () => {
       setScreenState(cleanScreenFromHistory(validScreens) ?? "intro");
-      setCleanSearchOpen(cleanSearchOpenFromHistory());
       setSelectedCleanProductId(cleanProductIdFromHistory(validProductIds));
       setSelectedCleanComboId(cleanComboIdFromHistory(validComboIds));
     };
@@ -327,31 +165,15 @@ function CleanMenuPage({ menu }: { menu: MenuData }) {
       setSelectedCleanProductId(null);
       setSelectedCleanComboId(null);
       setCleanQuery("");
-      setCleanSearchOpen(false);
       pushCleanHistoryState(normalized, false);
     },
     [validScreens]
   );
 
-  const openCleanSearch = React.useCallback(() => {
-    setCleanSearchOpen(true);
-    pushCleanHistoryState(screen, true);
-  }, [screen]);
-
-  const closeCleanSearch = React.useCallback(() => {
-    if (isCleanSearchOpen && cleanSearchOpenFromHistory()) {
-      window.history.back();
-      return;
-    }
-    setCleanSearchOpen(false);
-    replaceCleanHistoryState(screen, false);
-  }, [isCleanSearchOpen, screen]);
-
   const openCleanDetail = React.useCallback(
     (item: ProductWithContext) => {
       setSelectedCleanProductId(item.product.id);
       setSelectedCleanComboId(null);
-      setCleanSearchOpen(false);
       pushCleanHistoryState(screen, false, { productId: item.product.id });
     },
     [screen]
@@ -370,7 +192,6 @@ function CleanMenuPage({ menu }: { menu: MenuData }) {
     (combo: MenuCombo) => {
       setSelectedCleanComboId(combo.id);
       setSelectedCleanProductId(null);
-      setCleanSearchOpen(false);
       pushCleanHistoryState(screen, false, { comboId: combo.id });
     },
     [screen]
@@ -390,7 +211,7 @@ function CleanMenuPage({ menu }: { menu: MenuData }) {
       <main className="clean-menu-page" style={themeVars(theme)}>
         <section className="clean-intro">
           <div>
-            <h1>{menu.bar.name}</h1>
+            <h1 className="refreshable-bar-title" {...refreshLongPress}>{menu.bar.name}</h1>
             {menu.bar.description ? <p>{menu.bar.description}</p> : null}
           </div>
           <button type="button" onClick={() => setScreen("index")}>
@@ -409,7 +230,7 @@ function CleanMenuPage({ menu }: { menu: MenuData }) {
             소개
           </button>
           <div className="clean-category-title">
-            <h1>{menu.bar.name}</h1>
+            <h1 className="refreshable-bar-title" {...refreshLongPress}>{menu.bar.name}</h1>
             <p>카테고리를 선택하세요</p>
           </div>
           <nav className="clean-category-list" aria-label="메뉴 카테고리">
@@ -442,8 +263,8 @@ function CleanMenuPage({ menu }: { menu: MenuData }) {
           title="Event"
           count={filteredCleanCombos.length}
           onBack={() => setScreen("index")}
-          onSearch={openCleanSearch}
-          searchActive={Boolean(cleanQuery)}
+          searchValue={cleanQuery}
+          onSearchChange={setCleanQuery}
         />
         <div className="clean-menu-list">
           {filteredCleanCombos.length ? (
@@ -462,9 +283,6 @@ function CleanMenuPage({ menu }: { menu: MenuData }) {
             <CleanEmptyState title={cleanQuery ? "검색 결과가 없습니다." : "등록된 이벤트가 없습니다."} />
           )}
         </div>
-        {isCleanSearchOpen ? (
-          <CleanSearchDialog value={cleanQuery} onChange={setCleanQuery} onClose={closeCleanSearch} />
-        ) : null}
       </main>
     );
   }
@@ -485,8 +303,8 @@ function CleanMenuPage({ menu }: { menu: MenuData }) {
         title={selectedCategory?.name ?? "Menu"}
         count={filteredCleanProducts.length}
         onBack={() => setScreen("index")}
-        onSearch={openCleanSearch}
-        searchActive={Boolean(cleanQuery)}
+        searchValue={cleanQuery}
+        onSearchChange={setCleanQuery}
       />
       <div className="clean-menu-list">
         {filteredCleanProducts.length ? (
@@ -511,9 +329,6 @@ function CleanMenuPage({ menu }: { menu: MenuData }) {
           <CleanEmptyState title={cleanQuery ? "검색 결과가 없습니다." : "등록된 메뉴가 없습니다."} />
         )}
       </div>
-      {isCleanSearchOpen ? (
-        <CleanSearchDialog value={cleanQuery} onChange={setCleanQuery} onClose={closeCleanSearch} />
-      ) : null}
     </main>
   );
 }
@@ -521,6 +336,13 @@ function CleanMenuPage({ menu }: { menu: MenuData }) {
 function CleanProductDetailPage({ item, onBack, style }: { item: ProductWithContext; onBack: () => void; style: React.CSSProperties }) {
   const { product, category, subcategory } = item;
   const detailRows = productDetailRows(product);
+  const detailCardRef = React.useRef<HTMLElement | null>(null);
+
+  React.useLayoutEffect(() => {
+    if (!detailCardRef.current) return;
+    detailCardRef.current.scrollLeft = 0;
+    detailCardRef.current.scrollTop = 0;
+  }, [product.id]);
 
   return (
     <main className="clean-menu-page clean-detail-page" style={style}>
@@ -533,7 +355,7 @@ function CleanProductDetailPage({ item, onBack, style }: { item: ProductWithCont
         </p>
       </header>
 
-      <article className="clean-detail-card">
+      <article ref={detailCardRef} className="clean-detail-card">
         <div className="clean-detail-title">
           <h1>{productTitle(product)}</h1>
         </div>
@@ -579,6 +401,13 @@ function CleanProductDetailPage({ item, onBack, style }: { item: ProductWithCont
 
 function CleanComboDetailPage({ combo, onBack, style }: { combo: MenuCombo; onBack: () => void; style: React.CSSProperties }) {
   const items = combo.items ?? [];
+  const detailCardRef = React.useRef<HTMLElement | null>(null);
+
+  React.useLayoutEffect(() => {
+    if (!detailCardRef.current) return;
+    detailCardRef.current.scrollLeft = 0;
+    detailCardRef.current.scrollTop = 0;
+  }, [combo.id]);
 
   return (
     <main className="clean-menu-page clean-detail-page" style={style}>
@@ -589,7 +418,7 @@ function CleanComboDetailPage({ combo, onBack, style }: { combo: MenuCombo; onBa
         <p>Event</p>
       </header>
 
-      <article className="clean-detail-card">
+      <article ref={detailCardRef} className="clean-detail-card">
         <div className="clean-detail-title">
           <h1>{combo.name}</h1>
         </div>
@@ -687,30 +516,33 @@ function CleanListHeader({
   title,
   count,
   onBack,
-  onSearch,
-  searchActive
+  searchValue,
+  onSearchChange
 }: {
   title: string;
   count: number;
   onBack: () => void;
-  onSearch: () => void;
-  searchActive: boolean;
+  searchValue: string;
+  onSearchChange: (value: string) => void;
 }) {
   return (
     <header className="clean-list-header">
-      <div className="clean-list-tools">
-        <button type="button" className="clean-text-button" onClick={onBack}>
-          뒤로가기
-        </button>
-        <button type="button" className={searchActive ? "clean-search-button is-active" : "clean-search-button"} onClick={onSearch} aria-label="검색">
-          <Icon name="search" />
-          <span>검색</span>
-        </button>
-      </div>
+      <button type="button" className="clean-text-button clean-list-back" onClick={onBack}>
+        뒤로가기
+      </button>
       <div className="clean-list-title">
         <h1>{title}</h1>
-        <p className="clean-list-count">총 {count}개</p>
       </div>
+      <label className={searchValue ? "clean-search-button is-active" : "clean-search-button"}>
+        <Icon name="search" />
+        <input
+          value={searchValue}
+          onChange={(event) => onSearchChange(event.target.value)}
+          placeholder="검색어 입력"
+          type="search"
+        />
+      </label>
+      <p className="clean-list-count">총 {count}개</p>
     </header>
   );
 }
@@ -718,44 +550,6 @@ function CleanEmptyState({ title }: { title: string }) {
   return (
     <div className="clean-empty-state">
       <p>{title}</p>
-    </div>
-  );
-}
-
-function CleanSearchDialog({
-  value,
-  onChange,
-  onClose
-}: {
-  value: string;
-  onChange: (value: string) => void;
-  onClose: () => void;
-}) {
-  const inputRef = React.useRef<HTMLInputElement | null>(null);
-
-  React.useEffect(() => {
-    inputRef.current?.focus();
-  }, []);
-
-  return (
-    <div className="clean-search-backdrop" role="presentation" onClick={onClose}>
-      <section className="clean-search-dialog" role="dialog" aria-modal="true" aria-label="메뉴 검색" onClick={(event) => event.stopPropagation()}>
-        <div className="clean-search-dialog-header">
-          <h2>검색</h2>
-          <button type="button" onClick={onClose} aria-label="닫기">
-            ×
-          </button>
-        </div>
-        <label className="clean-search-field">
-          <Icon name="search" />
-          <input ref={inputRef} value={value} onChange={(event) => onChange(event.target.value)} placeholder="메뉴명을 입력하세요" type="search" />
-        </label>
-        {value ? (
-          <button type="button" className="clean-search-clear" onClick={() => onChange("")}>
-            검색어 지우기
-          </button>
-        ) : null}
-      </section>
     </div>
   );
 }
@@ -785,6 +579,7 @@ function MenuPage({ menu }: { menu: MenuData }) {
   const theme = resolveTheme(menu);
   const themeStyle = themeVars(theme);
   const features = { ...defaultFeatures, ...menu.presentation?.features };
+  const refreshLongPress = useMenuRefreshLongPress();
   const allProducts = React.useMemo(() => productsWithContext(menu), [menu]);
   const featuredProducts = React.useMemo(() => allProducts.filter((item) => item.product.is_featured), [allProducts]);
   const [view, setView] = React.useState<MenuView>("menu");
@@ -849,10 +644,10 @@ function MenuPage({ menu }: { menu: MenuData }) {
         <div className="bar-title-block">
           {menu.bar.website_url ? (
             <a className="bar-title-link" href={menu.bar.website_url} target="_blank" rel="noreferrer">
-              <h1>{menu.bar.name}</h1>
+              <h1 className="refreshable-bar-title" {...refreshLongPress}>{menu.bar.name}</h1>
             </a>
           ) : (
-            <h1>{menu.bar.name}</h1>
+            <h1 className="refreshable-bar-title" {...refreshLongPress}>{menu.bar.name}</h1>
           )}
           {features.showDescriptions && menu.bar.description ? <p>{menu.bar.description}</p> : null}
         </div>
@@ -1037,31 +832,11 @@ function MenuPage({ menu }: { menu: MenuData }) {
   );
 }
 
-function themeVars(theme: Required<MenuTheme>) {
-  return {
-    "--accent": theme.accent,
-    "--bg": theme.background,
-    "--surface": theme.surface,
-    "--text": theme.text,
-    "--muted": theme.muted
-  } as React.CSSProperties;
-}
-
-function resolveMenuStyle(menu: MenuData): MenuStyle {
-  return menu.presentation?.style === "clean" ? "clean" : "luxury";
-}
-
 function cleanScreenFromHistory(validScreens: ReadonlySet<string>) {
   const state = window.history.state;
   if (!state || typeof state !== "object") return null;
   const screen = (state as { barsetterCleanScreen?: unknown }).barsetterCleanScreen;
   return typeof screen === "string" && validScreens.has(screen) ? screen : null;
-}
-
-function cleanSearchOpenFromHistory() {
-  const state = window.history.state;
-  if (!state || typeof state !== "object") return false;
-  return (state as { barsetterCleanSearchOpen?: unknown }).barsetterCleanSearchOpen === true;
 }
 
 function cleanProductIdFromHistory(validProductIds: ReadonlySet<string>) {
@@ -1325,11 +1100,23 @@ function ProductDetail({
 
 function ProductDetailImage({ product, variant }: { product: MenuProduct; variant: "default" | "clean" }) {
   const imageUrl = product.image?.url?.trim();
-  if (!imageUrl) return null;
+  const [failed, setFailed] = React.useState(false);
+
+  React.useEffect(() => {
+    setFailed(false);
+  }, [imageUrl]);
+
+  if (!imageUrl || failed) return null;
 
   return (
     <figure className={variant === "clean" ? "clean-detail-image" : "detail-product-image"}>
-      <img src={imageUrl} alt={`${productTitle(product)} 이미지`} loading="lazy" decoding="async" />
+      <img
+        src={imageUrl}
+        alt={`${productTitle(product)} 이미지`}
+        loading="lazy"
+        decoding="async"
+        onError={() => setFailed(true)}
+      />
     </figure>
   );
 }
@@ -1519,55 +1306,6 @@ function EmptyShell({ title, message }: { title: string; message: string }) {
 
 function LoadingShell() {
   return <main className="loading-shell" aria-label="메뉴 로딩 중" />;
-}
-
-function resolveTheme(menu: MenuData): Required<MenuTheme> {
-  const variant = menu.presentation?.theme?.variant ?? menu.bar.bar_type ?? "multi";
-  const base = themePresets[variant];
-  const configured = menu.presentation?.theme ?? {};
-  const accent = normalizeHexColor(configured.accent) ?? base.accent;
-  const derived = configured.accent ? paletteFromAccent(accent) : {};
-  return { ...base, ...derived, ...configured, accent, variant };
-}
-
-function paletteFromAccent(accent: string): Partial<Required<MenuTheme>> {
-  return {
-    background: mixHex("#050506", accent, 0.025),
-    surface: mixHex("#141516", accent, 0.055),
-    text: "#fffaf2",
-    muted: mixHex("#e8e0d5", accent, 0.18)
-  };
-}
-
-function normalizeHexColor(value?: string) {
-  if (!value) return null;
-  const next = value.trim();
-  return /^#[0-9a-fA-F]{6}$/.test(next) ? next.toLowerCase() : null;
-}
-
-function mixHex(base: string, accent: string, amount: number) {
-  const left = hexToRgb(base);
-  const right = hexToRgb(accent);
-  if (!left || !right) return base;
-  return rgbToHex({
-    r: Math.round(left.r + (right.r - left.r) * amount),
-    g: Math.round(left.g + (right.g - left.g) * amount),
-    b: Math.round(left.b + (right.b - left.b) * amount)
-  });
-}
-
-function hexToRgb(value: string) {
-  const match = /^#([0-9a-fA-F]{2})([0-9a-fA-F]{2})([0-9a-fA-F]{2})$/.exec(value);
-  if (!match) return null;
-  return {
-    r: Number.parseInt(match[1], 16),
-    g: Number.parseInt(match[2], 16),
-    b: Number.parseInt(match[3], 16)
-  };
-}
-
-function rgbToHex({ r, g, b }: { r: number; g: number; b: number }) {
-  return `#${[r, g, b].map((value) => value.toString(16).padStart(2, "0")).join("")}`;
 }
 
 function productsWithContext(menu: MenuData) {
