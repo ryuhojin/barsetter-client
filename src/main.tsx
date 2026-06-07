@@ -136,6 +136,8 @@ function CleanMenuPage({ menu }: { menu: MenuData }) {
   const filteredCleanProducts = normalizedCleanQuery
     ? selectedProducts.filter((item) => productSearchText(item).includes(normalizedCleanQuery))
     : selectedProducts;
+  const cleanTopFeaturedProducts = filteredCleanProducts.filter((item) => item.product.is_top_featured);
+  const cleanRegularProducts = filteredCleanProducts.filter((item) => !item.product.is_top_featured);
   const filteredCleanCombos = normalizedCleanQuery
     ? menu.combos.filter((combo) => comboSearchText(combo).includes(normalizedCleanQuery))
     : menu.combos;
@@ -308,28 +310,100 @@ function CleanMenuPage({ menu }: { menu: MenuData }) {
       />
       <div className="clean-menu-list">
         {filteredCleanProducts.length ? (
-          filteredCleanProducts.map((item) => {
-            const price = cleanProductPrice(item.product);
-            return (
-              <article key={`${item.category.id}-${item.subcategory.id}-${item.product.id}`} className="clean-menu-row">
-                <button type="button" className="clean-menu-row-button" onClick={() => openCleanDetail(item)}>
-                  <div>
-                    <h2>{productTitle(item.product)}</h2>
-                    <p>{item.subcategory.name}</p>
-                  </div>
-                  <div className="clean-price">
-                    <span>{price.label}</span>
-                    <strong>{price.value}</strong>
-                  </div>
-                </button>
-              </article>
-            );
-          })
+          <>
+            {cleanTopFeaturedProducts.length ? (
+              <section className="clean-featured-section" aria-label="주요 메뉴">
+                <div className="clean-featured-list">
+                  {cleanTopFeaturedProducts.map((item) => (
+                    <CleanFeaturedProduct
+                      key={`${item.category.id}-${item.subcategory.id}-${item.product.id}`}
+                      item={item}
+                      onOpen={openCleanDetail}
+                    />
+                  ))}
+                </div>
+              </section>
+            ) : null}
+            {cleanRegularProducts.map((item) => {
+              const price = cleanProductPrice(item.product);
+              return (
+                <article key={`${item.category.id}-${item.subcategory.id}-${item.product.id}`} className="clean-menu-row">
+                  <button type="button" className="clean-menu-row-button" onClick={() => openCleanDetail(item)}>
+                    <div>
+                      <div className="clean-menu-row-title">
+                        <h2>{productTitle(item.product)}</h2>
+                        {item.product.is_featured ? <span>추천</span> : null}
+                      </div>
+                      <p>{item.subcategory.name}</p>
+                    </div>
+                    <div className="clean-price">
+                      <span>{price.label}</span>
+                      <strong>{price.value}</strong>
+                    </div>
+                  </button>
+                </article>
+              );
+            })}
+          </>
         ) : (
           <CleanEmptyState title={cleanQuery ? "검색 결과가 없습니다." : "등록된 메뉴가 없습니다."} />
         )}
       </div>
     </main>
+  );
+}
+
+function CleanFeaturedProduct({ item, onOpen }: { item: ProductWithContext; onOpen: (item: ProductWithContext) => void }) {
+  const { product, subcategory } = item;
+  const price = cleanProductPrice(product);
+  const metaParts = cleanFeaturedMetaParts(item);
+  const summary = cleanFeaturedSummary(product);
+  const imageUrl = product.image?.url?.trim();
+
+  return (
+    <article className={imageUrl ? "clean-featured-card has-image" : "clean-featured-card"}>
+      <button type="button" className="clean-featured-card-button" onClick={() => onOpen(item)}>
+        <CleanFeaturedImage product={product} />
+        <div className="clean-featured-body">
+          <div className="clean-featured-kicker">
+            {product.is_featured ? <span>추천</span> : null}
+            <small>{subcategory.name}</small>
+          </div>
+          <div className="clean-featured-title-row">
+            <h2>{productTitle(product)}</h2>
+            <div className="clean-price">
+              <span>{price.label}</span>
+              <strong>{price.value}</strong>
+            </div>
+          </div>
+          {metaParts.length ? <p className="clean-featured-meta">{metaParts.join(" · ")}</p> : null}
+          {summary ? <p className="clean-featured-summary">{summary}</p> : null}
+        </div>
+      </button>
+    </article>
+  );
+}
+
+function CleanFeaturedImage({ product }: { product: MenuProduct }) {
+  const imageUrl = product.image?.url?.trim();
+  const [failed, setFailed] = React.useState(false);
+
+  React.useEffect(() => {
+    setFailed(false);
+  }, [imageUrl]);
+
+  if (!imageUrl || failed) return null;
+
+  return (
+    <figure className="clean-featured-image">
+      <img
+        src={imageUrl}
+        alt={`${productTitle(product)} 이미지`}
+        loading="lazy"
+        decoding="async"
+        onError={() => setFailed(true)}
+      />
+    </figure>
   );
 }
 
@@ -1322,6 +1396,26 @@ function productsWithContext(menu: MenuData) {
 
 function categoryProductCount(category: MenuCategory) {
   return category.subcategories.reduce((sum, subcategory) => sum + subcategory.products.length, 0);
+}
+
+function cleanFeaturedMetaParts(item: ProductWithContext) {
+  const { product, subcategory } = item;
+  const parts: string[] = [];
+  pushUnique(parts, subcategory.name);
+  pushUnique(parts, product.producer);
+  for (const part of productListMetaParts(product)) pushUnique(parts, part);
+  if (product.abv) pushUnique(parts, `${product.abv}%`);
+  if (product.volume_ml) pushUnique(parts, `${product.volume_ml}${product.unit || "ml"}`);
+  return parts.slice(0, 5);
+}
+
+function cleanFeaturedSummary(product: MenuProduct) {
+  return (product.tasting_notes?.trim() || product.description?.trim() || "").replace(/\s+/g, " ");
+}
+
+function pushUnique(parts: string[], value: string | number | null | undefined) {
+  const normalized = typeof value === "number" ? String(value) : value?.trim();
+  if (normalized && !parts.includes(normalized)) parts.push(normalized);
 }
 
 function cleanProductPrice(product: MenuProduct) {

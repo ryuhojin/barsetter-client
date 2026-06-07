@@ -43,6 +43,7 @@ export type MenuProduct = {
   details?: Record<string, string | number | null | undefined>;
   image?: MenuProductImage | null;
   is_featured?: number;
+  is_top_featured?: number;
   servings?: MenuServing[];
 };
 

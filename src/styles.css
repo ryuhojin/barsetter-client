@@ -1634,6 +1634,173 @@ svg.is-filled {
   display: none;
 }
 
+.clean-featured-section {
+  border-bottom: 1px solid #dfd8ce;
+  display: flex;
+  flex-direction: column;
+  grid-column: 1 / -1;
+  padding: 0 0 22px;
+}
+
+.clean-featured-heading {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.clean-featured-heading span {
+  color: #171512;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.clean-featured-heading small {
+  color: #8c8378;
+  font-size: 12px;
+}
+
+.clean-featured-list {
+  display: grid;
+  gap: 12px;
+}
+
+.clean-featured-card {
+  min-width: 0;
+}
+
+.clean-featured-card-button {
+  align-items: stretch;
+  background: #fffdf9;
+  border: 1px solid #e6ded2;
+  border-radius: 8px;
+  color: inherit;
+  cursor: pointer;
+  display: grid;
+  gap: 14px;
+  grid-template-columns: minmax(0, 1fr);
+  height: 142px;
+  overflow: hidden;
+  padding: 14px;
+  text-align: left;
+  width: 100%;
+}
+
+.clean-featured-card.has-image .clean-featured-card-button {
+  grid-template-columns: 86px minmax(0, 1fr);
+}
+
+.clean-featured-card-button:hover h2,
+.clean-featured-card-button:focus-visible h2 {
+  color: color-mix(in srgb, var(--accent) 72%, #171512);
+}
+
+.clean-featured-card-button:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--accent) 46%, transparent);
+  outline-offset: 4px;
+}
+
+.clean-featured-image {
+  aspect-ratio: 1 / 1;
+  background: #f4eee5;
+  border: 1px solid #e2dace;
+  border-radius: 8px;
+  margin: 0;
+  min-width: 0;
+  overflow: hidden;
+  width: 86px;
+}
+
+.clean-featured-image img {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.clean-featured-body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: center;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.clean-featured-kicker {
+  align-items: center;
+  display: flex;
+  gap: 0;
+  min-width: 0;
+}
+
+.clean-featured-kicker > * + *,
+.clean-menu-row-title > * + * {
+  margin-left: 8px;
+}
+
+.clean-featured-kicker span,
+.clean-menu-row-title span {
+  background: #fff7e8;
+  border: 1px solid #e7c98c;
+  border-radius: 999px;
+  color: color-mix(in srgb, var(--accent) 72%, #171512);
+  flex: 0 0 auto;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1;
+  padding: 4px 7px;
+  white-space: nowrap;
+}
+
+.clean-featured-kicker small {
+  color: #8c8378;
+  font-size: 12px;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.clean-featured-title-row {
+  align-items: flex-start;
+  display: grid;
+  gap: 14px;
+  grid-template-columns: minmax(0, 1fr) auto;
+}
+
+.clean-featured-title-row h2 {
+  color: #171512;
+  font-family: inherit;
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 1.18;
+  margin: 0;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.clean-featured-meta,
+.clean-featured-summary {
+  color: #7b7368;
+  font-size: 12px;
+  line-height: 1.45;
+  margin: 0;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.clean-featured-summary {
+  color: #5f584f;
+  display: -webkit-box;
+  white-space: normal;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
 .clean-menu-row {
   align-items: center;
   border-bottom: 1px solid #ebe5dc;
@@ -1676,6 +1843,13 @@ svg.is-filled {
   outline-offset: 5px;
 }
 
+.clean-menu-row-title {
+  align-items: center;
+  display: flex;
+  gap: 0;
+  min-width: 0;
+}
+
 .clean-empty-state {
   align-items: center;
   color: #8c8378;
@@ -1688,10 +1862,12 @@ svg.is-filled {
 
 .clean-menu-row h2 {
   color: #171512;
+  flex: 0 1 auto;
   font-family: inherit;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.2;
+  min-width: 0;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -1929,6 +2105,10 @@ svg.is-filled {
 }
 
 @media (min-width: 700px) {
+  .clean-featured-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .clean-menu-list {
     display: grid;
     gap: 0 42px;
@@ -2304,6 +2484,182 @@ svg.is-filled {
   margin-top: 26px;
 }
 
+.barsetter-android-app .clean-featured-section {
+  border-bottom: 1px solid #dfd8ce;
+  display: block;
+  -webkit-flex: 0 0 100%;
+  flex: 0 0 100%;
+  padding: 0 0 22px;
+  width: 100%;
+}
+
+.barsetter-android-app .clean-featured-heading {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.barsetter-android-app .clean-featured-heading span {
+  color: #171512;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.barsetter-android-app .clean-featured-heading small {
+  color: #8c8378;
+  font-size: 13px;
+}
+
+.barsetter-android-app .clean-featured-list {
+  display: block;
+}
+
+.barsetter-android-app .clean-featured-card {
+  display: block;
+  margin-bottom: 12px;
+  min-width: 0;
+}
+
+.barsetter-android-app .clean-featured-card:last-child {
+  margin-bottom: 0;
+}
+
+.barsetter-android-app .clean-featured-card-button {
+  background: #fffdf9;
+  border: 1px solid #e6ded2;
+  border-radius: 8px;
+  color: inherit;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: stretch;
+  align-items: stretch;
+  gap: 0;
+  height: 150px;
+  margin: 0;
+  overflow: hidden;
+  padding: 14px;
+  text-align: left;
+  width: 100%;
+}
+
+.barsetter-android-app .clean-featured-image {
+  background: #f4eee5;
+  border: 1px solid #e2dace;
+  border-radius: 8px;
+  -webkit-flex: 0 0 94px;
+  flex: 0 0 94px;
+  height: 94px;
+  margin: 0 14px 0 0;
+  overflow: hidden;
+  width: 94px;
+}
+
+.barsetter-android-app .clean-featured-image img {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.barsetter-android-app .clean-featured-body {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex: 1 1 auto;
+  flex: 1 1 auto;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  gap: 8px;
+  -webkit-justify-content: center;
+  justify-content: center;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.barsetter-android-app .clean-featured-kicker,
+.barsetter-android-app .clean-featured-title-row {
+  display: -webkit-flex;
+  display: flex;
+}
+
+.barsetter-android-app .clean-featured-kicker {
+  -webkit-align-items: center;
+  align-items: center;
+  gap: 0;
+}
+
+.barsetter-android-app .clean-featured-kicker > * + *,
+.barsetter-android-app .clean-menu-row-title > * + * {
+  margin-left: 8px;
+}
+
+.barsetter-android-app .clean-featured-kicker span,
+.barsetter-android-app .clean-menu-row-title span {
+  background: #fff7e8;
+  border: 1px solid #e7c98c;
+  border-radius: 999px;
+  color: #8b5e2d;
+  -webkit-flex: 0 0 auto;
+  flex: 0 0 auto;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1;
+  padding: 4px 7px;
+  white-space: nowrap;
+}
+
+.barsetter-android-app .clean-featured-kicker small {
+  color: #8c8378;
+  font-size: 13px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.barsetter-android-app .clean-featured-title-row {
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.barsetter-android-app .clean-featured-title-row h2 {
+  color: #171512;
+  -webkit-flex: 1 1 auto;
+  flex: 1 1 auto;
+  font-size: 21px;
+  font-weight: 500;
+  line-height: 1.18;
+  margin: 0 14px 0 0;
+  min-width: 0;
+  word-break: break-word;
+}
+
+.barsetter-android-app .clean-featured-meta,
+.barsetter-android-app .clean-featured-summary {
+  color: #7b7368;
+  font-size: 13px;
+  line-height: 1.45;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.barsetter-android-app .clean-featured-summary {
+  color: #5f584f;
+  display: -webkit-box;
+  white-space: normal;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
 .barsetter-android-app .clean-menu-row {
   border-bottom: 1px solid #ebe5dc;
   display: block;
@@ -2337,11 +2693,23 @@ svg.is-filled {
   min-width: 0;
 }
 
+.barsetter-android-app .clean-menu-row-title {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  gap: 0;
+  min-width: 0;
+}
+
 .barsetter-android-app .clean-menu-row h2 {
   color: #171512;
+  -webkit-flex: 0 1 auto;
+  flex: 0 1 auto;
   font-size: 20px;
   font-weight: 500;
   line-height: 1.2;
+  min-width: 0;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -2562,6 +2930,28 @@ svg.is-filled {
 }
 
 @media (min-width: 700px) {
+  .barsetter-android-app .clean-featured-list {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .barsetter-android-app .clean-featured-card {
+    -webkit-flex: 0 0 calc(50% - 6px);
+    flex: 0 0 calc(50% - 6px);
+    margin-bottom: 0;
+    max-width: calc(50% - 6px);
+    width: calc(50% - 6px);
+  }
+
+  .barsetter-android-app .clean-featured-card:nth-child(2n+1) {
+    margin-right: 12px;
+  }
+
   .barsetter-android-app .clean-menu-list {
     display: -webkit-flex;
     display: flex;
