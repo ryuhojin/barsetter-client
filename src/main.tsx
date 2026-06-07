@@ -333,6 +333,7 @@ function CleanMenuPage({ menu }: { menu: MenuData }) {
                       <div className="clean-menu-row-title">
                         <h2>{productTitle(item.product)}</h2>
                         {item.product.is_featured ? <span>추천</span> : null}
+                        {item.product.is_beginner ? <span className="beginner-badge">입문</span> : null}
                       </div>
                       <p>{item.subcategory.name}</p>
                     </div>
@@ -354,28 +355,33 @@ function CleanMenuPage({ menu }: { menu: MenuData }) {
 }
 
 function CleanFeaturedProduct({ item, onOpen }: { item: ProductWithContext; onOpen: (item: ProductWithContext) => void }) {
-  const { product, subcategory } = item;
+  const { product } = item;
   const price = cleanProductPrice(product);
   const metaParts = cleanFeaturedMetaParts(item);
   const summary = cleanFeaturedSummary(product);
+  const hasBadges = Boolean(product.is_featured || product.is_beginner);
 
   return (
     <article className="clean-featured-card">
       <button type="button" className="clean-featured-card-button" onClick={() => onOpen(item)}>
         <div className="clean-featured-body">
-          <div className="clean-featured-kicker">
-            {product.is_featured ? <span>추천</span> : null}
-            <small>{subcategory.name}</small>
-          </div>
+          {hasBadges ? (
+            <div className="clean-featured-kicker">
+              {product.is_featured ? <span>추천</span> : null}
+              {product.is_beginner ? <span className="beginner-badge">입문</span> : null}
+            </div>
+          ) : null}
           <div className="clean-featured-title-row">
-            <h2>{productTitle(product)}</h2>
+            <div className="clean-featured-copy">
+              <h2>{productTitle(product)}</h2>
+              {metaParts.length ? <p className="clean-featured-meta">{metaParts.join(" · ")}</p> : null}
+              {summary ? <p className="clean-featured-summary">{summary}</p> : null}
+            </div>
             <div className="clean-price">
               <span>{price.label}</span>
               <strong>{price.value}</strong>
             </div>
           </div>
-          {metaParts.length ? <p className="clean-featured-meta">{metaParts.join(" · ")}</p> : null}
-          {summary ? <p className="clean-featured-summary">{summary}</p> : null}
         </div>
       </button>
     </article>
@@ -407,6 +413,12 @@ function CleanProductDetailPage({ item, onBack, style }: { item: ProductWithCont
       <article ref={detailCardRef} className="clean-detail-card">
         <div className="clean-detail-title">
           <h1>{productTitle(product)}</h1>
+          {product.is_featured || product.is_beginner ? (
+            <div className="clean-detail-badges">
+              {product.is_featured ? <span>추천</span> : null}
+              {product.is_beginner ? <span className="beginner-badge">입문</span> : null}
+            </div>
+          ) : null}
         </div>
 
         <ProductDetailImage product={product} variant="clean" />
@@ -1037,6 +1049,7 @@ function ProductCard({
         <div className="product-info">
           <div className="product-title-line">
             <h3>{productTitle(product)}</h3>
+            {product.is_beginner ? <span className="beginner-badge">입문</span> : null}
             {product.product_type === "alcohol" && product.abv ? <span>{product.abv}%</span> : null}
           </div>
           <ProductMeta product={product} />
@@ -1106,6 +1119,7 @@ function ProductDetail({
           <span>{category.name}</span>
           <span>{subcategory.name}</span>
           {product.is_featured ? <strong>추천</strong> : null}
+          {product.is_beginner ? <strong className="beginner-badge">입문</strong> : null}
         </div>
         <h2>{productTitle(product)}</h2>
 

@@ -44,6 +44,7 @@ export type MenuProduct = {
   image?: MenuProductImage | null;
   is_featured?: number;
   is_top_featured?: number;
+  is_beginner?: number;
   servings?: MenuServing[];
 };
 

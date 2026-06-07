@@ -551,6 +551,7 @@ svg.is-filled {
 }
 
 .product-title-line span {
+  background: color-mix(in srgb, var(--accent) 10%, transparent);
   border: 1px solid color-mix(in srgb, var(--accent) 42%, transparent);
   border-radius: 999px;
   color: color-mix(in srgb, var(--accent) 70%, var(--text));
@@ -559,6 +560,13 @@ svg.is-filled {
   font-weight: 700;
   line-height: 1;
   padding: 3px 6px;
+}
+
+.product-title-line span.beginner-badge,
+.detail-path strong.beginner-badge {
+  background: color-mix(in srgb, #2f9a53 16%, transparent);
+  border-color: color-mix(in srgb, #2f9a53 46%, transparent);
+  color: color-mix(in srgb, #45b66a 72%, var(--text));
 }
 
 .meta,
@@ -1679,7 +1687,7 @@ svg.is-filled {
   display: grid;
   gap: 14px;
   grid-template-columns: minmax(0, 1fr);
-  height: 142px;
+  height: 132px;
   overflow: hidden;
   padding: 14px;
   text-align: left;
@@ -1718,7 +1726,8 @@ svg.is-filled {
 }
 
 .clean-featured-kicker span,
-.clean-menu-row-title span {
+.clean-menu-row-title span,
+.clean-detail-badges span {
   background: #fff7e8;
   border: 1px solid #e7c98c;
   border-radius: 999px;
@@ -1732,13 +1741,12 @@ svg.is-filled {
   white-space: nowrap;
 }
 
-.clean-featured-kicker small {
-  color: #8c8378;
-  font-size: 12px;
-  min-width: 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+.clean-featured-kicker span.beginner-badge,
+.clean-menu-row-title span.beginner-badge,
+.clean-detail-badges span.beginner-badge {
+  background: #eef8ee;
+  border-color: #95ce9c;
+  color: #236b37;
 }
 
 .clean-featured-title-row {
@@ -1746,6 +1754,10 @@ svg.is-filled {
   display: grid;
   gap: 14px;
   grid-template-columns: minmax(0, 1fr) auto;
+}
+
+.clean-featured-copy {
+  min-width: 0;
 }
 
 .clean-featured-title-row h2 {
@@ -1849,6 +1861,14 @@ svg.is-filled {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.clean-detail-badges {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
 }
 
 .clean-menu-row p {
@@ -2275,7 +2295,11 @@ svg.is-filled {
 }
 
 .barsetter-android-app .clean-category-title {
+  -webkit-align-self: flex-start;
+  align-self: flex-start;
   margin-top: 48px;
+  text-align: left;
+  width: 100%;
 }
 
 .barsetter-android-app .clean-category-list {
@@ -2519,12 +2543,9 @@ svg.is-filled {
   border: 1px solid #e6ded2;
   border-radius: 8px;
   color: inherit;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-align-items: stretch;
-  align-items: stretch;
+  display: block;
   gap: 0;
-  height: 142px;
+  height: 132px;
   margin: 0;
   overflow: hidden;
   padding: 14px;
@@ -2533,15 +2554,7 @@ svg.is-filled {
 }
 
 .barsetter-android-app .clean-featured-body {
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex: 1 1 auto;
-  flex: 1 1 auto;
-  -webkit-flex-direction: column;
-  flex-direction: column;
-  gap: 8px;
-  -webkit-justify-content: center;
-  justify-content: center;
+  display: block;
   min-width: 0;
   overflow: hidden;
 }
@@ -2564,7 +2577,8 @@ svg.is-filled {
 }
 
 .barsetter-android-app .clean-featured-kicker span,
-.barsetter-android-app .clean-menu-row-title span {
+.barsetter-android-app .clean-menu-row-title span,
+.barsetter-android-app .clean-detail-badges span {
   background: #fff7e8;
   border: 1px solid #e7c98c;
   border-radius: 999px;
@@ -2579,12 +2593,12 @@ svg.is-filled {
   white-space: nowrap;
 }
 
-.barsetter-android-app .clean-featured-kicker small {
-  color: #8c8378;
-  font-size: 12px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+.barsetter-android-app .clean-featured-kicker span.beginner-badge,
+.barsetter-android-app .clean-menu-row-title span.beginner-badge,
+.barsetter-android-app .clean-detail-badges span.beginner-badge {
+  background: #eef8ee;
+  border-color: #95ce9c;
+  color: #236b37;
 }
 
 .barsetter-android-app .clean-featured-title-row {
@@ -2594,6 +2608,14 @@ svg.is-filled {
   justify-content: space-between;
   gap: 14px;
   margin-top: 8px;
+}
+
+.barsetter-android-app .clean-featured-copy {
+  -webkit-flex: 1 1 auto;
+  flex: 1 1 auto;
+  margin-right: 14px;
+  min-width: 0;
+  overflow: hidden;
 }
 
 .barsetter-android-app .clean-featured-title-row h2 {
@@ -2611,21 +2633,21 @@ svg.is-filled {
 .barsetter-android-app .clean-featured-meta,
 .barsetter-android-app .clean-featured-summary {
   color: #7b7368;
+  display: block;
   font-size: 12px;
-  line-height: 1.45;
-  margin: 7px 0 0;
+  line-height: 1.35;
+  margin: 6px 0 0;
+  max-width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  width: 100%;
 }
 
 .barsetter-android-app .clean-featured-summary {
   color: #5f584f;
-  display: -webkit-box;
-  margin-top: 5px;
-  white-space: normal;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
+  margin-top: 4px;
+  white-space: nowrap;
 }
 
 .barsetter-android-app .clean-menu-row {
@@ -2902,65 +2924,65 @@ svg.is-filled {
   padding: 12px 0;
 }
 
-@media (min-width: 700px) {
+@media (min-width: 700px), (orientation: landscape) and (min-width: 600px) {
   .barsetter-android-app .clean-featured-list {
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: row;
-    flex-direction: row;
-    -webkit-flex-wrap: wrap;
-    flex-wrap: wrap;
-    gap: 12px;
+    display: block;
   }
 
   .barsetter-android-app .clean-featured-card {
-    -webkit-flex: 0 0 calc(50% - 6px);
-    flex: 0 0 calc(50% - 6px);
-    margin-bottom: 0;
-    max-width: calc(50% - 6px);
-    width: calc(50% - 6px);
+    float: left;
+    margin-bottom: 12px;
+    margin-right: 2%;
+    max-width: none;
+    width: 49%;
   }
 
-  .barsetter-android-app .clean-featured-card:nth-child(2n+1) {
-    margin-right: 12px;
+  .barsetter-android-app .clean-featured-card:nth-child(2n) {
+    margin-right: 0;
   }
 
   .barsetter-android-app .clean-featured-card:only-child {
-    -webkit-flex-basis: 100%;
-    flex-basis: 100%;
+    float: none;
     margin-right: 0;
     max-width: 100%;
     width: 100%;
   }
 
+  .barsetter-android-app .clean-featured-list::after {
+    clear: both;
+    content: "";
+    display: block;
+  }
+
   .barsetter-android-app .clean-menu-list {
-    display: -webkit-flex;
-    display: flex;
-    -webkit-align-content: flex-start;
-    align-content: flex-start;
-    -webkit-flex-direction: row;
-    flex-direction: row;
-    -webkit-flex-wrap: wrap;
-    flex-wrap: wrap;
+    display: block;
   }
 
   .barsetter-android-app .clean-menu-row {
-    -webkit-flex: 0 0 calc(50% - 21px);
-    flex: 0 0 calc(50% - 21px);
-    max-width: calc(50% - 21px);
-    width: calc(50% - 21px);
+    float: left;
+    max-width: none;
+    width: 48%;
   }
 
-  .barsetter-android-app .clean-menu-row:nth-child(2n+1) {
-    margin-right: 42px;
+  .barsetter-android-app .clean-menu-row:nth-of-type(2n+1) {
+    clear: left;
+    margin-right: 4%;
   }
 
-  .barsetter-android-app .clean-featured-section ~ .clean-menu-row:nth-child(2n+1) {
+  .barsetter-android-app .clean-menu-row:nth-of-type(2n) {
     margin-right: 0;
   }
 
-  .barsetter-android-app .clean-featured-section ~ .clean-menu-row:nth-child(2n) {
-    margin-right: 42px;
+  .barsetter-android-app .clean-menu-row:only-of-type {
+    float: none;
+    margin-right: 0;
+    width: 100%;
+  }
+
+  .barsetter-android-app .clean-menu-list::after {
+    clear: both;
+    content: "";
+    display: block;
   }
 }
 
