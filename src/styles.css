@@ -1437,18 +1437,22 @@ svg.is-filled {
   margin: 0;
 }
 
-.clean-list-count {
+.clean-list-header .clean-list-count {
+  align-items: center;
+  align-self: center;
   color: #7b7368;
+  display: inline-flex;
   font-size: 14px;
   grid-area: count;
-  line-height: 1.4;
+  height: 24px;
+  line-height: 1;
   margin: 0;
-  align-self: end;
   text-align: right;
 }
 
 .clean-search-button {
   align-items: center;
+  align-self: center;
   background: #fffdf9;
   border: 0;
   border-radius: 6px;
@@ -1969,6 +1973,21 @@ svg.is-filled {
     white-space: nowrap;
   }
 
+  .clean-search-button {
+    height: 30px;
+    min-width: 0;
+    width: min(176px, 54vw);
+  }
+
+  .clean-search-button input {
+    font-size: 16px;
+    line-height: 1;
+  }
+
+  .clean-list-header .clean-list-count {
+    height: 30px;
+  }
+
   .clean-detail-title h1 {
     font-size: 27px;
   }
@@ -2182,10 +2201,15 @@ svg.is-filled {
   text-align: right;
 }
 
-.barsetter-android-app .clean-list-count {
+.barsetter-android-app .clean-list-header .clean-list-count {
   color: #7b7368;
+  display: -webkit-inline-flex;
+  display: inline-flex;
+  -webkit-align-items: center;
+  align-items: center;
   font-size: 16px;
-  line-height: 30px;
+  height: 30px;
+  line-height: 1;
   margin: 0;
   position: absolute;
   right: 0;
@@ -2241,7 +2265,8 @@ svg.is-filled {
   flex: 1 1 auto;
   font-size: 15px;
   font-weight: 500;
-  line-height: 1;
+  height: 100%;
+  line-height: 30px;
   min-width: 0;
   outline: none;
   overflow: hidden;
