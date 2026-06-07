@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "version": 18,
-  "generated_at": "2026-06-07T14:35:18.258Z",
+  "version": 19,
+  "generated_at": "2026-06-07T17:08:01.891Z",
   "bar": {
     "id": "28754067-952c-4f89-9618-62d358bb7566",
     "name": "BARO",
@@ -71,6 +71,7 @@
               "details": {},
               "is_featured": 1,
               "is_top_featured": 1,
+              "is_beginner": 1,
               "servings": [
                 {
                   "label": "half",
@@ -118,6 +119,7 @@
               "details": {},
               "is_featured": 0,
               "is_top_featured": 1,
+              "is_beginner": 0,
               "servings": [
                 {
                   "label": "half",
@@ -165,6 +167,7 @@
               "details": {},
               "is_featured": 0,
               "is_top_featured": 0,
+              "is_beginner": 0,
               "servings": [
                 {
                   "label": "half",
@@ -212,6 +215,7 @@
               "details": {},
               "is_featured": 0,
               "is_top_featured": 0,
+              "is_beginner": 0,
               "servings": [
                 {
                   "label": "half",
@@ -259,6 +263,7 @@
               "details": {},
               "is_featured": 0,
               "is_top_featured": 0,
+              "is_beginner": 0,
               "servings": [
                 {
                   "label": "half",
@@ -306,6 +311,7 @@
               "details": {},
               "is_featured": 0,
               "is_top_featured": 0,
+              "is_beginner": 0,
               "servings": [
                 {
                   "label": "half",
@@ -353,6 +359,7 @@
               "details": {},
               "is_featured": 0,
               "is_top_featured": 0,
+              "is_beginner": 0,
               "servings": [
                 {
                   "label": "half",
@@ -400,6 +407,7 @@
               "details": {},
               "is_featured": 0,
               "is_top_featured": 0,
+              "is_beginner": 0,
               "servings": [
                 {
                   "label": "half",
@@ -447,6 +455,7 @@
               "details": {},
               "is_featured": 0,
               "is_top_featured": 0,
+              "is_beginner": 0,
               "servings": [
                 {
                   "label": "half",
@@ -494,6 +503,7 @@
               "details": {},
               "is_featured": 0,
               "is_top_featured": 0,
+              "is_beginner": 0,
               "servings": [
                 {
                   "label": "half",
@@ -541,6 +551,7 @@
               "details": {},
               "is_featured": 0,
               "is_top_featured": 0,
+              "is_beginner": 0,
               "servings": [
                 {
                   "label": "half",
@@ -588,6 +599,7 @@
               "details": {},
               "is_featured": 0,
               "is_top_featured": 0,
+              "is_beginner": 0,
               "servings": [
                 {
                   "label": "half",
@@ -635,6 +647,7 @@
               "details": {},
               "is_featured": 0,
               "is_top_featured": 0,
+              "is_beginner": 0,
               "servings": [
                 {
                   "label": "half",
@@ -682,6 +695,7 @@
               "details": {},
               "is_featured": 0,
               "is_top_featured": 0,
+              "is_beginner": 0,
               "servings": [
                 {
                   "label": "half",
@@ -729,6 +743,7 @@
               "details": {},
               "is_featured": 0,
               "is_top_featured": 0,
+              "is_beginner": 0,
               "servings": [
                 {
                   "label": "half",
@@ -776,6 +791,7 @@
               "details": {},
               "is_featured": 0,
               "is_top_featured": 0,
+              "is_beginner": 0,
               "servings": [
                 {
                   "label": "half",
@@ -838,6 +854,7 @@
               "details": {},
               "is_featured": 0,
               "is_top_featured": 0,
+              "is_beginner": 0,
               "servings": [
                 {
                   "label": "half",
@@ -885,6 +902,7 @@
               "details": {},
               "is_featured": 0,
               "is_top_featured": 0,
+              "is_beginner": 0,
               "servings": [
                 {
                   "label": "half",
@@ -932,6 +950,7 @@
               "details": {},
               "is_featured": 0,
               "is_top_featured": 0,
+              "is_beginner": 0,
               "servings": [
                 {
                   "label": "half",
@@ -979,6 +998,7 @@
               "details": {},
               "is_featured": 0,
               "is_top_featured": 0,
+              "is_beginner": 0,
               "servings": [
                 {
                   "label": "half",
@@ -1026,6 +1046,7 @@
               "details": {},
               "is_featured": 0,
               "is_top_featured": 0,
+              "is_beginner": 0,
               "servings": [
                 {
                   "label": "half",
@@ -1073,6 +1094,7 @@
               "details": {},
               "is_featured": 0,
               "is_top_featured": 0,
+              "is_beginner": 0,
               "servings": [
                 {
                   "label": "half",
@@ -1120,6 +1142,7 @@
               "details": {},
               "is_featured": 0,
               "is_top_featured": 0,
+              "is_beginner": 0,
               "servings": [
                 {
                   "label": "half",
@@ -1167,6 +1190,7 @@
               "details": {},
               "is_featured": 0,
               "is_top_featured": 0,
+              "is_beginner": 0,
               "servings": [
                 {
                   "label": "half",
@@ -1214,6 +1238,7 @@
               "details": {},
               "is_featured": 0,
               "is_top_featured": 0,
+              "is_beginner": 0,
               "servings": [
                 {
                   "label": "half",
@@ -1261,6 +1286,7 @@
               "details": {},
               "is_featured": 0,
               "is_top_featured": 0,
+              "is_beginner": 0,
               "servings": [
                 {
                   "label": "half",
@@ -1308,6 +1334,7 @@
               "details": {},
               "is_featured": 0,
               "is_top_featured": 0,
+              "is_beginner": 0,
               "servings": [
                 {
                   "label": "half",
@@ -1355,6 +1382,7 @@
               "details": {},
               "is_featured": 0,
               "is_top_featured": 0,
+              "is_beginner": 0,
               "servings": [
                 {
                   "label": "half",
@@ -1402,6 +1430,7 @@
               "details": {},
               "is_featured": 0,
               "is_top_featured": 0,
+              "is_beginner": 0,
               "servings": [
                 {
                   "label": "half",
@@ -1449,6 +1478,7 @@
               "details": {},
               "is_featured": 0,
               "is_top_featured": 0,
+              "is_beginner": 0,
               "servings": [
                 {
                   "label": "half",
@@ -1496,6 +1526,7 @@
               "details": {},
               "is_featured": 0,
               "is_top_featured": 0,
+              "is_beginner": 0,
               "servings": [
                 {
                   "label": "half",
@@ -1543,6 +1574,7 @@
               "details": {},
               "is_featured": 0,
               "is_top_featured": 0,
+              "is_beginner": 0,
               "servings": [
                 {
                   "label": "half",
@@ -1590,6 +1622,7 @@
               "details": {},
               "is_featured": 0,
               "is_top_featured": 0,
+              "is_beginner": 0,
               "servings": [
                 {
                   "label": "half",
@@ -1637,6 +1670,7 @@
               "details": {},
               "is_featured": 0,
               "is_top_featured": 0,
+              "is_beginner": 0,
               "servings": [
                 {
                   "label": "half",
@@ -1684,6 +1718,7 @@
               "details": {},
               "is_featured": 0,
               "is_top_featured": 0,
+              "is_beginner": 0,
               "servings": [
                 {
                   "label": "half",
@@ -1731,6 +1766,7 @@
               "details": {},
               "is_featured": 0,
               "is_top_featured": 0,
+              "is_beginner": 0,
               "servings": [
                 {
                   "label": "half",
@@ -1778,6 +1814,7 @@
               "details": {},
               "is_featured": 0,
               "is_top_featured": 0,
+              "is_beginner": 0,
               "servings": [
                 {
                   "label": "half",
@@ -1825,6 +1862,7 @@
               "details": {},
               "is_featured": 0,
               "is_top_featured": 0,
+              "is_beginner": 0,
               "servings": [
                 {
                   "label": "half",
@@ -1872,6 +1910,7 @@
               "details": {},
               "is_featured": 0,
               "is_top_featured": 0,
+              "is_beginner": 0,
               "servings": [
                 {
                   "label": "half",
@@ -1919,6 +1958,7 @@
               "details": {},
               "is_featured": 0,
               "is_top_featured": 0,
+              "is_beginner": 0,
               "servings": [
                 {
                   "label": "half",
@@ -1974,6 +2014,7 @@
               "details": {},
               "is_featured": 0,
               "is_top_featured": 0,
+              "is_beginner": 0,
               "servings": [
                 {
                   "label": "half",
@@ -2021,6 +2062,7 @@
               "details": {},
               "is_featured": 0,
               "is_top_featured": 0,
+              "is_beginner": 0,
               "servings": [
                 {
                   "label": "half",
@@ -2068,6 +2110,7 @@
               "details": {},
               "is_featured": 0,
               "is_top_featured": 0,
+              "is_beginner": 0,
               "servings": [
                 {
                   "label": "half",
@@ -2115,6 +2158,7 @@
               "details": {},
               "is_featured": 0,
               "is_top_featured": 0,
+              "is_beginner": 0,
               "servings": [
                 {
                   "label": "half",
@@ -2162,6 +2206,7 @@
               "details": {},
               "is_featured": 0,
               "is_top_featured": 0,
+              "is_beginner": 0,
               "servings": [
                 {
                   "label": "half",
@@ -2209,6 +2254,7 @@
               "details": {},
               "is_featured": 0,
               "is_top_featured": 0,
+              "is_beginner": 0,
               "servings": [
                 {
                   "label": "half",
@@ -2256,6 +2302,7 @@
               "details": {},
               "is_featured": 0,
               "is_top_featured": 0,
+              "is_beginner": 0,
               "servings": [
                 {
                   "label": "half",
@@ -2303,6 +2350,7 @@
               "details": {},
               "is_featured": 0,
               "is_top_featured": 0,
+              "is_beginner": 0,
               "servings": [
                 {
                   "label": "half",
@@ -2350,6 +2398,7 @@
               "details": {},
               "is_featured": 0,
               "is_top_featured": 0,
+              "is_beginner": 0,
               "servings": [
                 {
                   "label": "half",
@@ -2397,6 +2446,7 @@
               "details": {},
               "is_featured": 0,
               "is_top_featured": 0,
+              "is_beginner": 0,
               "servings": [
                 {
                   "label": "half",
@@ -2444,6 +2494,7 @@
               "details": {},
               "is_featured": 0,
               "is_top_featured": 0,
+              "is_beginner": 0,
               "servings": [
                 {
                   "label": "half",
@@ -2491,6 +2542,7 @@
               "details": {},
               "is_featured": 0,
               "is_top_featured": 0,
+              "is_beginner": 0,
               "servings": [
                 {
                   "label": "half",
@@ -2538,6 +2590,7 @@
               "details": {},
               "is_featured": 0,
               "is_top_featured": 0,
+              "is_beginner": 0,
               "servings": [
                 {
                   "label": "half",
@@ -2585,6 +2638,7 @@
               "details": {},
               "is_featured": 0,
               "is_top_featured": 0,
+              "is_beginner": 0,
               "servings": [
                 {
                   "label": "half",
@@ -2632,6 +2686,7 @@
               "details": {},
               "is_featured": 0,
               "is_top_featured": 0,
+              "is_beginner": 0,
               "servings": [
                 {
                   "label": "half",
@@ -2679,6 +2734,7 @@
               "details": {},
               "is_featured": 0,
               "is_top_featured": 0,
+              "is_beginner": 0,
               "servings": [
                 {
                   "label": "half",
@@ -2726,6 +2782,7 @@
               "details": {},
               "is_featured": 0,
               "is_top_featured": 0,
+              "is_beginner": 0,
               "servings": [
                 {
                   "label": "half",
@@ -2773,6 +2830,7 @@
               "details": {},
               "is_featured": 0,
               "is_top_featured": 0,
+              "is_beginner": 0,
               "servings": [
                 {
                   "label": "half",
@@ -2820,6 +2878,7 @@
               "details": {},
               "is_featured": 0,
               "is_top_featured": 0,
+              "is_beginner": 0,
               "servings": [
                 {
                   "label": "half",
@@ -2867,6 +2926,7 @@
               "details": {},
               "is_featured": 0,
               "is_top_featured": 0,
+              "is_beginner": 0,
               "servings": [
                 {
                   "label": "half",
@@ -2914,6 +2974,7 @@
               "details": {},
               "is_featured": 0,
               "is_top_featured": 0,
+              "is_beginner": 0,
               "servings": [
                 {
                   "label": "half",
@@ -2961,6 +3022,7 @@
               "details": {},
               "is_featured": 0,
               "is_top_featured": 0,
+              "is_beginner": 0,
               "servings": [
                 {
                   "label": "half",
@@ -3008,6 +3070,7 @@
               "details": {},
               "is_featured": 0,
               "is_top_featured": 0,
+              "is_beginner": 0,
               "servings": [
                 {
                   "label": "half",
@@ -3055,6 +3118,7 @@
               "details": {},
               "is_featured": 0,
               "is_top_featured": 0,
+              "is_beginner": 0,
               "servings": [
                 {
                   "label": "half",
@@ -3102,6 +3166,7 @@
               "details": {},
               "is_featured": 0,
               "is_top_featured": 0,
+              "is_beginner": 0,
               "servings": [
                 {
                   "label": "half",
@@ -3149,6 +3214,7 @@
               "details": {},
               "is_featured": 0,
               "is_top_featured": 0,
+              "is_beginner": 0,
               "servings": [
                 {
                   "label": "half",
@@ -3196,6 +3262,7 @@
               "details": {},
               "is_featured": 0,
               "is_top_featured": 0,
+              "is_beginner": 0,
               "servings": [
                 {
                   "label": "half",
@@ -3243,6 +3310,7 @@
               "details": {},
               "is_featured": 0,
               "is_top_featured": 0,
+              "is_beginner": 0,
               "servings": [
                 {
                   "label": "half",
@@ -3290,6 +3358,7 @@
               "details": {},
               "is_featured": 0,
               "is_top_featured": 0,
+              "is_beginner": 0,
               "servings": [
                 {
                   "label": "half",
@@ -3337,6 +3406,7 @@
               "details": {},
               "is_featured": 0,
               "is_top_featured": 0,
+              "is_beginner": 0,
               "servings": [
                 {
                   "label": "half",
@@ -3384,6 +3454,7 @@
               "details": {},
               "is_featured": 0,
               "is_top_featured": 0,
+              "is_beginner": 0,
               "servings": [
                 {
                   "label": "half",
@@ -3431,6 +3502,7 @@
               "details": {},
               "is_featured": 0,
               "is_top_featured": 0,
+              "is_beginner": 0,
               "servings": [
                 {
                   "label": "half",
@@ -3478,6 +3550,7 @@
               "details": {},
               "is_featured": 0,
               "is_top_featured": 0,
+              "is_beginner": 0,
               "servings": [
                 {
                   "label": "half",
@@ -3525,6 +3598,7 @@
               "details": {},
               "is_featured": 0,
               "is_top_featured": 0,
+              "is_beginner": 0,
               "servings": [
                 {
                   "label": "half",
@@ -3580,6 +3654,7 @@
               "details": {},
               "is_featured": 0,
               "is_top_featured": 0,
+              "is_beginner": 0,
               "servings": [
                 {
                   "label": "half",
@@ -3643,6 +3718,7 @@
               "details": {},
               "is_featured": 1,
               "is_top_featured": 1,
+              "is_beginner": 0,
               "servings": []
             },
             {
@@ -3671,6 +3747,7 @@
               "details": {},
               "is_featured": 0,
               "is_top_featured": 0,
+              "is_beginner": 0,
               "servings": []
             },
             {
@@ -3699,6 +3776,7 @@
               "details": {},
               "is_featured": 0,
               "is_top_featured": 0,
+              "is_beginner": 0,
               "servings": []
             }
           ]
@@ -3735,6 +3813,7 @@
               "details": {},
               "is_featured": 0,
               "is_top_featured": 0,
+              "is_beginner": 0,
               "servings": []
             },
             {
@@ -3763,6 +3842,7 @@
               "details": {},
               "is_featured": 0,
               "is_top_featured": 0,
+              "is_beginner": 0,
               "servings": []
             },
             {
@@ -3791,6 +3871,7 @@
               "details": {},
               "is_featured": 0,
               "is_top_featured": 0,
+              "is_beginner": 0,
               "servings": []
             },
             {
@@ -3819,6 +3900,7 @@
               "details": {},
               "is_featured": 0,
               "is_top_featured": 0,
+              "is_beginner": 0,
               "servings": []
             },
             {
@@ -3847,6 +3929,7 @@
               "details": {},
               "is_featured": 0,
               "is_top_featured": 0,
+              "is_beginner": 0,
               "servings": []
             },
             {
@@ -3875,6 +3958,7 @@
               "details": {},
               "is_featured": 0,
               "is_top_featured": 0,
+              "is_beginner": 0,
               "servings": []
             },
             {
@@ -3903,6 +3987,7 @@
               "details": {},
               "is_featured": 0,
               "is_top_featured": 0,
+              "is_beginner": 0,
               "servings": []
             },
             {
@@ -3931,6 +4016,7 @@
               "details": {},
               "is_featured": 0,
               "is_top_featured": 0,
+              "is_beginner": 0,
               "servings": []
             },
             {
@@ -3959,6 +4045,7 @@
               "details": {},
               "is_featured": 0,
               "is_top_featured": 0,
+              "is_beginner": 0,
               "servings": []
             },
             {
@@ -3987,6 +4074,7 @@
               "details": {},
               "is_featured": 0,
               "is_top_featured": 0,
+              "is_beginner": 0,
               "servings": []
             },
             {
@@ -4015,6 +4103,7 @@
               "details": {},
               "is_featured": 0,
               "is_top_featured": 0,
+              "is_beginner": 0,
               "servings": []
             }
           ]
