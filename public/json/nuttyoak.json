@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "version": 3,
-  "generated_at": "2026-06-06T07:31:55.550Z",
+  "version": 4,
+  "generated_at": "2026-06-08T05:39:32.863Z",
   "bar": {
     "id": "543bca85-d752-4401-854c-a5e535b21042",
     "name": "NuttyOak",
@@ -23,6 +23,9 @@
       "showTastingNotes": true,
       "showServingDetails": true
     }
+  },
+  "visibility": {
+    "app_only": false
   },
   "categories": [
     {
