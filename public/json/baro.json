@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "version": 20,
-  "generated_at": "2026-06-07T17:14:51.055Z",
+  "version": 21,
+  "generated_at": "2026-06-08T03:30:54.693Z",
   "bar": {
     "id": "28754067-952c-4f89-9618-62d358bb7566",
     "name": "BARO",
@@ -52,9 +52,9 @@
               "origin": "France",
               "producer": "Camus",
               "abv": 40,
-              "vintage": "VSOP",
+              "vintage": "NAS",
               "cask_info": "",
-              "volume_ml": null,
+              "volume_ml": 700,
               "unit": "bottle",
               "list_price_label": "glass",
               "image": {
@@ -66,84 +66,28 @@
                 "format": "webp",
                 "updated_at": "2026-06-06T01:02:38.569Z"
               },
-              "description": "",
-              "tasting_notes": "포도",
-              "details": {},
+              "description": "꽃향과 과일향이 풍부한 부드러운 코냑을 찾는 사람에게 추천",
+              "tasting_notes": "플로럴, 과일향, 부드러움, 우아함",
+              "details": {
+                "region": "Borderies",
+                "grade": "VSOP",
+                "grape": "Ugni Blanc"
+              },
               "is_featured": 1,
               "is_top_featured": 1,
               "is_beginner": 1,
               "servings": [
                 {
-                  "label": "half",
-                  "serving_ml": 15,
-                  "price": 15000,
-                  "sort_order": 0
-                },
-                {
                   "label": "glass",
                   "serving_ml": 30,
                   "price": 24000,
                   "sort_order": 1
-                },
-                {
-                  "label": "bottle",
-                  "serving_ml": 750,
-                  "price": 250000,
-                  "sort_order": 2
-                }
-              ]
-            },
-            {
-              "id": "5f56f5ac-e24c-4702-a610-091d6fc3fc36",
-              "name": "까뮤 꾸베",
-              "product_type": "alcohol",
-              "alcohol_type": "brandy",
-              "food_type": null,
-              "cigar_vitola": "",
-              "cigar_wrapper": "",
-              "cigar_binder": "",
-              "cigar_filler": "",
-              "cigar_body": null,
-              "base_price": null,
-              "origin": "",
-              "producer": "",
-              "abv": null,
-              "vintage": "",
-              "cask_info": "",
-              "volume_ml": null,
-              "unit": "bottle",
-              "list_price_label": "",
-              "image": null,
-              "description": "",
-              "tasting_notes": "",
-              "details": {},
-              "is_featured": 0,
-              "is_top_featured": 1,
-              "is_beginner": 0,
-              "servings": [
-                {
-                  "label": "half",
-                  "serving_ml": 15,
-                  "price": null,
-                  "sort_order": 0
-                },
-                {
-                  "label": "glass",
-                  "serving_ml": 30,
-                  "price": null,
-                  "sort_order": 1
-                },
-                {
-                  "label": "bottle",
-                  "serving_ml": 750,
-                  "price": null,
-                  "sort_order": 2
                 }
               ]
             },
             {
               "id": "00ba88a7-1d3c-4faa-a5fa-31d563e31d1d",
-              "name": "까뮤 라그랑마르크 vsop",
+              "name": "까뮤 라그랑마르크 VSOP",
               "product_type": "alcohol",
               "alcohol_type": "brandy",
               "food_type": null,
@@ -153,39 +97,31 @@
               "cigar_filler": "",
               "cigar_body": null,
               "base_price": null,
-              "origin": "",
-              "producer": "",
-              "abv": null,
-              "vintage": "",
+              "origin": "France",
+              "producer": "Camus",
+              "abv": 40,
+              "vintage": "NAS",
               "cask_info": "",
-              "volume_ml": null,
+              "volume_ml": 700,
               "unit": "bottle",
-              "list_price_label": "",
+              "list_price_label": "glass",
               "image": null,
-              "description": "",
-              "tasting_notes": "",
-              "details": {},
+              "description": "꽃향과 과일향이 풍부한 부드러운 코냑을 찾는 사람에게 추천",
+              "tasting_notes": "플로럴,  살구, 복숭아, 바닐라, 스파이스, 부드러움",
+              "details": {
+                "region": "Cognac",
+                "grade": "VSOP",
+                "grape": "Ugni Blanc"
+              },
               "is_featured": 0,
               "is_top_featured": 1,
               "is_beginner": 0,
               "servings": [
                 {
-                  "label": "half",
-                  "serving_ml": 15,
-                  "price": null,
-                  "sort_order": 0
-                },
-                {
                   "label": "glass",
                   "serving_ml": 30,
-                  "price": null,
+                  "price": 25000,
                   "sort_order": 1
-                },
-                {
-                  "label": "bottle",
-                  "serving_ml": 750,
-                  "price": null,
-                  "sort_order": 2
                 }
               ]
             },
@@ -201,45 +137,37 @@
               "cigar_filler": "",
               "cigar_body": null,
               "base_price": null,
-              "origin": "",
-              "producer": "",
-              "abv": null,
-              "vintage": "",
+              "origin": "France",
+              "producer": "Camus",
+              "abv": 40,
+              "vintage": "NAS",
               "cask_info": "",
-              "volume_ml": null,
+              "volume_ml": 700,
               "unit": "bottle",
-              "list_price_label": "",
+              "list_price_label": "glass",
               "image": null,
-              "description": "",
-              "tasting_notes": "",
-              "details": {},
+              "description": "꽃향 중심 VSOP보다 한 단계 깊은 오크감과 숙성미를 즐기고 싶은 클래식 코냑 입문자에게 추천",
+              "tasting_notes": "건과일, 바닐라, 오크, 스파이스, 숙성감, 클래식 꼬냑",
+              "details": {
+                "region": "Cognac",
+                "grade": "Napoléon",
+                "grape": "Ugni Blanc"
+              },
               "is_featured": 0,
               "is_top_featured": 0,
               "is_beginner": 0,
               "servings": [
                 {
-                  "label": "half",
-                  "serving_ml": 15,
-                  "price": null,
-                  "sort_order": 0
-                },
-                {
                   "label": "glass",
                   "serving_ml": 30,
-                  "price": null,
+                  "price": 25000,
                   "sort_order": 1
-                },
-                {
-                  "label": "bottle",
-                  "serving_ml": 750,
-                  "price": null,
-                  "sort_order": 2
                 }
               ]
             },
             {
               "id": "f8da1015-2364-4ed8-bd92-74910a0e19ff",
-              "name": "마르텔 vsop 스폐셜리저브",
+              "name": "마르텔 VSOP 메달리온 스폐셜 리저브",
               "product_type": "alcohol",
               "alcohol_type": "brandy",
               "food_type": null,
@@ -249,39 +177,31 @@
               "cigar_filler": "",
               "cigar_body": null,
               "base_price": null,
-              "origin": "",
-              "producer": "",
-              "abv": null,
-              "vintage": "",
+              "origin": "France",
+              "producer": "Martell",
+              "abv": 40,
+              "vintage": "NAS",
               "cask_info": "",
               "volume_ml": null,
               "unit": "bottle",
-              "list_price_label": "",
+              "list_price_label": "glass",
               "image": null,
-              "description": "",
-              "tasting_notes": "",
-              "details": {},
+              "description": "꽃향보다는 바닐라와 은은한 오크가 있는 정통 코냑 스타일을 좋아하는 사람에게 추천",
+              "tasting_notes": "바닐라, 포도, 오크, 스파이스, 균형형, 클래식 꼬냑",
+              "details": {
+                "region": "Cognac",
+                "grade": "VSOP",
+                "grape": "Ugni Blanc"
+              },
               "is_featured": 0,
               "is_top_featured": 0,
               "is_beginner": 0,
               "servings": [
                 {
-                  "label": "half",
-                  "serving_ml": 15,
-                  "price": null,
-                  "sort_order": 0
-                },
-                {
                   "label": "glass",
                   "serving_ml": 30,
-                  "price": null,
+                  "price": 25000,
                   "sort_order": 1
-                },
-                {
-                  "label": "bottle",
-                  "serving_ml": 750,
-                  "price": null,
-                  "sort_order": 2
                 }
               ]
             },
@@ -359,6 +279,54 @@
               "details": {},
               "is_featured": 0,
               "is_top_featured": 0,
+              "is_beginner": 0,
+              "servings": [
+                {
+                  "label": "half",
+                  "serving_ml": 15,
+                  "price": null,
+                  "sort_order": 0
+                },
+                {
+                  "label": "glass",
+                  "serving_ml": 30,
+                  "price": null,
+                  "sort_order": 1
+                },
+                {
+                  "label": "bottle",
+                  "serving_ml": 750,
+                  "price": null,
+                  "sort_order": 2
+                }
+              ]
+            },
+            {
+              "id": "5f56f5ac-e24c-4702-a610-091d6fc3fc36",
+              "name": "까뮤 꾸베",
+              "product_type": "alcohol",
+              "alcohol_type": "brandy",
+              "food_type": null,
+              "cigar_vitola": "",
+              "cigar_wrapper": "",
+              "cigar_binder": "",
+              "cigar_filler": "",
+              "cigar_body": null,
+              "base_price": null,
+              "origin": "",
+              "producer": "",
+              "abv": null,
+              "vintage": "",
+              "cask_info": "",
+              "volume_ml": null,
+              "unit": "bottle",
+              "list_price_label": "",
+              "image": null,
+              "description": "",
+              "tasting_notes": "",
+              "details": {},
+              "is_featured": 0,
+              "is_top_featured": 1,
               "is_beginner": 0,
               "servings": [
                 {
