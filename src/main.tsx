@@ -55,6 +55,9 @@ function App() {
   }
   if (state.kind === "loading") return <LoadingShell />;
   if (state.kind === "error") return <EmptyShell title={state.slug} message={state.message} />;
+  if (state.menu.visibility?.app_only && !isAndroidMenuApp()) {
+    return <EmptyShell title={state.menu.bar.name} message="앱 전용 메뉴판입니다." />;
+  }
   if (resolveMenuStyle(state.menu) === "clean") return <CleanMenuPage menu={state.menu} />;
   return <MenuPage menu={state.menu} />;
 }

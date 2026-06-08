@@ -115,6 +115,9 @@ export type MenuData = {
     theme?: MenuTheme;
     features?: MenuFeatures;
   };
+  visibility?: {
+    app_only?: boolean;
+  };
   categories: MenuCategory[];
   combos: MenuCombo[];
 };
